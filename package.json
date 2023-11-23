@@ -1,0 +1,28 @@
+{
+  "name": "schnuppertag-bilder",
+  "private": true,
+  "version": "0.0.0",
+  "type": "module",
+  "scripts": {
+    "liip-dev:toggle": "[ -f .vscode/settings.json ] && mv .vscode/settings.json .vscode/deactivated.settings.json || mv .vscode/deactivated.settings.json .vscode/settings.json",
+    "liip-dev": "concurrently --names \"BildGenerierung,AufgabenFrontend,Aufgaben\" -c \"green,red,cyan\" --kill-others \"vite --port 3000\" \"npm run tasks\" \"npm run tasks:build:watch\"",
+    "tasks:build:watch": "nodemon -w TASKS.md build-tasks.js",
+    "tasks:build": "node build-tasks.js",
+    "tasks": "cd tasks && vite --port 3001 --open",
+    "dev": "concurrently --names \"BildGenerierung,Aufgaben\" -c \"green,red\" --kill-others \"vite --port 3000 --open\" \"npm run tasks\""
+  },
+  "devDependencies": {
+    "@sveltejs/vite-plugin-svelte": "^3.0.0",
+    "@tsconfig/svelte": "^5.0.2",
+    "concurrently": "^8.2.2",
+    "nodemon": "^3.0.1",
+    "svelte": "^4.2.3",
+    "svelte-check": "^3.6.0",
+    "tslib": "^2.6.2",
+    "typescript": "^5.2.2",
+    "vite": "^5.0.0"
+  },
+  "dependencies": {
+    "openai": "^4.19.1"
+  }
+}
