@@ -38,6 +38,7 @@ app.get("/", (request, response) => {
 });
 
 app.get("/api-key", (request, response) => {
+  response.setHeader("Content-Type", "application/json",)
   response.send({
     token: process.env["OPENAI_API_TOKEN"],
     organization: process.env["OPENAI_API_ORGANIZATION"],
