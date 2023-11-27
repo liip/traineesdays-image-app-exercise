@@ -1,6 +1,7 @@
 # Schnuppertag Bilder
 
 - [Schnuppertag Bilder](#schnuppertag-bilder)
+  - [Starten](#starten)
   - [Bearbeitung](#bearbeitung)
     - [Development](#development)
     - [Commits](#commits)
@@ -12,6 +13,18 @@
     - [Starten des Projekts](#starten-des-projekts)
 
 Dieses Repository wird für Schnuppertage gebraucht.
+
+## Starten
+
+Es gibt ein paar Schritte welche man durch führen muss.
+
+Ein Lehrnender sollte jeweils den Laptop aufgeklappt und an den Beamer gehänkt vorne aufstellen und folgenden command ausführen
+
+```bash
+npm run provide-key
+```
+
+Damit startet ein express server im Hintergrund welcher den openai-api-key zur verfügung stellt. Davor muss jedoch das `.env-example` kopiert werden und der [api key](https://platform.openai.com/api-keys) muss mit der [organization](https://platform.openai.com/account/organization) eingeschrieben werden.
 
 ## Bearbeitung
 
@@ -74,7 +87,9 @@ Auf [vscode.dev](https://vscode.dev) ist die [Github Codespaces](https://marketp
 Das Projekt und die Aufgaben werden mit folgendem command ausgeführt.
 
 ```bash
-npm run dev
+npm run dev %IP%
 ```
+
+`%IP%` muss mit der IP ersetzt werden welche angezeigt wird nachdem man den key provider [gestartet](#starten) hat.
 
 Hierbei ist zu beachten, dass es zwei neue tabs im browser direkt öffnet.

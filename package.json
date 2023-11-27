@@ -6,10 +6,11 @@
   "scripts": {
     "liip-dev:toggle": "[ -f .vscode/settings.json ] && mv .vscode/settings.json .vscode/deactivated.settings.json || mv .vscode/deactivated.settings.json .vscode/settings.json",
     "liip-dev": "concurrently --names \"BildGenerierung,AufgabenFrontend,Aufgaben\" -c \"green,red,cyan\" --kill-others \"vite --port 3000\" \"npm run tasks\" \"npm run tasks:build:watch\"",
-    "tasks:build:watch": "nodemon -w TASKS.md build-tasks.js",
-    "tasks:build": "node build-tasks.js",
+    "tasks:build:watch": "nodemon -w TASKS.md scripts/build-tasks.js",
+    "tasks:build": "node scripts/build-tasks.js",
     "tasks": "cd tasks && vite --port 3001 --open",
-    "dev": "concurrently --names \"BildGenerierung,Aufgaben\" -c \"green,red\" --kill-others \"vite --port 3000 --open\" \"npm run tasks\""
+    "provide-key": "cd openai-api-key-provider && npm start",
+    "dev": "./scripts/dev.sh $1"
   },
   "devDependencies": {
     "@sveltejs/vite-plugin-svelte": "^3.0.0",
