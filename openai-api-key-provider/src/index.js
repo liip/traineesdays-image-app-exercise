@@ -22,9 +22,13 @@ for (const name of Object.keys(nets)) {
   }
 }
 
+// The first result is the actual ip of the machine
+const ip = Object.values(results)[0][0];
+
 const html = readFileSync("src/index.html")
   .toString()
-  .replace("%IP-HERE%", results["en0"][0]);
+
+  .replace("%IP-HERE%", ip);
 
 const app = express();
 app.use(express.json());
@@ -41,5 +45,5 @@ app.get("/api-key", (request, response) => {
 });
 
 app.listen(PORT, () => {
-  console.log(`Server Listening at http://localhost:${PORT}`);
+  console.log(`Server Listening at http://${ip}:${PORT}`);
 });
