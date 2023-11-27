@@ -10,6 +10,7 @@
     "tasks:build": "node scripts/build-tasks.js",
     "tasks": "cd tasks && vite --port 3001 --open",
     "provide-key": "cd openai-api-key-provider && npm start",
+    "install": "cd openai-api-key-provider && npm i && cd ../tasks && npm i",
     "dev": "./scripts/dev.sh $1"
   },
   "devDependencies": {
