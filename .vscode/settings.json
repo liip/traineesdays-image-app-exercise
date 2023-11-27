@@ -1,0 +1,19 @@
+{
+  "files.exclude": {
+    "**/vite-env.d.ts": true,
+    "**/node_modules": true,
+    "**/.vscode": true,
+    "**/.gitignore": true,
+    "**/package.json": true,
+    "**/svelte.config.js": true,
+    "**/vite.config.ts": true,
+    "**/env.js": true,
+    "**/tasks": true,
+    "**/tsconfig.json": true,
+    "**/tsconfig.node.json": true,
+    "**/build-tasks.js": true,
+    "**/package-lock.json": true,
+    "**/TASKS.md": true,
+    "**/README.md": true
+  }
+}
