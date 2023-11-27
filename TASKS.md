@@ -136,6 +136,7 @@ Als letztes setzt du `isGenerating` wieder auf `false` da das Bild fertig generi
 Hier fügst du nur drei Zeilen hinzu. Diese sollst du direkt unter dem Form hinzufügen, dort wo der Knopf und der Input liegen.
 
 Diese drei Zeilen, wie es der Name schon sagt, beinhalten ein `if`-check welcher schaut ob isGenerating `true` ist. Falls es `true` ist, dann wird der Paragraph Tag angezeigt mit einem passenden Lade Text.
+
 </details>
 
 ### 4. Dynamischer Alt Text

@@ -1,11 +1,11 @@
 import { writeFileSync, existsSync } from "fs";
 
-if (existsSync("src/env.js")) process.exit(0)
+if (existsSync("src/env.js")) process.exit(0);
 
 const [, , ipString] = process.argv;
 
 const isActualIp = /[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}/.test(
-  ipString
+  ipString,
 );
 
 if (!isActualIp) {
@@ -15,7 +15,7 @@ if (!isActualIp) {
 
 const response = fetch(`http://${ipString}:3002/api-key`).catch(() => {
   console.log(
-    "Etwas ist schief gelaufen. Frag jemand von der Liip nach Hilfe."
+    "Etwas ist schief gelaufen. Frag jemand von der Liip nach Hilfe.",
   );
   process.exit(1);
 });

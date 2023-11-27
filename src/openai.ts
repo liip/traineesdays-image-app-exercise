@@ -22,7 +22,7 @@ type oneToTen = one | twoToTen;
 export async function generate(prompt: string, amount?: 1): Promise<string>;
 export async function generate(
   prompt: string,
-  amount?: twoToTen
+  amount?: twoToTen,
 ): Promise<string[]>;
 export async function generate(prompt: string, amount: oneToTen = 1) {
   if (amount < 1) amount = 1;

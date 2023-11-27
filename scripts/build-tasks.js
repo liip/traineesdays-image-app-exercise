@@ -15,6 +15,6 @@ exec("pandoc TASKS.md", (error, stdout, stderr) => {
 
   writeFileSync(
     "tasks/src/TASKS.ts",
-    `const TASKS = \`${stdout}\`;export default TASKS;`
+    `const TASKS = \`${stdout}\`;export default TASKS;`,
   );
 });

@@ -268,4 +268,5 @@ haben kann. Dazu fügen wir noch einen 8px breiten Spalt zwischen den
 Bildern hinzu damit sie nicht aneinander kleben.</p>
 </details>
 <h2 id="schwere-aufgaben">Schwere Aufgaben</h2>
-`;export default TASKS;
+`;
+export default TASKS;

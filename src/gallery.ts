@@ -4,7 +4,7 @@ type Image = { url: string; prompt: string };
 
 // We use "0" to make sure JSON.parse doesn't error if there isn't an item in storage at "images". It defaults to an empty list
 export const images = writable<Image[]>(
-  JSON.parse(localStorage.getItem("images") || "0") || []
+  JSON.parse(localStorage.getItem("images") || "0") || [],
 );
 
 images.subscribe((images) => {
