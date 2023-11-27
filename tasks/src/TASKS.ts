@@ -23,7 +23,7 @@ in der Mitte der Datei.</p>
   Generate
 &lt;/button&gt;</code></pre>
 </details>
-<h3 id="input-knopf-css">2. Input &amp; Knopf CSS</h3>
+<h3 id="input-knopf-styling">2. Input &amp; Knopf Styling</h3>
 <p>CSS, ausgeschrieben <code>Cascading Style Sheets</code>, benutzt man
 um Farbe, Form und Position von HTML Elementen zu ändern. CSS kann sehr
 mächtig sein und komplex jedoch kann man auch sehr einfach nur die
@@ -153,7 +153,7 @@ benutzt kann man variablen einsetzen.</p>
 <h2 id="mittlere-aufgaben">Mittlere Aufgaben</h2>
 <h3 id="bilder-galerie">5. Bilder Galerie</h3>
 <p>Es wäre doch cool wenn wir Bilder die wir schon generiert haben auch
-speichern könnten.</p>
+automatisch gespeichert werden.</p>
 <details>
 <summary>
 TIPP
@@ -249,13 +249,23 @@ TIPP
 
   .image-grid {
     width: 768px;
-    gap: 8px;
     display: grid;
     grid-template-columns: 1fr 1fr;
+    gap: 8px;
   }
 
   /* Andere Styles */
 &lt;/style&gt;</code></pre>
+<p>Diesmal kein Javascript dafür ein wenig mehr CSS.</p>
+<p>Im ersten Schritt fügen wir einen div um unsere Bilder hinzu mit der
+Klasse <code>image-grid</code>.</p>
+<p>Im <code>&lt;style&gt;</code> Tag editieren wir dann die
+<code>image</code> Klasse und erstellen die <code>image-grid</code>
+Klasse. In der ersteren entfernen wir die Breite unter dem Attribute
+<code>width</code>. In der zweiten Klasse fügen wir die Breite wieder
+hinzu und machen den div zu einem Gitter welches 2 Bilder nebeneinander
+haben kann. Dazu fügen wir noch einen 8px breiten Spalt zwischen den
+Bildern hinzu damit sie nicht aneinander kleben.</p>
 </details>
 <h2 id="schwere-aufgaben">Schwere Aufgaben</h2>
 `;export default TASKS;

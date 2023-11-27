@@ -2,7 +2,7 @@ import { writable } from "svelte/store";
 
 type Image = { url: string; prompt: string };
 
-// We use "0" to make sure JSON.parse doesn't error and if there isn't an item in storage at images it get set to an empty list
+// We use "0" to make sure JSON.parse doesn't error if there isn't an item in storage at "images". It defaults to an empty list
 export const images = writable<Image[]>(
   JSON.parse(localStorage.getItem("images") || "0") || []
 );

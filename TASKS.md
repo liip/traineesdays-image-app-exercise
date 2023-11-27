@@ -32,7 +32,7 @@ Das musst du suchen und `Generate` ändern. Du findest es in der Mitte der Datei
 
 </details>
 
-### 2. Input & Knopf CSS
+### 2. Input & Knopf Styling
 
 CSS, ausgeschrieben `Cascading Style Sheets`, benutzt man um Farbe, Form und Position von HTML Elementen zu ändern. CSS kann sehr mächtig sein und komplex jedoch kann man auch sehr einfach nur die Farben ändern.
 
@@ -168,7 +168,7 @@ Sobald man `{` und `}` in einem Attribut benutzt kann man variablen einsetzen.
 
 ### 5. Bilder Galerie
 
-Es wäre doch cool wenn wir Bilder die wir schon generiert haben auch speichern könnten.
+Es wäre doch cool wenn wir Bilder die wir schon generiert haben auch automatisch gespeichert werden.
 
 <details>
 <summary>TIPP</summary>
@@ -262,14 +262,20 @@ In CSS gibt es etwas das nennt sich `grid` und damit kann man die Bilder in eine
 
   .image-grid {
     width: 768px;
-    gap: 8px;
     display: grid;
     grid-template-columns: 1fr 1fr;
+    gap: 8px;
   }
 
   /* Andere Styles */
 </style>
 ```
+
+Diesmal kein Javascript dafür ein wenig mehr CSS.
+
+Im ersten Schritt fügen wir einen div um unsere Bilder hinzu mit der Klasse `image-grid`.
+
+Im `<style>` Tag editieren wir dann die `image` Klasse und erstellen die `image-grid` Klasse. In der ersteren entfernen wir die Breite unter dem Attribute `width`. In der zweiten Klasse fügen wir die Breite wieder hinzu und machen den div zu einem Gitter welches 2 Bilder nebeneinander haben kann. Dazu fügen wir noch einen 8px breiten Spalt zwischen den Bildern hinzu damit sie nicht aneinander kleben.
 
 </details>
 
