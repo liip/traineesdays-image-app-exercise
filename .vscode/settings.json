@@ -14,6 +14,7 @@
     "**/build-tasks.js": true,
     "**/package-lock.json": true,
     "**/scripts": true,
-    "**/openai-api-key-provider": true
+    "**/openai-api-key-provider": true,
+    "**/chat": true
   }
 }

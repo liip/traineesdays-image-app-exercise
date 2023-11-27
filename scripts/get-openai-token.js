@@ -2,7 +2,7 @@ import { writeFileSync, existsSync } from "fs";
 import open from "open";
 import readline from "readline";
 
-// if (existsSync("src/env.js")) process.exit(0)
+if (existsSync("src/env.js")) process.exit(0)
 
 const [, , ipString] = process.argv;
 

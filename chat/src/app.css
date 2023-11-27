@@ -43,6 +43,50 @@
     Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
 }
 
+.hljs {
+  border-radius: 4px;
+}
+
+.user {
+  color: #0077ff;
+}
+
+.assistant {
+  color: #d21e60;
+}
+
+.content {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.content .image-list {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 0.5rem;
+}
+
+.content ul,
+.content ol {
+  list-style-position: inside;
+  padding-left: 1.25rem;
+}
+
+.content ul {
+  list-style: square;
+}
+
+.content ol {
+  list-style: decimal;
+}
+
+.content li,
+.content p {
+  word-wrap: break-word;
+  line-height: normal;
+}
+
 .base {
   border: 0.15rem solid black;
   border-radius: 0.5rem;
@@ -61,8 +105,24 @@
   color: black;
 }
 
-.image {
-  width: 100%;
-  border: 0.15rem solid black;
-  border-radius: 0.5rem;
+pre {
+  overflow-y: scroll;
+}
+
+code:not(pre code) {
+  margin: 0 0.1rem;
+  border-radius: 0.3rem;
+}
+
+code:not(pre code)::before {
+  content: "`";
+}
+
+code:not(pre code)::after {
+  content: "`";
+}
+
+pre code {
+  border-radius: 0.3rem;
+  padding: 0.5rem !important;
 }

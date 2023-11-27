@@ -9,8 +9,9 @@
     "tasks:build:watch": "nodemon -w TASKS.md scripts/build-tasks.js",
     "tasks:build": "node scripts/build-tasks.js",
     "tasks": "cd tasks && vite --port 3001 --open",
+    "chat": "cd chat && vite --port 3003 --open",
     "provide-key": "cd openai-api-key-provider && npm start",
-    "install": "cd openai-api-key-provider && npm i && cd ../tasks && npm i",
+    "install": "cd openai-api-key-provider && npm i && cd ../tasks && npm i && cd ../chat && npm i",
     "dev": "./scripts/dev.sh $1"
   },
   "devDependencies": {
@@ -26,6 +27,8 @@
     "vite": "^5.0.0"
   },
   "dependencies": {
+    "highlight.js": "^11.9.0",
+    "highlightjs-svelte": "^1.0.6",
     "openai": "^4.19.1"
   }
 }
