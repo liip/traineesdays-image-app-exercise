@@ -25,24 +25,25 @@ for (const name of Object.keys(nets)) {
 // The first result is the actual ip of the machine
 const ip = Object.values(results)[0][0];
 
-const html = readFileSync("src/index.html")
+const indexHtml = readFileSync("src/index.html")
   .toString()
-
   .replace("%IP-HERE%", ip);
+
+const token = {
+  token: process.env["OPENAI_API_TOKEN"],
+  organization: process.env["OPENAI_API_ORGANIZATION"],
+};
 
 const app = express();
 app.use(express.json());
 
 app.get("/", (request, response) => {
-  response.send(html);
+  response.send(indexHtml);
 });
 
 app.get("/api-key", (request, response) => {
-  response.setHeader("Content-Type", "application/json",)
-  response.send({
-    token: process.env["OPENAI_API_TOKEN"],
-    organization: process.env["OPENAI_API_ORGANIZATION"],
-  });
+  // response.setHeader("Content-Type", "application/json");
+  response.send(token);
 });
 
 app.listen(PORT, () => {
