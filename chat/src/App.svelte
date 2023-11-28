@@ -30,7 +30,6 @@
     display: flex;
     flex-direction: column;
     width: calc(100vw - var(--margin) * 2);
-    /* padding: 0 var(--margin); */
     height: 100vh;
   }
   .input-wrapper {

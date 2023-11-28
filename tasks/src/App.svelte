@@ -14,24 +14,13 @@
       .querySelectorAll("pre code")
       .forEach((block) => hljs.highlightBlock(block as HTMLElement));
 
-    const { color: stringColor } = getComputedStyle(
-      document.getElementsByClassName("hljs-string")[0]
-    );
+    document
+      .querySelectorAll("code:not(pre code)")
+      .forEach((block) => (block.className = "hljs hljs-string"));
 
-    document.querySelectorAll("code:not(pre code)").forEach((_block) => {
-      const block = _block as HTMLElement;
-      block.style.color = stringColor;
-      block.classList.add("hljs");
-    });
-
-    const { color: keywordColor } = getComputedStyle(
-      document.getElementsByClassName("hljs-keyword")[0]
-    );
-
-    document.querySelectorAll("details summary").forEach((_block) => {
-      const block = _block as HTMLElement;
-      block.style.color = keywordColor;
-    });
+    document
+      .querySelectorAll("details summary")
+      .forEach((block) => (block.className = "hljs-keyword"));
   });
 </script>
 

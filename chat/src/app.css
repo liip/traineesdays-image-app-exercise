@@ -105,6 +105,10 @@
   color: black;
 }
 
+p {
+  text-align: justify;
+}
+
 pre {
   overflow-y: scroll;
 }
@@ -112,6 +116,7 @@ pre {
 code:not(pre code) {
   margin: 0 0.1rem;
   border-radius: 0.3rem;
+  white-space: nowrap;
 }
 
 code:not(pre code)::before {
