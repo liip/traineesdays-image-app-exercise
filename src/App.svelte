@@ -1,6 +1,6 @@
 <script lang="ts">
   import { generate, error } from "./openai";
-  
+
   let source = "";
 
   let prompt = "Eine siamesische Katze mit blauen Augen.";

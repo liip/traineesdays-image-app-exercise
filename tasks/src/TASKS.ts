@@ -1,6 +1,27 @@
 const TASKS = `<h1 id="schnuppertag-bei-der-liip">Schnuppertag bei der Liip</h1>
 <h2 id="einfache-aufgaben">Einfache Aufgaben</h2>
-<h3 id="knöpfe">1. Knöpfe</h3>
+<h3 id="titel">1. Titel</h3>
+<p>Ein Titel, oder heading, gibt es in 6 grössen in HTML.</p>
+<pre class="svelte"><code>&lt;h1&gt;H1&lt;/h1&gt;
+&lt;h2&gt;H2&lt;/h2&gt;
+&lt;h3&gt;H3&lt;/h3&gt;
+&lt;h4&gt;H4&lt;/h4&gt;
+&lt;h5&gt;H5&lt;/h5&gt;
+&lt;h6&gt;H6&lt;/h6&gt;</code></pre>
+<p>Hierbei ist zu beachten, dass <code>&lt;h1&gt;</code> der grösste ist
+und <code>&lt;h6&gt;</code> der kleinste.</p>
+<p>Deine Aufgabe ist es nun, einen Titel hinzuzufügen.</p>
+<details>
+<summary>
+TIPP
+</summary>
+<pre class="svelte"><code>&lt;div class=&quot;app&quot;&gt;
+  &lt;h1&gt;Bild generierung&lt;/h1&gt;
+
+  &lt;!-- Form, Bild &amp; Error --&gt;
+&lt;/div&gt;</code></pre>
+</details>
+<h3 id="knöpfe">2. Knöpfe</h3>
 <p>Ein Knopf, in HTML auch <code>button</code>, ist wie folgt
 aufgebaut:</p>
 <pre class="svelte"><code>&lt;button&gt;
@@ -23,7 +44,7 @@ in der Mitte der Datei.</p>
   Generate
 &lt;/button&gt;</code></pre>
 </details>
-<h3 id="input-knopf-styling">2. Input &amp; Knopf Styling</h3>
+<h3 id="input-knopf-styling">3. Input &amp; Knopf Styling</h3>
 <p>CSS, ausgeschrieben <code>Cascading Style Sheets</code>, benutzt man
 um Farbe, Form und Position von HTML Elementen zu ändern. CSS kann sehr
 mächtig sein und komplex jedoch kann man auch sehr einfach nur die
@@ -53,22 +74,22 @@ tag der zu unterst in der Datei ist.</p>
 <p>Damit du nicht noch nachschauen musst wie du <code>background</code>,
 <code>color</code> und <code>border</code> benutzt, hier ein paar
 Beispiele.</p>
-<div class="sourceCode" id="cb4"><pre
-class="sourceCode css"><code class="sourceCode css"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="fu">.class</span> {</span>
-<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a>  <span class="co">/* Du kannst fast alle Farben auf Englisch angeben. */</span></span>
-<span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a>  <span class="kw">background</span>: <span class="cn">red</span><span class="op">;</span></span>
-<span id="cb4-4"><a href="#cb4-4" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb4-5"><a href="#cb4-5" aria-hidden="true" tabindex="-1"></a>  <span class="co">/* Das gleiche wie beim Hintergrund. */</span></span>
-<span id="cb4-6"><a href="#cb4-6" aria-hidden="true" tabindex="-1"></a>  <span class="kw">color</span>: <span class="cn">black</span><span class="op">;</span></span>
-<span id="cb4-7"><a href="#cb4-7" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb4-8"><a href="#cb4-8" aria-hidden="true" tabindex="-1"></a>  <span class="co">/* Die border ist ein wenig komplexer. Sie besteht aus 3 Teilen. */</span></span>
-<span id="cb4-9"><a href="#cb4-9" aria-hidden="true" tabindex="-1"></a>  <span class="co">/* Zuerst kommt die Dicke in pixel zum Beispiel. Hier 1px */</span></span>
-<span id="cb4-10"><a href="#cb4-10" aria-hidden="true" tabindex="-1"></a>  <span class="co">/* Danach die Art der Border. Hier solid aber es geht auch dotted oder dashed für gepunktete oder gestrichelte Linien. */</span></span>
-<span id="cb4-11"><a href="#cb4-11" aria-hidden="true" tabindex="-1"></a>  <span class="co">/* Und zuletzt die Farbe, die ist, wie bei background und color, fast alle Farben auf Englisch. */</span></span>
-<span id="cb4-12"><a href="#cb4-12" aria-hidden="true" tabindex="-1"></a>  <span class="kw">border</span>: <span class="dv">1</span><span class="dt">px</span> <span class="dv">solid</span> <span class="cn">black</span><span class="op">;</span></span>
-<span id="cb4-13"><a href="#cb4-13" aria-hidden="true" tabindex="-1"></a>}</span></code></pre></div>
+<div class="sourceCode" id="cb6"><pre
+class="sourceCode css"><code class="sourceCode css"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="fu">.class</span> {</span>
+<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a>  <span class="co">/* Du kannst fast alle Farben auf Englisch angeben. */</span></span>
+<span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a>  <span class="kw">background</span>: <span class="cn">red</span><span class="op">;</span></span>
+<span id="cb6-4"><a href="#cb6-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-5"><a href="#cb6-5" aria-hidden="true" tabindex="-1"></a>  <span class="co">/* Das gleiche wie beim Hintergrund. */</span></span>
+<span id="cb6-6"><a href="#cb6-6" aria-hidden="true" tabindex="-1"></a>  <span class="kw">color</span>: <span class="cn">black</span><span class="op">;</span></span>
+<span id="cb6-7"><a href="#cb6-7" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-8"><a href="#cb6-8" aria-hidden="true" tabindex="-1"></a>  <span class="co">/* Die border ist ein wenig komplexer. Sie besteht aus 3 Teilen. */</span></span>
+<span id="cb6-9"><a href="#cb6-9" aria-hidden="true" tabindex="-1"></a>  <span class="co">/* Zuerst kommt die Dicke in pixel zum Beispiel. Hier 1px */</span></span>
+<span id="cb6-10"><a href="#cb6-10" aria-hidden="true" tabindex="-1"></a>  <span class="co">/* Danach die Art der Border. Hier solid aber es geht auch dotted oder dashed für gepunktete oder gestrichelte Linien. */</span></span>
+<span id="cb6-11"><a href="#cb6-11" aria-hidden="true" tabindex="-1"></a>  <span class="co">/* Und zuletzt die Farbe, die ist, wie bei background und color, fast alle Farben auf Englisch. */</span></span>
+<span id="cb6-12"><a href="#cb6-12" aria-hidden="true" tabindex="-1"></a>  <span class="kw">border</span>: <span class="dv">1</span><span class="dt">px</span> <span class="dv">solid</span> <span class="cn">black</span><span class="op">;</span></span>
+<span id="cb6-13"><a href="#cb6-13" aria-hidden="true" tabindex="-1"></a>}</span></code></pre></div>
 </details>
-<h3 id="lade-indikator">3. Lade Indikator</h3>
+<h3 id="lade-indikator">4. Lade Indikator</h3>
 <p>Das angezeigt wird wann das Bild generiert wird sollst du ein Lade
 Indikator einfügen. Um das zu erreichen musst du eine Variable
 hinzufügen welche du verwenden sollst um den Ladeindikator
@@ -122,12 +143,12 @@ Indikator nicht mehr angezeigt werden muss.</p>
 <h4 id="html">HTML</h4>
 <p>Hier fügst du nur drei Zeilen hinzu. Diese sollst du direkt unter dem
 Form hinzufügen, dort wo der Knopf und der Input liegen.</p>
-Diese drei Zeilen, wie es der Name schon sagt, beinhalten ein
+<p>Diese drei Zeilen, wie es der Name schon sagt, beinhalten ein
 <code>if</code>-check welcher schaut ob isGenerating <code>true</code>
 ist. Falls es <code>true</code> ist, dann wird der Paragraph Tag
-angezeigt mit einem passenden Lade Text.
+angezeigt mit einem passenden Lade Text.</p>
 </details>
-<h3 id="dynamischer-alt-text">4. Dynamischer Alt Text</h3>
+<h3 id="dynamischer-alt-text">5. Dynamischer Alt Text</h3>
 <p>Alt Text bei Bildern im Internet werden gebraucht falls das Bild
 nicht laden kann oder für Blinde. Ersteres kann zmb. passieren falls die
 Internet Verbindung zu langsam ist oder das Bild nicht mehr existiert
@@ -151,7 +172,7 @@ Elemente setzen.</p>
 benutzt kann man variablen einsetzen.</p>
 </details>
 <h2 id="mittlere-aufgaben">Mittlere Aufgaben</h2>
-<h3 id="bilder-galerie">5. Bilder Galerie</h3>
+<h3 id="bilder-galerie">6. Bilder Galerie</h3>
 <p>Es wäre doch cool wenn wir Bilder die wir schon generiert haben auch
 automatisch gespeichert werden.</p>
 <details>
@@ -212,7 +233,7 @@ einen <code>&lt;img&gt;</code> tag weiter.</p>
 erkennen, da es mehrere Bilder untereinander sein sollten wenn du Knopf
 zum generieren drückst.</p>
 </details>
-<h3 id="styling-der-galerie">6. Styling der Galerie</h3>
+<h3 id="styling-der-galerie">7. Styling der Galerie</h3>
 <p>Im Moment sind die einzelnen Bilder noch sehr gross und nicht sehr
 schön angeordnet.</p>
 <p>In CSS gibt es etwas das nennt sich <code>grid</code> und damit kann
@@ -268,5 +289,4 @@ haben kann. Dazu fügen wir noch einen 8px breiten Spalt zwischen den
 Bildern hinzu damit sie nicht aneinander kleben.</p>
 </details>
 <h2 id="schwere-aufgaben">Schwere Aufgaben</h2>
-`;
-export default TASKS;
+`;export default TASKS;

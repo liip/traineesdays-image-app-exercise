@@ -66,3 +66,84 @@
   border: 0.15rem solid black;
   border-radius: 0.5rem;
 }
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  text-decoration: underline;
+  margin: 1rem 0;
+}
+
+p {
+  margin: 0.5rem 0;
+}
+
+pre {
+  overflow-y: scroll;
+}
+
+code:not(pre code) {
+  margin: 0 0.1rem;
+  border-radius: 0.3rem;
+}
+
+code:not(pre code)::before {
+  content: "`";
+}
+
+code:not(pre code)::after {
+  content: "`";
+}
+
+pre code {
+  border-radius: 0.3rem;
+  padding: 0.5rem !important;
+}
+
+details summary {
+  list-style-type: none;
+}
+
+details summary::before {
+  content: "▶️";
+  display: inline-block;
+  transition: rotate 300ms ease-in-out;
+}
+
+details[open] summary::before {
+  display: inline-block;
+  rotate: 90deg;
+}
+
+details summary {
+  font-weight: bold;
+  user-select: none;
+  cursor: pointer;
+}
+
+details {
+  padding: 0.5rem;
+}
+
+details[open] > summary {
+  position: initial;
+}
+
+details[open] {
+  position: relative;
+}
+
+details[open]::before {
+  content: "";
+  display: block;
+  position: absolute;
+  left: 0;
+  top: 0;
+  height: 100%;
+  width: 0.15rem;
+  background: black;
+  border-radius: 0.15rem;
+}

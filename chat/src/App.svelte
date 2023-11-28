@@ -6,6 +6,8 @@
 
 <div class="app-wrapper">
   <div class="app">
+    <h1 class="title">Svelte Chat</h1>
+
     <form
       class="input-wrapper"
       on:submit|preventDefault
@@ -33,6 +35,11 @@
   }
   .input-wrapper {
     display: flex;
-    margin-top: 3rem;
+  }
+
+  .title {
+    text-align: center;
+    font-size: 4rem;
+    margin: 2rem 0;
   }
 </style>

@@ -2,7 +2,37 @@
 
 ## Einfache Aufgaben
 
-### 1. Knöpfe
+### 1. Titel
+
+Ein Titel, oder heading, gibt es in 6 grössen in HTML.
+
+```svelte
+<h1>H1</h1>
+<h2>H2</h2>
+<h3>H3</h3>
+<h4>H4</h4>
+<h5>H5</h5>
+<h6>H6</h6>
+```
+
+Hierbei ist zu beachten, dass `<h1>` der grösste ist und `<h6>` der kleinste.
+
+Deine Aufgabe ist es nun, einen Titel hinzuzufügen.
+
+<details>
+<summary>TIPP</summary>
+
+```svelte
+<div class="app">
+  <h1>Bild generierung</h1>
+
+  <!-- Form, Bild & Error -->
+</div>
+```
+
+</details>
+
+### 2. Knöpfe
 
 Ein Knopf, in HTML auch `button`, ist wie folgt aufgebaut:
 
@@ -32,7 +62,7 @@ Das musst du suchen und `Generate` ändern. Du findest es in der Mitte der Datei
 
 </details>
 
-### 2. Input & Knopf Styling
+### 3. Input & Knopf Styling
 
 CSS, ausgeschrieben `Cascading Style Sheets`, benutzt man um Farbe, Form und Position von HTML Elementen zu ändern. CSS kann sehr mächtig sein und komplex jedoch kann man auch sehr einfach nur die Farben ändern.
 
@@ -79,7 +109,7 @@ Damit du nicht noch nachschauen musst wie du `background`, `color` und `border` 
 
 </details>
 
-### 3. Lade Indikator
+### 4. Lade Indikator
 
 Das angezeigt wird wann das Bild generiert wird sollst du ein Lade Indikator einfügen. Um das zu erreichen musst du eine Variable hinzufügen welche du verwenden sollst um den Ladeindikator anzuzeigen.
 
@@ -139,7 +169,7 @@ Diese drei Zeilen, wie es der Name schon sagt, beinhalten ein `if`-check welcher
 
 </details>
 
-### 4. Dynamischer Alt Text
+### 5. Dynamischer Alt Text
 
 Alt Text bei Bildern im Internet werden gebraucht falls das Bild nicht laden kann oder für Blinde. Ersteres kann zmb. passieren falls die Internet Verbindung zu langsam ist oder das Bild nicht mehr existiert oder verschoben wurde.
 
@@ -167,7 +197,7 @@ Sobald man `{` und `}` in einem Attribut benutzt kann man variablen einsetzen.
 
 ## Mittlere Aufgaben
 
-### 5. Bilder Galerie
+### 6. Bilder Galerie
 
 Es wäre doch cool wenn wir Bilder die wir schon generiert haben auch automatisch gespeichert werden.
 
@@ -225,7 +255,7 @@ Nun kannst du ausprobieren ob es auch funktioniert! Du kannst es gut erkennen, d
 
 </details>
 
-### 6. Styling der Galerie
+### 7. Styling der Galerie
 
 Im Moment sind die einzelnen Bilder noch sehr gross und nicht sehr schön angeordnet.
 

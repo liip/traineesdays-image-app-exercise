@@ -6,6 +6,7 @@
   class="base input"
   type="text"
   bind:value={$input}
+  placeholder="Svelte relevante Fragen & Fragen bezüglich den Aufgaben."
 />
 
 <style>
