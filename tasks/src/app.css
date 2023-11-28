@@ -43,6 +43,11 @@
     Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
 }
 
+code,
+code * {
+  font-family: "Courier New", Courier, monospace !important;
+}
+
 .base {
   border: 0.15rem solid black;
   border-radius: 0.5rem;
