@@ -1,5 +1,5 @@
 import { exec } from "child_process";
-import { writeFileSync } from "fs";
+import { writeFileSync, readFileSync } from "fs";
 
 exec("pandoc TASKS.md", (error, stdout, stderr) => {
   if (error) {
@@ -11,10 +11,15 @@ exec("pandoc TASKS.md", (error, stdout, stderr) => {
     return;
   }
 
-  writeFileSync("tasks/src/TASKS.html", stdout);
+  const app = readFileSync("src/App.svelte")
 
   writeFileSync(
     "tasks/src/TASKS.ts",
     `const TASKS = \`${stdout}\`;export default TASKS;`,
+  );
+
+  writeFileSync(
+    "tasks/src/APP.ts",
+    `const APP = \`${app}\`;export default APP;`,
   );
 });

@@ -1,4 +1,4 @@
-<script lang="ts">
+const APP = `<script lang="ts">
   import { generate, error } from "./openai";
   import { addImage, images } from "./gallery";
 
@@ -59,3 +59,4 @@
     border-radius: 8px;
   }
 </style>
+`;export default APP;

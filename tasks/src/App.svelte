@@ -21,6 +21,8 @@
     document
       .querySelectorAll("details summary")
       .forEach((block) => (block.className = "hljs-keyword"));
+
+    // document.querySelectorAll(".solution").forEach((block) => block.remove());
   });
 </script>
 

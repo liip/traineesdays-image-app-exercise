@@ -4,6 +4,12 @@
 
 ### 1. Titel
 
+#### Aufgabe
+
+Füge einen Titel in die Webseite ein.
+
+#### Hilfestellung
+
 Ein Titel, oder heading, gibt es in 6 grössen in HTML.
 
 ```svelte
@@ -15,65 +21,130 @@ Ein Titel, oder heading, gibt es in 6 grössen in HTML.
 <h6>H6</h6>
 ```
 
-Hierbei ist zu beachten, dass `<h1>` der grösste ist und `<h6>` der kleinste.
+Hierbei ist zu beachten, dass `<h1>` am grössten ist und `<h6>` am kleinste.
 
-Deine Aufgabe ist es nun, einen Titel hinzuzufügen.
-
-<details>
-<summary>TIPP</summary>
+Hier findest du die Stelle an der du deinen Titel einfügst.
 
 ```svelte
 <div class="app">
-  <h1>Bild generierung</h1>
+  <h>Dein Titel</h>
 
   <!-- Form, Bild & Error -->
 </div>
 ```
 
-</details>
+Beachte, dass `<h>` kein endgültiger Titel ist und du noch die grösse (1-6) hinzufügen musst.
+
+<div class="solution">
+
+```svelte
+<div class="app">
+  <h1>Dein Titel</h1>
+
+  <!-- Form, Image & Error -->
+</div>
+```
+
+</div>
 
 ### 2. Knöpfe
 
-Ein Knopf, in HTML auch `button`, ist wie folgt aufgebaut:
+#### Aufgabe
+
+Ändere den Text des Knopfes der im Moment mit `Generate` angeschrieben ist.
+
+#### Hilfestellung
+
+Ein Knopf, in HTML auch `button`, sieht wie folgt aus
 
 ```svelte
 <button>
-  Hello World!
+  Knopf Text
 </button>
 ```
 
-Wobei `Hello World!` der text ist der angezeigt wird.
+Wobei `Knopf Text` der text ist der angezeigt wird.
 
-Deine Aufgabe ist es jetzt nun den Knopf zu finden, der gebraucht wird um die Bilder zu generieren, und den Text in etwas passenderes abzuändern.
-
-<details>
-<summary>TIPP</summary>
-
-Das musst du suchen und `Generate` ändern. Du findest es in der Mitte der Datei.
+Hier findest du die Stelle an der du den Text im Knopf abändern sollst.
 
 ```svelte
 <button
-  class="submit-button"
+  class="submit-button custom-button"
   on:click={handleGenerate}
 >
-  Generate
+  Dein neuere Text
 </button>
 ```
 
-</details>
+<div class="solution">
 
-### 3. Input & Knopf Styling
+```svelte
+<div class="app">
+  <form
+    class="form"
+    on:submit|preventDefault
+  >
+    <!-- Prompt Input -->
 
-CSS, ausgeschrieben `Cascading Style Sheets`, benutzt man um Farbe, Form und Position von HTML Elementen zu ändern. CSS kann sehr mächtig sein und komplex jedoch kann man auch sehr einfach nur die Farben ändern.
+    <button
+      class="submit-button custom-button"
+      on:click={handleGenerate}
+    >
+      Dein Generate Text
+    </button>
+  </form>
 
-Deine Aufgabe ist es herum zu spielen mit dem styling des Inputs und des Knopfes.
+  <!-- Image & Error -->
+</div>
+```
 
-<details>
-<summary>TIPP</summary>
+</div>
 
-Du kannst Eigenschaften wie `background`, `color` und `border` benutzen jedoch darfst du auch andere benutzen.
+### 3. Prompt anpassen
 
-Das was du editieren musst, findest du im `<style>` tag der zu unterst in der Datei ist.
+#### Aufgabe
+
+Diese Aufgabe ist sehr simple und du kannst sie jederzeit mehrmals machen.
+
+Du sollst den Prompt anpassen. Im Moment ist dieser `"Eine siamesische Katze mit blauen Augen."`.
+
+#### Hilfestellung
+
+Hier findest du die Stelle an der du den Prompt abändern sollst.
+
+```svelte
+<script lang="ts">
+  // Import & source Variable.
+
+  let prompt = "Eine siamesische Katze mit blauen Augen."; // <-- Hier anpassen
+
+  // handleGenerate Funktion
+</script>
+```
+
+Du kannst nach `let prompt` mit `CTRL + F` auf Windows & Linux danach suchen und auf MacOS mit `Command + F`.
+
+<div class="solution">
+
+```svelte
+<script lang="ts">
+  let prompt = "Ein neuer Prompt.";
+</script>
+```
+
+</div>
+
+### 4. Input & Knopf Styling
+
+#### Aufgabe
+
+CSS, ausgeschrieben `Cascading Style Sheets`, benutzt man um Farbe, Form und Position von HTML Elementen zu ändern.
+
+Du sollst die Farbe des Textes, des Hintergrundes und des Randes vom Generier Knopf und vom Prompt Input abändern.
+
+#### Hilfestellung
+
+Hierzu stehen dir zwei leere Klassen schon zur verfügung.
 
 ```svelte
 <style>
@@ -84,12 +155,13 @@ Das was du editieren musst, findest du im `<style>` tag der zu unterst in der Da
   .custom-button {
     /* Deine Eigenschaften hier. */
   }
-
-  /* Andere Selektoren. */
 </style>
 ```
 
-Damit du nicht noch nachschauen musst wie du `background`, `color` und `border` benutzt, hier ein paar Beispiele.
+<details>
+<summary>TIPP</summary>
+
+Du kannst Eigenschaften wie `background`, `color` und `border` benutzen.
 
 ```css
 .class {
@@ -109,108 +181,223 @@ Damit du nicht noch nachschauen musst wie du `background`, `color` und `border` 
 
 </details>
 
-### 4. Lade Indikator
+<div class="solution">
 
-Das angezeigt wird wann das Bild generiert wird sollst du ein Lade Indikator einfügen. Um das zu erreichen musst du eine Variable hinzufügen welche du verwenden sollst um den Ladeindikator anzuzeigen.
+```svelte
+<style>
+  .custom-input {
+    background: red;
+    color: green;
+  }
 
-<details>
-<summary>TIPP</summary>
+  .custom-button {
+    background: orange;
+    color: white;
+  }
+</style>
+```
 
-Hier was du machen musst
+</div>
+
+### 5. Lade Indikator
+
+#### Aufgabe
+
+Ein Lade Indikator wird gebraucht um anzuzeigen, wenn etwas geladen wird.
+
+Hier ein Beispiel
+
+<img src="assets/laoding-indicator.gif" width="64" alt="Lade Indikator" />
+
+Jedoch sollst du nur einen Text anzeigen, welcher dem Nutzer eine Visuelle Mitteilung gibt, dass das Bild gerade geladen wird.
+
+#### Hilfestellung
+
+Hierfür kannst du eine Variable gebrauchen und ein `if` Bedingung. In Svelte kannst du dies wie folgt erzielen.
 
 ```svelte
 <script>
-  // Anderer code...
+  let loading = false;
 
-  let isGenerating = false; // Neu
+  const generate = () => {
+    if (loading) {
+      return
+    }
+
+    loading = true;
+
+    // Restlicher code
+
+    loading = false;
+  }
+</script>
+
+{#if loading}
+  <p>
+    Wird geladen
+  </p>
+{/if}
+
+<button on:click={generate}>
+  Generier
+</button>
+```
+
+Hier wird eine Variable `loading` erstellt welche initial negativ eingestellt ist (`false`).
+
+Dies wird dann in der `generate` Funktion auf positiv geändert (`true`) und nach einem beliebigen Prozess wieder auf einen negativen Wert (`false`). Dazu kommt noch, dass wir am Anfang der `generate` Funktion schauen ob `loading` positiv oder negativ ist und falls es positiv ist, brechen wir die Funktion ab.
+
+Die `generate` Funktion wird jedoch nicht direkt ausgeführt, sondern erst wenn der Knopf gedrückt wird. Mit `on:click` sagen wir, dass es `generate` ausführen soll, wenn der Knopf gedrückt wird.
+
+Über dem Knopf schauen wir ob `loading` negativ oder positiv ist und falls es positiv ist, zeigen wir einen Paragraph (`<p>`) mit dem Text `Wird geladen` an.
+
+Alles im `<script>` ist JavaScript und alles ausserhalb ist HTML. Dazu sid Variablen reaktiv. Das heisst, dass wenn du eine Variable oben im `<script>` erstellst und danach veränderst kannst du die Veränderung auch im HTML direkt beobachten, deshalb heisst es auch **Reaktiv**, weil HTML auf die Veränderung von JavaScript **reagiert**.
+
+<div class="solution">
+
+```svelte
+<script lang="ts">
+  import { generate, error } from "./openai";
+  import { addImage, images } from "./gallery";
+
+  let source = "";
+
+  let prompt = "Eine siamesische Katze mit blauen Augen.";
+
+  let isGenerating = false;
 
   const handleGenerate = async () => {
-    if (isGenerating) return; // Neu
+    if (isGenerating) {
+      return
+    };
 
-    isGenerating = true; // Neu
+    isGenerating = true;
 
     source = await generate(prompt);
 
-    isGenerating = false; // Neu
+    isGenerating = false;
   };
 </script>
 
 <div class="app">
   <!-- Form -->
 
-  <!-- Neu -->
   {#if isGenerating}
     <p>Wird generiert...</p>
   {/if}
 
-  <!-- Bild und Error -->
+  <!-- Image & Error -->
 </div>
 ```
 
-Das ist viel Code aber ich erklär es dir kurz.
+</div>
 
-#### JavaScript
+### 6. Dynamischer Alt Text
 
-Mit `let isGenerating = false;` erstellst du eine Variable mit Namen `isGenerating` und dem Wert `false`.
+#### Aufgabe
 
-In der `handleGenerate` Methode schaust du ob schon ein Bild am generieren ist, falls ja, dann beende die Methode, falls nein geh weiter. Das wäre `if (isGenerating) return;`
+Alt Text bei Bildern im Internet werden gebraucht falls das Bild nicht laden kann oder für Blinde. Ersteres kann zmb. passieren falls die Internet Verbindung zu langsam ist oder das Bild nicht mehr existiert.
 
-Jetzt setzt du `isGenerating` auf `true` was dazu führt, dass wenn du den Knopf ein zweites Mal drückst, dass nichts passiert und wir auch wissen wann es generiert wird und wir so ein Lade Indikator anzeigen können.
+Setze den Alt Text vom Bild auf den Prompt Text.
 
-Die nächsten zwei Zeilen sind nicht verändert.
-
-Als letztes setzt du `isGenerating` wieder auf `false` da das Bild fertig generiert wurde und der Lade Indikator nicht mehr angezeigt werden muss.
-
-#### HTML
-
-Hier fügst du nur drei Zeilen hinzu. Diese sollst du direkt unter dem Form hinzufügen, dort wo der Knopf und der Input liegen.
-
-Diese drei Zeilen, wie es der Name schon sagt, beinhalten ein `if`-check welcher schaut ob isGenerating `true` ist. Falls es `true` ist, dann wird der Paragraph Tag angezeigt mit einem passenden Lade Text.
-
-</details>
-
-### 5. Dynamischer Alt Text
-
-Alt Text bei Bildern im Internet werden gebraucht falls das Bild nicht laden kann oder für Blinde. Ersteres kann zmb. passieren falls die Internet Verbindung zu langsam ist oder das Bild nicht mehr existiert oder verschoben wurde.
-
-Ein guter Start für ein Alt Text in unserem Fall wäre den Text vom Input Feld zu nehmen und zu benutzen.
-
-<details>
-<summary>TIPP</summary>
+#### Hilfestellung
 
 In Svelte kann man dynamisch den Wert einer Variable als Attribut auf Elemente setzen.
 
-Hier wie du das machen kannst.
+Hier wie du sowas machen könntest.
 
 ```svelte
-<script lang="ts">
-  let prompt = "Eine siamesische Katze mit blauen Augen.";
+<script>
+  let altText = "Ein Bild von einer Katze";
 </script>
 
-
-<img alt="{prompt}" />
+<img alt="{altText}" />
 ```
 
 Sobald man `{` und `}` in einem Attribut benutzt kann man variablen einsetzen.
 
-</details>
+<div class="solution">
+
+```svelte
+<div class="app">
+  <!-- Form & Loading -->
+
+  <img
+    class="image"
+    src={url}
+    alt={prompt}
+  />
+
+  <!-- Error -->
+</div>
+```
+
+</div>
 
 ## Mittlere Aufgaben
 
-### 6. Bilder Galerie
+Wir empfehlen den Chat spätestens hier zu gebrauchen!
 
-Es wäre doch cool wenn wir Bilder die wir schon generiert haben auch automatisch gespeichert werden.
+### 7. Bilder Galerie
 
-<details>
-<summary>TIPP</summary>
+#### Aufgabe
+
+Speichere jedes generierte Bild mit dem jeweiligen Prompt ab und iteriere über alle Bilder in der Liste und zeige sie an.
+
+#### Hilfestellung
+
+Wenn du eine Liste in Svelte hast, kannst du wie folgt darüber itererieren, was bedeuetet, dass wir durch alle Bilder durch gehen und, in unserem Fall, sie anzeigen.
+
+```svelte
+<script>
+  let imageList = ["url1", "url2", "url3"];
+</script>
+
+{#each imageList as url}
+  <img src={url} />
+{/each}
+```
+
+Hierbei ist zu beachten, dass wir wie beim `{#if} ... {/if}` die gewellten Klammern herum haben.
+
+Der erste Wert direkt nach dem `each` ist unsere Liste. Danach kommt ein `as` und eine neue Variable, hier `url`. Jetzt können wir in dem `each` Block `url` benutzen und somit geht Svelte über jedes Bild und zeigt es in einem `<img>` an.
+
+Wir haben für dich eine `addImage` Funktion bereitgestellt welche die Bilder zu einer bestehenden Liste hinzufügt. Hier wie du die addImage Funktion benutzen kannst.
+
+```svelte
+<script>
+   // Das wäre dein Prompt den du immer wieder mal änderst.
+  let prompt = "Ein Baum auf einer Wiese im Herbst.";
+   // Das wäre die url welche du von der generate Funktion zurück bekommst.
+  let url = "url1";
+
+  // So benutzt du die addImage Funktion.
+  addImage(url, prompt);
+</script>
+```
+
+Diese Liste haben wir die auch schon zur Verfügung gestellt, jedoch ist es eine spezielle Liste die du wie folgt benutzen kannst.
+
+```svelte
+<!-- $images ist unsere Liste. -->
+<!-- Wir bekommen wir einmal die url des Bildes und der dazugehörige Prompt. -->
+{#each $images as { url, prompt }}
+  <img src={url} alt={prompt} />
+{/each}
+```
+
+<div class="solution">
 
 ```svelte
 <script lang="ts">
-  import { addImage, images } from "./gallery"; // Neu
+  import { generate, error } from "./openai";
+  import { addImage, images } from "./gallery";
 
-  // Restlicher code
+  let source = "";
 
-  // let source = ""; <-- Kann entfernt werden
+  let prompt = "Eine siamesische Katze mit blauen Augen.";
+
+  let isGenerating = false;
 
   const handleGenerate = async () => {
     if (isGenerating) return;
@@ -218,22 +405,20 @@ Es wäre doch cool wenn wir Bilder die wir schon generiert haben auch automatisc
     isGenerating = true;
 
     const url = await generate(prompt);
-    addImage(url, prompt); // Neu
+    addImage(url, prompt);
 
     isGenerating = false;
   };
 </script>
 
-
 <div class="app">
-  <!-- Form & Lade Indikator -->
+  <!-- Form & Loading -->
 
-  <!-- Neu bzw. ersetzt altes image -->
-  {#each $images as {url, prompt}}
+  {#each $images as { url, prompt }}
     <img
       class="image"
-      src="{url}"
-      alt="{prompt}"
+      src={url}
+      alt={prompt}
     />
   {/each}
 
@@ -241,40 +426,64 @@ Es wäre doch cool wenn wir Bilder die wir schon generiert haben auch automatisc
 </div>
 ```
 
-Erneut sehr viel code aber hier die Erklärung.
+</div>
 
-`addImage` und `images` sind von uns zu verfügung gestellt und ihr könnt sie einfach benutzen.
+### 8. Styling der Galerie
 
-Wir entfernen die variable `source` da sie nicht länger gebraucht wird.
+#### Aufgabe
 
-Im `handleGenerate` ändern wir zwei Zeilen. Einerseits setzen wir das Resultat von unserer generate funktion auf die neu erstellte Variable `url` und in der zweiten Zeile geben wir `url` und `prompt` an `addImage` weiter welches das ganze für uns abspeichert.
+Ändere das Styling der Galerie so, dass zwei Bilder nebeneinander sind und gleich gross angezeigt werden.
 
-Anstelle wie vorher einfach die `source` variable einem `<img>` Tag zu übergeben, iterieren wir nun über `$images` was eine Liste von unseren Bildern ist. Iterieren bedeutet so viel wie, wir gehen durch die ganze Liste und machen etwas bestimmtes mit jedem Bild. In unserem Fall geben wir die Bild url an einen `<img>` tag weiter.
+#### Hilfestellung
 
-Nun kannst du ausprobieren ob es auch funktioniert! Du kannst es gut erkennen, da es mehrere Bilder untereinander sein sollten wenn du Knopf zum generieren drückst.
+Wenn du mehrere Elemente hast die du in einem Gitter anzeigen willst kannst du das wie folgt tun.
 
-</details>
+```svelte
+<div class="grid">
+  <p>Paragraph 1</p>
+  <p>Paragraph 2</p>
+  <p>Paragraph 3</p>
+  <p>Paragraph 4</p>
+  <p>Paragraph 5</p>
+</div>
 
-### 7. Styling der Galerie
+<style>
+  .grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 8px;
+    overflow-y: scroll;
+  }.
 
-Im Moment sind die einzelnen Bilder noch sehr gross und nicht sehr schön angeordnet.
+</style>
+```
 
-In CSS gibt es etwas das nennt sich `grid` und damit kann man die Bilder in einem 2 breiten Gitter anordnen.
+Mit diesem css würden die 5 Paragraphe so angeordnet werden, dass jeweils zwei nebeneinander liegen und sie einen 8 Pixel grossen Abstand dazwischen haben. Das `1fr 1fr` bedeutet, dass das erste Element in dem Gitter gleich viel Platz erhält wie das zweite Element. Das `overflow-y: scroll` macht es auch noch so, dass alles was in der höhe zu gross wäre in dem Gitter würde unsichtbar werden und man wird mit dem Mausrad beziehungsweise mit dem Trackpad nach unten scrollen können.
 
-<details>
-<summary>TIPP</summary>
+Vergiss nicht, den Bildern die Breite (`width`) zu enziehen und es dem Gitter zu übergeben. Das Styling für die Bilder findest du hier.
+
+```svelte
+<style>
+  .image {
+    width: 768px;
+    border: 3px solid black;
+    border-radius: 8px;
+  }
+</style>
+```
+
+<div class="solution">
 
 ```svelte
 <div class="app">
-  <!-- Form & Lade Indikator -->
+  <!-- Form & Loading -->
 
-  <!-- Neu -->
   <div class="image-grid">
-    {#each $images as {url, prompt}}
+    {#each $images as { url, prompt }}
       <img
         class="image"
-        src="{url}"
-        alt="{prompt}"
+        src={url}
+        alt={prompt}
       />
     {/each}
   </div>
@@ -286,7 +495,6 @@ In CSS gibt es etwas das nennt sich `grid` und damit kann man die Bilder in eine
   /* Andere Styles */
 
   .image {
-    /* width: 768px; <-- Entfernt */
     border: 3px solid black;
     border-radius: 8px;
   }
@@ -296,18 +504,102 @@ In CSS gibt es etwas das nennt sich `grid` und damit kann man die Bilder in eine
     display: grid;
     grid-template-columns: 1fr 1fr;
     gap: 8px;
+    overflow-y: scroll;
   }
-
-  /* Andere Styles */
 </style>
 ```
 
-Diesmal kein Javascript dafür ein wenig mehr CSS.
+</div>
 
-Im ersten Schritt fügen wir einen div um unsere Bilder hinzu mit der Klasse `image-grid`.
+### 9. Mehrere Bilder auf einmal
 
-Im `<style>` Tag editieren wir dann die `image` Klasse und erstellen die `image-grid` Klasse. In der ersteren entfernen wir die Breite unter dem Attribute `width`. In der zweiten Klasse fügen wir die Breite wieder hinzu und machen den div zu einem Gitter welches 2 Bilder nebeneinander haben kann. Dazu fügen wir noch einen 8px breiten Spalt zwischen den Bildern hinzu damit sie nicht aneinander kleben.
+#### Aufgabe
 
-</details>
+Füge ein weiteres Eingabefeld hinzu womit du die Anzahl der Bilder pro Knopfdruck bestimmen kannst.
+
+#### Hilfestellung
+
+Die `generate` Funktion welche wir gebrauchen um die Bilder zu generieren, kann auch noch einen weiteren Parameter entgegen nehmen, welcher die Anzahl der Bilder, die es generieren soll, bestimmt. Hier noch ein Beispiel wie du die `generate` Funktion nun verwenden kannst.
+
+```svelte
+<script>
+  let amount = 4;
+  let prompt = "Ein Baum auf einer Wiese im Herbst.";
+
+  let urls = await generate(prompt, amount);
+</script>
+```
+
+Du kannst die mehreren urls dann jedoch wie gewohnt mit der `addImage` zur Liste der Bilder hinzufügen.
+
+```svelte
+<script>
+  addImage(urls, prompt);
+</script>
+```
+
+Hier ein Beispiel wie ein solches Eingabefeld in Svelte aussehen kann.
+
+```svelte
+<script>
+  let amount = 1;
+</script>
+
+<input type="number" min="1" max="4" bind:value={amount}/>
+```
+
+Im `<script>` erstellen wir eine Variable namens `amount`. Darunter erstellen wir einen `<input>` welcher vom Typ `number` ist, das heisst man kann keine Buchstaben eingeben. Gleich dahinter sagen wir dem Eingabefeld, dass der Wert darin mindestens 1 und maximal 4 sein kann. Zuletzt binden wir die Variable `amount` auf den Parameter `value` vom Eingabefeld was dazu führt, dass die Variable sich mit verändert wenn du die Zahl im `<input>` änderst.
+
+<div class="solution">
+
+```svelte
+<script lang="ts">
+  import { generate, error } from "./openai";
+  import { addImage, images } from "./gallery";
+
+  let source = "";
+
+  let prompt = "Eine siamesische Katze mit blauen Augen.";
+
+  let isGenerating = false;
+
+  let amount = 1;
+
+  const handleGenerate = async () => {
+    if (isGenerating) return;
+
+    isGenerating = true;
+
+    const url = await generate(prompt, amount);
+    addImage(url, prompt);
+
+    isGenerating = false;
+  };
+</script>
+
+<div class="app">
+  <form
+    class="form"
+    on:submit|preventDefault
+  >
+    <!-- Prompt Input -->
+    <input
+      type="number"
+      min="1"
+      max="4"
+      bind:value={amount}
+      class="amount"
+    />
+    <!-- Generate Button -->
+  </form>
+
+  <!-- Loading, Bilder & Error -->
+</div>
+
+```
+
+</div>
+
+### 10. Einzelne Bilder löschen
 
 ## Schwere Aufgaben
