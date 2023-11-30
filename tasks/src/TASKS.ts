@@ -44,7 +44,7 @@ sollst.</p>
   class=&quot;submit-button custom-button&quot;
   on:click={handleGenerate}
 &gt;
-  Dein neuere Text
+  Dein neuer Text
 &lt;/button&gt;</code></pre>
 <div class="solution">
 <pre class="svelte"><code>&lt;div class=&quot;app&quot;&gt;
@@ -144,7 +144,7 @@ class="sourceCode css"><code class="sourceCode css"><span id="cb10-1"><a href="#
 <p>Ein Lade Indikator wird gebraucht um anzuzeigen, wenn etwas geladen
 wird.</p>
 <p>Hier ein Beispiel</p>
-<p><img src="assets/laoding-indicator.gif" width="64" alt="Lade Indikator" /></p>
+<p><img src="assets/laoding-indicator.gif" alt="Lade Indikator" /></p>
 <p>Jedoch sollst du nur einen Text anzeigen, welcher dem Nutzer eine
 Visuelle Mitteilung gibt, dass das Bild gerade geladen wird.</p>
 <h4 id="hilfestellung-4">Hilfestellung</h4>
@@ -199,7 +199,7 @@ auf die Veränderung von JavaScript <strong>reagiert</strong>.</p>
 <div class="solution">
 <pre class="svelte"><code>&lt;script lang=&quot;ts&quot;&gt;
   import { generate, error } from &quot;./openai&quot;;
-  import { addImage, images } from &quot;./gallery&quot;;
+  import { addImage, images, removeImage } from &quot;./gallery&quot;;
 
   let source = &quot;&quot;;
 
@@ -307,7 +307,7 @@ ist es eine spezielle Liste die du wie folgt benutzen kannst.</p>
 <div class="solution">
 <pre class="svelte"><code>&lt;script lang=&quot;ts&quot;&gt;
   import { generate, error } from &quot;./openai&quot;;
-  import { addImage, images } from &quot;./gallery&quot;;
+  import { addImage, images, removeImage } from &quot;./gallery&quot;;
 
   let source = &quot;&quot;;
 
@@ -457,7 +457,7 @@ sich mit verändert wenn du die Zahl im <code>&lt;input&gt;</code>
 <div class="solution">
 <pre class="svelte"><code>&lt;script lang=&quot;ts&quot;&gt;
   import { generate, error } from &quot;./openai&quot;;
-  import { addImage, images } from &quot;./gallery&quot;;
+  import { addImage, images, removeImage } from &quot;./gallery&quot;;
 
   let source = &quot;&quot;;
 
@@ -496,9 +496,189 @@ sich mit verändert wenn du die Zahl im <code>&lt;input&gt;</code>
   &lt;/form&gt;
 
   &lt;!-- Loading, Bilder &amp; Error --&gt;
-&lt;/div&gt;
-</code></pre>
+&lt;/div&gt;</code></pre>
 </div>
-<h3 id="einzelne-bilder-löschen">10. Einzelne Bilder löschen</h3>
+<h3 id="input-styling">10. Input Styling</h3>
+<h4 id="aufgabe-9">Aufgabe</h4>
+<p>Style den neu erstellten Input mit ein wenig margin und padding,
+damit es nicht so komisch aussieht.</p>
+<h4 id="hilfestellung-9">Hilfestellung</h4>
+<p>Margin und padding sind ähnlich in was sie tun. Sie geben dem Element
+mehr Platz.</p>
+<p>Um es besser zu erklären, hier ein Bild</p>
+<p><img src="assets/padding-border-margin.png" alt="Padding, Border & Margin"/></p>
+<p>Zuerst schauen wir die orangene Fläche an. Dies ist der Content, bei
+einem <code>&lt;p&gt;</code> wäre es der Text.</p>
+<p>Gleich drum herum ist eine gelbe Fläche, Padding. Diese ist innerhalb
+der Border und des Elements. Wenn du den Hintergrund eines Elementes
+setzt wird der Content und die Padding Region beeinflusst.</p>
+<p>Die Wand zwischen dem Rest der Webseite und unseres Elementes ist die
+blaue Fläche namens Border. Die hast du auch schon verändert.</p>
+<p>Zuletzt die weisse Region namens Margin. Sie Beschreibt wie viel
+Platz bis zum nächsten Element mindestens sein muss.</p>
+<p>Padding und Margin kannst du wie folgt anwenden</p>
+<pre class="svelte"><code>&lt;div class=&quot;container&quot;&gt;
+  &lt;!-- Content --&gt;
+&lt;/div&gt;
+
+&lt;style&gt;
+  .container {
+    padding: 8px;
+    margin: 8px;
+  }
+&lt;/style&gt;</code></pre>
+<div class="solution">
+<pre class="svelte"><code>&lt;div class=&quot;app&quot;&gt;
+  &lt;form
+    class=&quot;form&quot;
+    on:submit|preventDefault
+  &gt;
+    &lt;!-- Prompt Input --&gt;
+    &lt;input
+      class=&quot;amount&quot;
+      type=&quot;number&quot;
+      min=&quot;1&quot;
+      max=&quot;4&quot;
+      bind:value={amount}
+      class=&quot;amount&quot;
+    /&gt;
+    &lt;!-- Generate Button --&gt;
+  &lt;/form&gt;
+
+  &lt;!-- Loading, Bilder &amp; Error --&gt;
+&lt;/div&gt;
+
+&lt;style&gt;
+  /* Andere styles */
+
+  .amount {
+    padding: 8px; /* Dieser Wert kann variieren */
+    margin: 8px; /* Dieser Wert kann variieren */
+  }
+&lt;/style&gt;</code></pre>
+</div>
 <h2 id="schwere-aufgaben">Schwere Aufgaben</h2>
+<h3 id="einzelne-bilder-löschen">11. Einzelne Bilder löschen</h3>
+<h4 id="aufgabe-10">Aufgabe</h4>
+<p>Erstelle einen Knopf pro Bild welcher das Bild aus der Liste
+nimmt.</p>
+<h4 id="hilfestellung-10">Hilfestellung</h4>
+<p>Wir haben schon Attribute wie <code>alt</code> für
+<code>&lt;img&gt;</code> angeschaut oder <code>bind:value</code> für
+<code>&lt;input&gt;</code>. <code>alt</code> &amp; <code>value</code>
+sind die Attribute an sich, wobei <code>bind:</code> das
+<code>value</code> an eine Variable bindet. Jetzt gibt es noch mehr von
+solchen Modifikatoren. Hier brauchen wir <code>on:</code> für unsere
+Knöpfe. <code>on:click</code> zum Beispiel nimmt eine Funktion entgegen
+und führt diese aus wenn der Knopf gedrückt wird also auf einem Klick
+oder im englischen <code>on a click</code>.</p>
+<p>Hier ein Beispiel was ich meine</p>
+<pre class="svelte"><code>&lt;script&gt;
+  const handleClick = () =&gt; {
+    // Code der ausgeführt wird wenn der Knopf gedrückt wird.
+  }
+&lt;/script&gt;
+
+&lt;button on:click={handleClick}&gt;
+  Knopf
+&lt;/button&gt;</code></pre>
+<p>Wenn du jetzt jedoch nur einen Knopf unterhalb des Bildes einfügst,
+wirst du sehen, dass es nun nur noch ein Bild auf der Linken Seite hat
+und rechts und hell graues Viereck hat. Dieses Viereck ist unser Knopf
+aber wie bringen wir ihn in die obere linke Ecke?</p>
+<p>In CSS gibt es an Attribut das nennt sich <code>position</code>. Die
+Werte die wir heute benutzen wären <code>relative</code> und
+<code>absolute</code>. Beide machen alleine nichts, man muss noch
+weitere Attribute hinzufügen.</p>
+<p>Diese Attribute wären <code>top</code> und <code>left</code>. Wenn
+<code>position: relative</code> ist wird <code>top</code> und
+<code>left</code> sich auf das umfassende Element beziehen, das heisst
+wenn beide <code>top</code> und <code>left</code> auf <code>0</code>
+gesetzt sind würde es in der oberen linken Ecke des Elementes sein
+sofern kein anderes Element im Weg wäre.</p>
+<p>Bei <code>position: aboslute</code> ist es ähnlich jedoch ignoriert
+es andere Elemente. Dazu kommt noch, dass es vom nächsten relativ
+positionierten umfassenden Element ausgeht wobei der Normalfall hier die
+gesamt Webseite ist.</p>
+<p>Diese beiden Werte können wir uns zu Nutze machen in dem wir einen
+<code>&lt;div&gt;</code> um das Bild und den Knopf umfassen und ihn
+relativ positionieren. Wenn wir soweit sind können wir dem Knopf eine
+absolute Position geben wobei <code>top</code> und <code>left</code> auf
+<code>0</code> gesetzt sind. Das hätte zu Folge, dass die Bilder wie
+vorher normal in einem zwei breitem Gitter aneinander gereit sind und
+die Knöpfe oben links auf den Bildern kleben.</p>
+<p>Hier ein wenig code um es zu visualisieren.</p>
+<pre class="svelte"><code>&lt;div class=&quot;image-container&quot;&gt;
+  &lt;img src=&quot;some_url&quot;/&gt;
+  &lt;button class=&quot;delete-button&quot;&gt;Löschen&lt;/button&gt;
+&lt;/div&gt;
+
+&lt;style&gt;
+  .image-container {
+    position: relative;
+  }
+
+  .delete-button {
+    position: absolute;
+    top: 0;
+    left: 0;
+  }
+&lt;/style&gt;</code></pre>
+<p>Jetzt hast du den Button, weisst wie du Funktionen ausführst wenn er
+gedrückt wird und wie du ihn positionierst. Jedoch weisst du noch nicht
+was für eine Funktion du ausführen sollst.</p>
+<p>Hier kommt wieder einmal eine Funktion ins Spiel die wir dir zur
+Verfügung stellen. Die <code>removeImage</code> Funktion nimmt eine url
+entgegen und entfernt das Bild von der Liste.</p>
+<p>Hier wie du sie benutzen kannst</p>
+<pre class="svelte"><code>&lt;script&gt;
+  let url = &quot;url1&quot;;
+
+  removeImage(url);
+&lt;/script&gt;</code></pre>
+<p>Noch ein kleiner Tipp falls du nicht weisst wie du es machen sollst.
+Hier ist der Wert für das <code>on:click</code> Attribut</p>
+<pre class="svelte"><code>&lt;script&gt;
+  let url = &quot;url1&quot;;
+&lt;/script&gt;
+
+&lt;button on:click={() =&gt; removeImage(url)}&gt;
+  Löschen
+&lt;/button&gt;</code></pre>
+<div class="solution">
+<pre class="svelte"><code>
+&lt;div class=&quot;app&quot;&gt;
+  &lt;!-- Title, Form &amp; Loading --&gt;
+
+  &lt;div class=&quot;image-grid&quot;&gt;
+    {#each $images as { url, prompt }}
+      &lt;div class=&quot;image-container&quot;&gt;
+        &lt;img
+          class=&quot;image&quot;
+          src={url}
+          alt={prompt}
+        /&gt;
+        &lt;button
+          class=&quot;delete-button&quot;
+          on:click={() =&gt; removeImage(url)}&gt;Löschen&lt;/button
+        &gt;
+      &lt;/div&gt;
+    {/each}
+  &lt;/div&gt;
+
+  &lt;!-- Error --&gt;
+&lt;/div&gt;
+
+&lt;style&gt;
+  .image-container {
+    position: relative;
+  }
+
+  .delete-button {
+    position: absolute;
+    top: 0;
+    left: 0;
+  }
+&lt;/style&gt;</code></pre>
+</div>
 `;export default TASKS;

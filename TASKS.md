@@ -72,7 +72,7 @@ Hier findest du die Stelle an der du den Text im Knopf abändern sollst.
   class="submit-button custom-button"
   on:click={handleGenerate}
 >
-  Dein neuere Text
+  Dein neuer Text
 </button>
 ```
 
@@ -207,7 +207,7 @@ Ein Lade Indikator wird gebraucht um anzuzeigen, wenn etwas geladen wird.
 
 Hier ein Beispiel
 
-<img src="assets/laoding-indicator.gif" width="64" alt="Lade Indikator" />
+<img src="assets/laoding-indicator.gif" alt="Lade Indikator" />
 
 Jedoch sollst du nur einen Text anzeigen, welcher dem Nutzer eine Visuelle Mitteilung gibt, dass das Bild gerade geladen wird.
 
@@ -258,7 +258,7 @@ Alles im `<script>` ist JavaScript und alles ausserhalb ist HTML. Dazu sid Varia
 ```svelte
 <script lang="ts">
   import { generate, error } from "./openai";
-  import { addImage, images } from "./gallery";
+  import { addImage, images, removeImage } from "./gallery";
 
   let source = "";
 
@@ -391,7 +391,7 @@ Diese Liste haben wir die auch schon zur Verfügung gestellt, jedoch ist es eine
 ```svelte
 <script lang="ts">
   import { generate, error } from "./openai";
-  import { addImage, images } from "./gallery";
+  import { addImage, images, removeImage } from "./gallery";
 
   let source = "";
 
@@ -555,7 +555,7 @@ Im `<script>` erstellen wir eine Variable namens `amount`. Darunter erstellen wi
 ```svelte
 <script lang="ts">
   import { generate, error } from "./openai";
-  import { addImage, images } from "./gallery";
+  import { addImage, images, removeImage } from "./gallery";
 
   let source = "";
 
@@ -595,11 +595,202 @@ Im `<script>` erstellen wir eine Variable namens `amount`. Darunter erstellen wi
 
   <!-- Loading, Bilder & Error -->
 </div>
-
 ```
 
 </div>
 
-### 10. Einzelne Bilder löschen
+### 10. Input Styling
+
+#### Aufgabe
+
+Style den neu erstellten Input mit ein wenig margin und padding, damit es nicht so komisch aussieht.
+
+#### Hilfestellung
+
+Margin und padding sind ähnlich in was sie tun. Sie geben dem Element mehr Platz.
+
+Um es besser zu erklären, hier ein Bild
+
+<img src="assets/padding-border-margin.png" alt="Padding, Border & Margin"/>
+
+Zuerst schauen wir die orangene Fläche an. Dies ist der Content, bei einem `<p>` wäre es der Text.
+
+Gleich drum herum ist eine gelbe Fläche, Padding. Diese ist innerhalb der Border und des Elements. Wenn du den Hintergrund eines Elementes setzt wird der Content und die Padding Region beeinflusst.
+
+Die Wand zwischen dem Rest der Webseite und unseres Elementes ist die blaue Fläche namens Border. Die hast du auch schon verändert.
+
+Zuletzt die weisse Region namens Margin. Sie Beschreibt wie viel Platz bis zum nächsten Element mindestens sein muss.
+
+Padding und Margin kannst du wie folgt anwenden
+
+```svelte
+<div class="container">
+  <!-- Content -->
+</div>
+
+<style>
+  .container {
+    padding: 8px;
+    margin: 8px;
+  }
+</style>
+```
+
+<div class="solution">
+
+```svelte
+<div class="app">
+  <form
+    class="form"
+    on:submit|preventDefault
+  >
+    <!-- Prompt Input -->
+    <input
+      class="amount"
+      type="number"
+      min="1"
+      max="4"
+      bind:value={amount}
+      class="amount"
+    />
+    <!-- Generate Button -->
+  </form>
+
+  <!-- Loading, Bilder & Error -->
+</div>
+
+<style>
+  /* Andere styles */
+
+  .amount {
+    padding: 8px; /* Dieser Wert kann variieren */
+    margin: 8px; /* Dieser Wert kann variieren */
+  }
+</style>
+```
+
+</div>
 
 ## Schwere Aufgaben
+
+### 11. Einzelne Bilder löschen
+
+#### Aufgabe
+
+Erstelle einen Knopf pro Bild welcher das Bild aus der Liste nimmt.
+
+#### Hilfestellung
+
+Wir haben schon Attribute wie `alt` für `<img>` angeschaut oder `bind:value` für `<input>`. `alt` & `value` sind die Attribute an sich, wobei `bind:` das `value` an eine Variable bindet. Jetzt gibt es noch mehr von solchen Modifikatoren. Hier brauchen wir `on:` für unsere Knöpfe. `on:click` zum Beispiel nimmt eine Funktion entgegen und führt diese aus wenn der Knopf gedrückt wird also auf einem Klick oder im englischen `on a click`.
+
+Hier ein Beispiel was ich meine
+
+```svelte
+<script>
+  const handleClick = () => {
+    // Code der ausgeführt wird wenn der Knopf gedrückt wird.
+  }
+</script>
+
+<button on:click={handleClick}>
+  Knopf
+</button>
+```
+
+Wenn du jetzt jedoch nur einen Knopf unterhalb des Bildes einfügst, wirst du sehen, dass es nun nur noch ein Bild auf der Linken Seite hat und rechts und hell graues Viereck hat. Dieses Viereck ist unser Knopf aber wie bringen wir ihn in die obere linke Ecke?
+
+In CSS gibt es an Attribut das nennt sich `position`. Die Werte die wir heute benutzen wären `relative` und `absolute`. Beide machen alleine nichts, man muss noch weitere Attribute hinzufügen.
+
+Diese Attribute wären `top` und `left`. Wenn `position: relative` ist wird `top` und `left` sich auf das umfassende Element beziehen, das heisst wenn beide `top` und `left` auf `0` gesetzt sind würde es in der oberen linken Ecke des Elementes sein sofern kein anderes Element im Weg wäre.
+
+Bei `position: aboslute` ist es ähnlich jedoch ignoriert es andere Elemente. Dazu kommt noch, dass es vom nächsten relativ positionierten umfassenden Element ausgeht wobei der Normalfall hier die gesamt Webseite ist.
+
+Diese beiden Werte können wir uns zu Nutze machen in dem wir einen `<div>` um das Bild und den Knopf umfassen und ihn relativ positionieren. Wenn wir soweit sind können wir dem Knopf eine absolute Position geben wobei `top` und `left` auf `0` gesetzt sind. Das hätte zu Folge, dass die Bilder wie vorher normal in einem zwei breitem Gitter aneinander gereit sind und die Knöpfe oben links auf den Bildern kleben.
+
+Hier ein wenig code um es zu visualisieren.
+
+```svelte
+<div class="image-container">
+  <img src="some_url"/>
+  <button class="delete-button">Löschen</button>
+</div>
+
+<style>
+  .image-container {
+    position: relative;
+  }
+
+  .delete-button {
+    position: absolute;
+    top: 0;
+    left: 0;
+  }
+</style>
+```
+
+Jetzt hast du den Button, weisst wie du Funktionen ausführst wenn er gedrückt wird und wie du ihn positionierst. Jedoch weisst du noch nicht was für eine Funktion du ausführen sollst.
+
+Hier kommt wieder einmal eine Funktion ins Spiel die wir dir zur Verfügung stellen. Die `removeImage` Funktion nimmt eine url entgegen und entfernt das Bild von der Liste.
+
+Hier wie du sie benutzen kannst
+
+```svelte
+<script>
+  let url = "url1";
+
+  removeImage(url);
+</script>
+```
+
+Noch ein kleiner Tipp falls du nicht weisst wie du es machen sollst. Hier ist der Wert für das `on:click` Attribut
+
+```svelte
+<script>
+  let url = "url1";
+</script>
+
+<button on:click={() => removeImage(url)}>
+  Löschen
+</button>
+```
+
+<div class="solution">
+
+```svelte
+
+<div class="app">
+  <!-- Title, Form & Loading -->
+
+  <div class="image-grid">
+    {#each $images as { url, prompt }}
+      <div class="image-container">
+        <img
+          class="image"
+          src={url}
+          alt={prompt}
+        />
+        <button
+          class="delete-button"
+          on:click={() => removeImage(url)}>Löschen</button
+        >
+      </div>
+    {/each}
+  </div>
+
+  <!-- Error -->
+</div>
+
+<style>
+  .image-container {
+    position: relative;
+  }
+
+  .delete-button {
+    position: absolute;
+    top: 0;
+    left: 0;
+  }
+</style>
+```
+
+</div>

@@ -64,6 +64,8 @@ npm run tasks:build
 
 die Aufgaben neu zu HTML konvertieren.
 
+Hierzu brauchst du jedoch `pandoc` welches du [hier](https://pandoc.org/installing.html) installieren kannst.
+
 ### Im Browser Anschauen
 
 Die Aufgaben können im Browser angeschaut werden in dem man folgenden Command ausführt.

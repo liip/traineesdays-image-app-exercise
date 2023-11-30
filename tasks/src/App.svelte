@@ -23,6 +23,10 @@
       .forEach((block) => (block.className = "hljs-keyword"));
 
     document.querySelectorAll(".solution").forEach((block) => block.remove());
+
+    document.querySelectorAll("p img").forEach((img) => {
+      (img.parentElement as HTMLParagraphElement).className = "img-container";
+    });
   });
 </script>
 

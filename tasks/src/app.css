@@ -151,3 +151,12 @@ details[open]::before {
   background: black;
   border-radius: 0.15rem;
 }
+
+.img-container {
+  display: flex;
+  justify-content: center;
+}
+
+.img-container img {
+  padding: 2rem 0;
+}
