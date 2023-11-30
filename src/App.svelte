@@ -1,6 +1,6 @@
 <script lang="ts">
   import { generate, error } from "./openai";
-  import { addImage, images } from "./gallery";
+  import { addImage, images, removeImage } from "./gallery";
 
   let source = "";
 
