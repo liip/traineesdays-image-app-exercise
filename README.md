@@ -9,8 +9,10 @@
     - [Abändern](#abändern)
     - [Im Browser Anschauen](#im-browser-anschauen)
     - [Frontend](#frontend)
+  - [Chat](#chat)
   - [Schnupperlehrlinge](#schnupperlehrlinge)
     - [Starten des Projekts](#starten-des-projekts)
+  - [Durchführung](#durchführung)
 
 Dieses Repository wird für Schnuppertage gebraucht.
 
