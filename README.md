@@ -18,13 +18,13 @@ Dieses Repository wird für Schnuppertage gebraucht.
 
 Es gibt ein paar Schritte welche man durch führen muss.
 
-Ein Lehrnender sollte jeweils den Laptop aufgeklappt und an den Beamer gehänkt vorne aufstellen und folgenden command ausführen
+Ein Lehnender sollte jeweils den Laptop aufgeklappt und an den Beamer gehängt vorne aufstellen und folgenden command ausführenË
 
 ```bash
 npm run provide-key
 ```
 
-Damit startet ein express server im Hintergrund welcher den openai-api-key zur verfügung stellt. Davor muss jedoch das `.env-example` kopiert werden und der [api key](https://platform.openai.com/api-keys) muss mit der [organization](https://platform.openai.com/account/organization) eingeschrieben werden.
+Damit startet ein express server im Hintergrund welcher den openai-api-key zur Verfügung stellt. Davor muss jedoch das `.env-example` kopiert werden und der [api key](https://platform.openai.com/api-keys) muss mit der [organization](https://platform.openai.com/account/organization) eingeschrieben werden.
 
 ## Bearbeitung
 
@@ -40,7 +40,7 @@ Kann man alle files sichtbar machen. Es benennt das `settings.json` im `.vscode`
 
 ### Development
 
-Wenn man etwas bei den Aufgaben abändern will kann man folgenden command im root des projekts ausführen.
+Wenn man etwas bei den Aufgaben abändern will kann man folgenden command im root des Projekts ausführen.
 
 ```bash
 npm run liip-dev
@@ -78,6 +78,12 @@ npm run tasks
 
 Das Frontend für die Aufgaben liegt im `tasks` folder und basiert auf svelte. Es benutzt highlight.js um codeblöcke zu highlighten.
 
+## Chat
+
+Der Chat benutzt OpenAIs gpt-4-turbo und bekommt die Aufgaben, einschlisslich dessen Lösungen, und das Ausgangsfile eingespeist.
+
+Dieser Chat wird den Schnupperlehrlingen automatisch zur Verfügung gestellt und sie können ihn benutzten.
+
 ## Schnupperlehrlinge
 
 Das Projekt sollte per [vscode.dev](https://vscode.dev) ausgeführt werden in einem github codespace. Diese sind bis zu 60 Stunden auf 2 Kernen gratis und brauchen lediglich einen Github Account. Diese Accounts sollten im Voraus erstellt werden um sicher zu gehen, dass alle einen Account haben und keine Zeit verschwendet wird mit Account-Erstellung.
@@ -89,9 +95,9 @@ Auf [vscode.dev](https://vscode.dev) ist die [Github Codespaces](https://marketp
 Das Projekt und die Aufgaben werden mit folgendem command ausgeführt.
 
 ```bash
-npm run dev %IP%
+npm start %IP%
 ```
 
 `%IP%` muss mit der IP ersetzt werden welche angezeigt wird nachdem man den key provider [gestartet](#starten) hat.
 
-Hierbei ist zu beachten, dass es zwei neue tabs im browser direkt öffnet.
+Hierbei ist zu beachten, dass es drei neue tabs im browser direkt öffnet.
