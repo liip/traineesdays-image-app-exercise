@@ -101,3 +101,7 @@ npm start %IP%
 `%IP%` muss mit der IP ersetzt werden welche angezeigt wird nachdem man den key provider [gestartet](#starten) hat.
 
 Hierbei ist zu beachten, dass es drei neue tabs im browser direkt öffnet.
+
+## Durchführung
+
+Bei der Durchführung ist zu beachten, dass zuerst eine Einführung in HTML, CSS & JavaScript gemacht werden muss bevor die Einführung in Svelte und OpenAI/ChatGPT gemacht werden kann.
