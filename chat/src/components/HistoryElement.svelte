@@ -25,7 +25,7 @@
 </script>
 
 <div>
-  <h2 class="role {role}">{role}</h2>
+  <h2 class="role {role}">{role === "user" ? "Frage" : "Antwort"}</h2>
   <div class="content">{@html parsedContent}</div>
 </div>
 

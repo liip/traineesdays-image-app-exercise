@@ -1,8 +1,22 @@
 const TASKS = `<h1 id="schnuppertag-bei-der-liip">Schnuppertag bei der Liip</h1>
+<p>Heute werden wir mit Hilfe von AI Bilder generieren. Du wirst lernen
+wie man Styling.</p>
+<p>Wenn du alles gestartet hast haben sich 3 neue Browser Tabs geöffnet.
+Im Tab mit dem Titel <code>Bilder Generierung</code> findest du die
+Bilder Webseite an der du aktiv arbeiten wirst. Im zweiten Tab mit dem
+Titel <code>Aufgaben</code> findest du die Aufgaben dazu. Im dritten Tab
+mit dem Titel <code>Svelte Chat</code> befindet sich ein Chatbot,
+welchen du verwenden kannst um Unterstützung für das Lösen der Aufgaben
+zu erhalten. Der Chatbot kennt alle Aufgaben sowie deren Lösungen.
+Verwende den Chatbot wenn du Hilfe zu einer Aufgabe benötigst oder frage
+uns direkt.</p>
+<p>Öffne nun den Tab mit dem Titel <code>Bilder Generierung</code> um
+mit den Aufgaben zu beginnen.</p>
 <h2 id="einfache-aufgaben">Einfache Aufgaben</h2>
 <h3 id="titel">1. Titel</h3>
 <h4 id="aufgabe">Aufgabe</h4>
-<p>Füge einen Titel in die Webseite ein.</p>
+<p>Füge einen Titel mit dem Text <code>Bild Generierung</code> in die
+Webseite ein.</p>
 <h4 id="hilfestellung">Hilfestellung</h4>
 <p>Ein Titel, oder heading, gibt es in 6 grössen in HTML.</p>
 <pre class="svelte"><code>&lt;h1&gt;H1&lt;/h1&gt;

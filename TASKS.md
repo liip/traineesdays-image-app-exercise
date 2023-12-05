@@ -1,12 +1,18 @@
 # Schnuppertag bei der Liip
 
+Heute werden wir mit Hilfe von AI Bilder generieren. Du wirst lernen wie man Styling.
+
+Wenn du alles gestartet hast haben sich 3 neue Browser Tabs geöffnet. Im Tab mit dem Titel `Bilder Generierung` findest du die Bilder Webseite an der du aktiv arbeiten wirst. Im zweiten Tab mit dem Titel `Aufgaben` findest du die Aufgaben dazu. Im dritten Tab mit dem Titel `Svelte Chat` befindet sich ein Chatbot, welchen du verwenden kannst um Unterstützung für das Lösen der Aufgaben zu erhalten. Der Chatbot kennt alle Aufgaben sowie deren Lösungen. Verwende den Chatbot wenn du Hilfe zu einer Aufgabe benötigst oder frage uns direkt.
+
+Öffne nun den Tab mit dem Titel `Bilder Generierung` um mit den Aufgaben zu beginnen.
+
 ## Einfache Aufgaben
 
 ### 1. Titel
 
 #### Aufgabe
 
-Füge einen Titel in die Webseite ein.
+Füge einen Titel mit dem Text `Bild Generierung` in die Webseite ein.
 
 #### Hilfestellung
 
