@@ -6,7 +6,7 @@
 
 <div class="app-wrapper">
   <div class="app">
-    <h1 class="title">Svelte Chat</h1>
+    <h1 class="title">Chatbot</h1>
     <form
       class="input-wrapper"
       on:submit|preventDefault
