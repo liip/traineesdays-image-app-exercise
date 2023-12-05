@@ -490,7 +490,6 @@ sich mit verändert wenn du die Zahl im <code>&lt;input&gt;</code>
       min=&quot;1&quot;
       max=&quot;4&quot;
       bind:value={amount}
-      class=&quot;amount&quot;
     /&gt;
     &lt;!-- Generate Button --&gt;
   &lt;/form&gt;
@@ -540,7 +539,6 @@ Platz bis zum nächsten Element mindestens sein muss.</p>
       min=&quot;1&quot;
       max=&quot;4&quot;
       bind:value={amount}
-      class=&quot;amount&quot;
     /&gt;
     &lt;!-- Generate Button --&gt;
   &lt;/form&gt;
