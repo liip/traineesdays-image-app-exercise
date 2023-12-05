@@ -588,7 +588,6 @@ Im `<script>` erstellen wir eine Variable namens `amount`. Darunter erstellen wi
       min="1"
       max="4"
       bind:value={amount}
-      class="amount"
     />
     <!-- Generate Button -->
   </form>
@@ -651,7 +650,6 @@ Padding und Margin kannst du wie folgt anwenden
       min="1"
       max="4"
       bind:value={amount}
-      class="amount"
     />
     <!-- Generate Button -->
   </form>
