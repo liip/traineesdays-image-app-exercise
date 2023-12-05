@@ -13,12 +13,12 @@ uns direkt.</p>
 <p>Öffne nun den Tab mit dem Titel <code>Bilder Generierung</code> um
 mit den Aufgaben zu beginnen.</p>
 <h2 id="einfache-aufgaben">Einfache Aufgaben</h2>
-<h3 id="titel">1. Titel</h3>
+<h3 id="titel-hinzufügen">1. Titel hinzufügen</h3>
 <h4 id="aufgabe">Aufgabe</h4>
 <p>Füge einen Titel mit dem Text <code>Bild Generierung</code> in die
 Webseite ein.</p>
 <h4 id="hilfestellung">Hilfestellung</h4>
-<p>Ein Titel, oder heading, gibt es in 6 grössen in HTML.</p>
+<p>Ein Titel, oder heading, gibt es in 6 Grössen in HTML.</p>
 <pre class="svelte"><code>&lt;h1&gt;H1&lt;/h1&gt;
 &lt;h2&gt;H2&lt;/h2&gt;
 &lt;h3&gt;H3&lt;/h3&gt;
@@ -26,7 +26,7 @@ Webseite ein.</p>
 &lt;h5&gt;H5&lt;/h5&gt;
 &lt;h6&gt;H6&lt;/h6&gt;</code></pre>
 <p>Hierbei ist zu beachten, dass <code>&lt;h1&gt;</code> am grössten ist
-und <code>&lt;h6&gt;</code> am kleinste.</p>
+und <code>&lt;h6&gt;</code> am kleinsten.</p>
 <p>Hier findest du die Stelle an der du deinen Titel einfügst.</p>
 <pre class="svelte"><code>&lt;div class=&quot;app&quot;&gt;
   &lt;h&gt;Dein Titel&lt;/h&gt;
@@ -34,7 +34,7 @@ und <code>&lt;h6&gt;</code> am kleinste.</p>
   &lt;!-- Form, Bild &amp; Error --&gt;
 &lt;/div&gt;</code></pre>
 <p>Beachte, dass <code>&lt;h&gt;</code> kein endgültiger Titel ist und
-du noch die grösse (1-6) hinzufügen musst.</p>
+du noch die Grösse (1-6) hinzufügen musst.</p>
 <div class="solution">
 <pre class="svelte"><code>&lt;div class=&quot;app&quot;&gt;
   &lt;h1&gt;Dein Titel&lt;/h1&gt;
@@ -42,24 +42,17 @@ du noch die grösse (1-6) hinzufügen musst.</p>
   &lt;!-- Form, Image &amp; Error --&gt;
 &lt;/div&gt;</code></pre>
 </div>
-<h3 id="knöpfe">2. Knöpfe</h3>
+<h3 id="button-text-ändern">2. Button Text ändern</h3>
 <h4 id="aufgabe-1">Aufgabe</h4>
-<p>Ändere den Text des Knopfes der im Moment mit <code>Generate</code>
-angeschrieben ist.</p>
+<p>Ändere den Text des Buttons der aktuell <code>Generate</code>
+bezeichnet ist.</p>
 <h4 id="hilfestellung-1">Hilfestellung</h4>
-<p>Ein Knopf, in HTML auch <code>button</code>, sieht wie folgt aus</p>
+<p>Ein Button, in HTML auch <code>&lt;button&gt;</code>, sieht wie folgt
+aus</p>
 <pre class="svelte"><code>&lt;button&gt;
   Knopf Text
 &lt;/button&gt;</code></pre>
-<p>Wobei <code>Knopf Text</code> der text ist der angezeigt wird.</p>
-<p>Hier findest du die Stelle an der du den Text im Knopf abändern
-sollst.</p>
-<pre class="svelte"><code>&lt;button
-  class=&quot;submit-button custom-button&quot;
-  on:click={handleGenerate}
-&gt;
-  Dein neuer Text
-&lt;/button&gt;</code></pre>
+<p>Wobei <code>Knopf Text</code> der Text ist der angezeigt wird.</p>
 <div class="solution">
 <pre class="svelte"><code>&lt;div class=&quot;app&quot;&gt;
   &lt;form
@@ -79,12 +72,26 @@ sollst.</p>
   &lt;!-- Image &amp; Error --&gt;
 &lt;/div&gt;</code></pre>
 </div>
-<h3 id="prompt-anpassen">3. Prompt anpassen</h3>
+<details>
+<summary>
+TIPP
+</summary>
+<p>Hier findest du die Stelle an der du den Text im Knopf abändern
+sollst.</p>
+<pre class="svelte"><code>&lt;button
+  class=&quot;submit-button custom-button&quot;
+  on:click={handleGenerate}
+&gt;
+  Dein neuer Text
+&lt;/button&gt;</code></pre>
+</details>
+<h3 id="anweisungstext-prompt-anpassen">3. Anweisungstext (Prompt)
+anpassen</h3>
 <h4 id="aufgabe-2">Aufgabe</h4>
-<p>Diese Aufgabe ist sehr simple und du kannst sie jederzeit mehrmals
-machen.</p>
-<p>Du sollst den Prompt anpassen. Im Moment ist dieser
+<p>Ändere den bestehenden Prompt. Aktuell ist dieser
 <code>"Eine siamesische Katze mit blauen Augen."</code>.</p>
+<p>Spiele ein wenig mit dem Prompt herum und schaue dir die Ergebnisse
+an.</p>
 <h4 id="hilfestellung-2">Hilfestellung</h4>
 <p>Hier findest du die Stelle an der du den Prompt abändern sollst.</p>
 <pre class="svelte"><code>&lt;script lang=&quot;ts&quot;&gt;
@@ -105,11 +112,11 @@ Windows &amp; Linux danach suchen und auf MacOS mit
 <h3 id="input-knopf-styling">4. Input &amp; Knopf Styling</h3>
 <h4 id="aufgabe-3">Aufgabe</h4>
 <p>CSS, ausgeschrieben <code>Cascading Style Sheets</code>, benutzt man
-um Farbe, Form und Position von HTML Elementen zu ändern.</p>
+um Farbe, Form und Position von HTML Elementen abzuändern.</p>
 <p>Du sollst die Farbe des Textes, des Hintergrundes und des Randes vom
-Generier Knopf und vom Prompt Input abändern.</p>
+Generierungs Button und vom Prompt Input abändern.</p>
 <h4 id="hilfestellung-3">Hilfestellung</h4>
-<p>Hierzu stehen dir zwei leere Klassen schon zur verfügung.</p>
+<p>Hierzu stehen dir zwei leere Klassen schon zur Verfügung.</p>
 <pre class="svelte"><code>&lt;style&gt;
   .custom-input {
     /* Deine Eigenschaften hier. */
@@ -134,7 +141,7 @@ class="sourceCode css"><code class="sourceCode css"><span id="cb10-1"><a href="#
 <span id="cb10-6"><a href="#cb10-6" aria-hidden="true" tabindex="-1"></a>  <span class="kw">color</span>: <span class="cn">black</span><span class="op">;</span></span>
 <span id="cb10-7"><a href="#cb10-7" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb10-8"><a href="#cb10-8" aria-hidden="true" tabindex="-1"></a>  <span class="co">/* Die border ist ein wenig komplexer. Sie besteht aus 3 Teilen. */</span></span>
-<span id="cb10-9"><a href="#cb10-9" aria-hidden="true" tabindex="-1"></a>  <span class="co">/* Zuerst kommt die Dicke in pixel zum Beispiel. Hier 1px */</span></span>
+<span id="cb10-9"><a href="#cb10-9" aria-hidden="true" tabindex="-1"></a>  <span class="co">/* Zuerst kommt die Dicke in pixel, hier 1px */</span></span>
 <span id="cb10-10"><a href="#cb10-10" aria-hidden="true" tabindex="-1"></a>  <span class="co">/* Danach die Art der Border. Hier solid aber es geht auch dotted oder dashed für gepunktete oder gestrichelte Linien. */</span></span>
 <span id="cb10-11"><a href="#cb10-11" aria-hidden="true" tabindex="-1"></a>  <span class="co">/* Und zuletzt die Farbe, die ist, wie bei background und color, fast alle Farben auf Englisch. */</span></span>
 <span id="cb10-12"><a href="#cb10-12" aria-hidden="true" tabindex="-1"></a>  <span class="kw">border</span>: <span class="dv">1</span><span class="dt">px</span> <span class="dv">solid</span> <span class="cn">black</span><span class="op">;</span></span>
@@ -153,17 +160,18 @@ class="sourceCode css"><code class="sourceCode css"><span id="cb10-1"><a href="#
   }
 &lt;/style&gt;</code></pre>
 </div>
-<h3 id="lade-indikator">5. Lade Indikator</h3>
+<h3 id="lade-indikator-hinzufügen">5. Lade Indikator hinzufügen</h3>
 <h4 id="aufgabe-4">Aufgabe</h4>
-<p>Ein Lade Indikator wird gebraucht um anzuzeigen, wenn etwas geladen
+<p>Ein lade Indikator wird gebraucht um anzuzeigen, wann etwas geladen
 wird.</p>
-<p>Hier ein Beispiel</p>
-<p><img src="assets/laoding-indicator.gif" alt="Lade Indikator" /></p>
-<p>Jedoch sollst du nur einen Text anzeigen, welcher dem Nutzer eine
-Visuelle Mitteilung gibt, dass das Bild gerade geladen wird.</p>
+<p>Hier ein Beispiel was ein lade Indikator ist</p>
+<p><img src="assets/loading-indicator.gif" alt="Lade Indikator" /></p>
+<p>Jedoch sollst du nur einen Text anzeigen, welchen dem Nutzer eine
+visuelle Mitteilung gibt, dass das Bild gerade generiert wird.</p>
 <h4 id="hilfestellung-4">Hilfestellung</h4>
-<p>Hierfür kannst du eine Variable gebrauchen und ein <code>if</code>
-Bedingung. In Svelte kannst du dies wie folgt erzielen.</p>
+<p>Hierfür kannst du eine Variable und eine <code>if</code> Bedingung
+gebrauchen.</p>
+<p>In Svelte kannst du dies wie folgt erzielen</p>
 <pre class="svelte"><code>&lt;script&gt;
   let loading = false;
 
@@ -187,25 +195,26 @@ Bedingung. In Svelte kannst du dies wie folgt erzielen.</p>
 {/if}
 
 &lt;button on:click={generate}&gt;
-  Generier
+  Generate
 &lt;/button&gt;</code></pre>
 <p>Hier wird eine Variable <code>loading</code> erstellt welche initial
 negativ eingestellt ist (<code>false</code>).</p>
 <p>Dies wird dann in der <code>generate</code> Funktion auf positiv
-geändert (<code>true</code>) und nach einem beliebigen Prozess wieder
-auf einen negativen Wert (<code>false</code>). Dazu kommt noch, dass wir
-am Anfang der <code>generate</code> Funktion schauen ob
-<code>loading</code> positiv oder negativ ist und falls es positiv ist,
+geändert (<code>true</code>). Nach einem beliebigen Prozess wird sie
+wieder auf einen negativen Wert (<code>false</code>). Dazu kommt noch,
+dass wir am Anfang der <code>generate</code> Funktion schauen ob
+<code>loading</code> positiv oder negativ ist und falls sie positiv ist,
 brechen wir die Funktion ab.</p>
 <p>Die <code>generate</code> Funktion wird jedoch nicht direkt
-ausgeführt, sondern erst wenn der Knopf gedrückt wird. Mit
-<code>on:click</code> sagen wir, dass es <code>generate</code> ausführen
-soll, wenn der Knopf gedrückt wird.</p>
+ausgeführt, sondern erst wenn der Button gedrückt wird. Mit
+<code>on:click</code> definieren wir, dass die Funktion
+<code>generate</code> ausgeführt werden soll, wenn der Button gedrückt
+wird.</p>
 <p>Über dem Knopf schauen wir ob <code>loading</code> negativ oder
 positiv ist und falls es positiv ist, zeigen wir einen Paragraph
 (<code>&lt;p&gt;</code>) mit dem Text <code>Wird geladen</code> an.</p>
 <p>Alles im <code>&lt;script&gt;</code> ist JavaScript und alles
-ausserhalb ist HTML. Dazu sid Variablen reaktiv. Das heisst, dass wenn
+ausserhalb ist HTML. Dazu sind Variablen reaktiv. Das heisst, dass wenn
 du eine Variable oben im <code>&lt;script&gt;</code> erstellst und
 danach veränderst kannst du die Veränderung auch im HTML direkt
 beobachten, deshalb heisst es auch <strong>Reaktiv</strong>, weil HTML
@@ -244,17 +253,18 @@ auf die Veränderung von JavaScript <strong>reagiert</strong>.</p>
   &lt;!-- Image &amp; Error --&gt;
 &lt;/div&gt;</code></pre>
 </div>
-<h3 id="dynamischer-alt-text">6. Dynamischer Alt Text</h3>
+<h3 id="dynamischer-alt-text-hinzufügen">6. Dynamischer Alt Text
+hinzufügen</h3>
 <h4 id="aufgabe-5">Aufgabe</h4>
-<p>Alt Text bei Bildern im Internet werden gebraucht falls das Bild
-nicht laden kann oder für Blinde. Ersteres kann zmb. passieren falls die
-Internet Verbindung zu langsam ist oder das Bild nicht mehr
-existiert.</p>
+<p>Ein Alt Text bei Bildern im Internet werden gebraucht falls das Bild
+nicht laden kann oder falls ein Blinder Mensch auf deine Webseite kommt.
+Ersteres kann zmb. passieren falls die Internet Verbindung zu langsam
+ist oder das Bild nicht mehr existiert.</p>
 <p>Setze den Alt Text vom Bild auf den Prompt Text.</p>
 <h4 id="hilfestellung-5">Hilfestellung</h4>
 <p>In Svelte kann man dynamisch den Wert einer Variable als Attribut auf
 Elemente setzen.</p>
-<p>Hier wie du sowas machen könntest.</p>
+<p>Hier ein Beispiel</p>
 <pre class="svelte"><code>&lt;script&gt;
   let altText = &quot;Ein Bild von einer Katze&quot;;
 &lt;/script&gt;
@@ -276,15 +286,15 @@ benutzt kann man variablen einsetzen.</p>
 &lt;/div&gt;</code></pre>
 </div>
 <h2 id="mittlere-aufgaben">Mittlere Aufgaben</h2>
-<p>Wir empfehlen den Chat spätestens hier zu gebrauchen!</p>
-<h3 id="bilder-galerie">7. Bilder Galerie</h3>
+<p>Wir empfehlen den Chatbot spätestens hier zu gebrauchen!</p>
+<h3 id="bilder-galerie-erstellen">7. Bilder Galerie erstellen</h3>
 <h4 id="aufgabe-6">Aufgabe</h4>
 <p>Speichere jedes generierte Bild mit dem jeweiligen Prompt ab und
 iteriere über alle Bilder in der Liste und zeige sie an.</p>
 <h4 id="hilfestellung-6">Hilfestellung</h4>
 <p>Wenn du eine Liste in Svelte hast, kannst du wie folgt darüber
-itererieren, was bedeuetet, dass wir durch alle Bilder durch gehen und,
-in unserem Fall, sie anzeigen.</p>
+iterieren, was bedeutet, dass wir durch alle Bilder durch gehen und, in
+unserem Fall, sie anzeigen.</p>
 <pre class="svelte"><code>&lt;script&gt;
   let imageList = [&quot;url1&quot;, &quot;url2&quot;, &quot;url3&quot;];
 &lt;/script&gt;
@@ -293,7 +303,8 @@ in unserem Fall, sie anzeigen.</p>
   &lt;img src={url} /&gt;
 {/each}</code></pre>
 <p>Hierbei ist zu beachten, dass wir wie beim
-<code>{#if} ... {/if}</code> die gewellten Klammern herum haben.</p>
+<code>{#if} ... {/if}</code> die gewellten Klammern um das
+<code>each</code> (<code>jedes</code>) haben.</p>
 <p>Der erste Wert direkt nach dem <code>each</code> ist unsere Liste.
 Danach kommt ein <code>as</code> und eine neue Variable, hier
 <code>url</code>. Jetzt können wir in dem <code>each</code> Block
@@ -311,8 +322,8 @@ addImage Funktion benutzen kannst.</p>
   // So benutzt du die addImage Funktion.
   addImage(url, prompt);
 &lt;/script&gt;</code></pre>
-<p>Diese Liste haben wir die auch schon zur Verfügung gestellt, jedoch
-ist es eine spezielle Liste die du wie folgt benutzen kannst.</p>
+<p>Diese Liste haben wir dir auch schon zur Verfügung gestellt, jedoch
+ist es eine spezielle Liste die du wie folgt benutzen musst.</p>
 <pre class="svelte"><code>&lt;!-- $images ist unsere Liste. --&gt;
 &lt;!-- Wir bekommen wir einmal die url des Bildes und der dazugehörige Prompt. --&gt;
 {#each $images as { url, prompt }}
@@ -357,11 +368,11 @@ ist es eine spezielle Liste die du wie folgt benutzen kannst.</p>
 </div>
 <h3 id="styling-der-galerie">8. Styling der Galerie</h3>
 <h4 id="aufgabe-7">Aufgabe</h4>
-<p>Ändere das Styling der Galerie so, dass zwei Bilder nebeneinander
-sind und gleich gross angezeigt werden.</p>
+<p>Ändere das Styling der Galerie, sodass zwei Bilder nebeneinander sind
+und gleich gross angezeigt werden.</p>
 <h4 id="hilfestellung-7">Hilfestellung</h4>
 <p>Wenn du mehrere Elemente hast die du in einem Gitter anzeigen willst
-kannst du das wie folgt tun.</p>
+kannst du das wie folgt tun</p>
 <pre class="svelte"><code>&lt;div class=&quot;grid&quot;&gt;
   &lt;p&gt;Paragraph 1&lt;/p&gt;
   &lt;p&gt;Paragraph 2&lt;/p&gt;
@@ -379,17 +390,21 @@ kannst du das wie folgt tun.</p>
   }.
 
 &lt;/style&gt;</code></pre>
-<p>Mit diesem css würden die 5 Paragraphe so angeordnet werden, dass
+<p>Mit diesem CSS würden die 5 Paragraphe so angeordnet werden, dass
 jeweils zwei nebeneinander liegen und sie einen 8 Pixel grossen Abstand
 dazwischen haben. Das <code>1fr 1fr</code> bedeutet, dass das erste
 Element in dem Gitter gleich viel Platz erhält wie das zweite Element.
-Das <code>overflow-y: scroll</code> macht es auch noch so, dass alles
-was in der höhe zu gross wäre in dem Gitter würde unsichtbar werden und
-man wird mit dem Mausrad beziehungsweise mit dem Trackpad nach unten
-scrollen können.</p>
+Das <code>overflow-y: scroll</code> bewirkt, dass alles was in der Höhe
+zu gross wäre in dem Gitter, würde unsichtbar werden und man wird mit
+dem Mausrad beziehungsweise mit dem Trackpad nach unten scrollen
+können.</p>
 <p>Vergiss nicht, den Bildern die Breite (<code>width</code>) zu
-enziehen und es dem Gitter zu übergeben. Das Styling für die Bilder
-findest du hier.</p>
+entziehen und es dem Gitter zu übergeben.</p>
+<details>
+<summary>
+TIPP
+</summary>
+<p>Das Styling für die Bilder findest du hier.</p>
 <pre class="svelte"><code>&lt;style&gt;
   .image {
     width: 768px;
@@ -397,6 +412,7 @@ findest du hier.</p>
     border-radius: 8px;
   }
 &lt;/style&gt;</code></pre>
+</details>
 <div class="solution">
 <pre class="svelte"><code>&lt;div class=&quot;app&quot;&gt;
   &lt;!-- Form &amp; Loading --&gt;
@@ -433,13 +449,13 @@ findest du hier.</p>
 </div>
 <h3 id="mehrere-bilder-auf-einmal">9. Mehrere Bilder auf einmal</h3>
 <h4 id="aufgabe-8">Aufgabe</h4>
-<p>Füge ein weiteres Eingabefeld hinzu womit du die Anzahl der Bilder
+<p>Füge ein weiteres Eingabefeld hinzu, womit du die Anzahl der Bilder
 pro Knopfdruck bestimmen kannst.</p>
 <h4 id="hilfestellung-8">Hilfestellung</h4>
-<p>Die <code>generate</code> Funktion welche wir gebrauchen um die
-Bilder zu generieren, kann auch noch einen weiteren Parameter entgegen
-nehmen, welcher die Anzahl der Bilder, die es generieren soll, bestimmt.
-Hier noch ein Beispiel wie du die <code>generate</code> Funktion nun
+<p>Die <code>generate</code> Funktion welche wir verwenden um die Bilder
+zu generieren, kann auch noch einen weiteren Parameter entgegen nehmen,
+welcher die Anzahl der Bilder, die es generieren soll, bestimmt. Hier
+noch ein Beispiel wie du die <code>generate</code> Funktion nun
 verwenden kannst.</p>
 <pre class="svelte"><code>&lt;script&gt;
   let amount = 4;
@@ -447,7 +463,7 @@ verwenden kannst.</p>
 
   let urls = await generate(prompt, amount);
 &lt;/script&gt;</code></pre>
-<p>Du kannst die mehreren urls dann jedoch wie gewohnt mit der
+<p>Du kannst die Liste von urls dann jedoch wie gewohnt mit der
 <code>addImage</code> zur Liste der Bilder hinzufügen.</p>
 <pre class="svelte"><code>&lt;script&gt;
   addImage(urls, prompt);
@@ -513,17 +529,17 @@ sich mit verändert wenn du die Zahl im <code>&lt;input&gt;</code>
 </div>
 <h3 id="input-styling">10. Input Styling</h3>
 <h4 id="aufgabe-9">Aufgabe</h4>
-<p>Style den neu erstellten Input mit ein wenig margin und padding,
+<p>Style den neu erstellten Input mit ein wenig Margin und Padding,
 damit es nicht so komisch aussieht.</p>
 <h4 id="hilfestellung-9">Hilfestellung</h4>
-<p>Margin und padding sind ähnlich in was sie tun. Sie geben dem Element
-mehr Platz.</p>
+<p>Margin und Padding sind ähnlich in dem was sie tun. Sie geben dem
+Element, dem zu zugewiesen sind, mehr Platz.</p>
 <p>Um es besser zu erklären, hier ein Bild</p>
 <p><img src="assets/padding-border-margin.png" alt="Padding, Border & Margin"/></p>
 <p>Zuerst schauen wir die orangene Fläche an. Dies ist der Content, bei
 einem <code>&lt;p&gt;</code> wäre es der Text.</p>
-<p>Gleich drum herum ist eine gelbe Fläche, Padding. Diese ist innerhalb
-der Border und des Elements. Wenn du den Hintergrund eines Elementes
+<p>Gleich drum herum ist eine gelbe Fläche, Padding. Diese ist zwischen
+der Border und des Contents. Wenn du den Hintergrund eines Elementes
 setzt wird der Content und die Padding Region beeinflusst.</p>
 <p>Die Wand zwischen dem Rest der Webseite und unseres Elementes ist die
 blaue Fläche namens Border. Die hast du auch schon verändert.</p>
@@ -572,8 +588,8 @@ Platz bis zum nächsten Element mindestens sein muss.</p>
 <h2 id="schwere-aufgaben">Schwere Aufgaben</h2>
 <h3 id="einzelne-bilder-löschen">11. Einzelne Bilder löschen</h3>
 <h4 id="aufgabe-10">Aufgabe</h4>
-<p>Erstelle einen Knopf pro Bild welcher das Bild aus der Liste
-nimmt.</p>
+<p>Erstelle einen Knopf, pro Bild, welcher das Bild aus der Liste
+entfernt.</p>
 <h4 id="hilfestellung-10">Hilfestellung</h4>
 <p>Wir haben schon Attribute wie <code>alt</code> für
 <code>&lt;img&gt;</code> angeschaut oder <code>bind:value</code> für
@@ -595,29 +611,29 @@ oder im englischen <code>on a click</code>.</p>
   Knopf
 &lt;/button&gt;</code></pre>
 <p>Wenn du jetzt jedoch nur einen Knopf unterhalb des Bildes einfügst,
-wirst du sehen, dass es nun nur noch ein Bild auf der Linken Seite hat
-und rechts und hell graues Viereck hat. Dieses Viereck ist unser Knopf
-aber wie bringen wir ihn in die obere linke Ecke?</p>
+wirst du sehen, dass es nun nur noch ein Bild auf der Linken Seite und
+rechts ein hell graues Viereck hat. Dieses Viereck ist unser Knopf. Nun
+wollen wir ihn in die obere linke Ecke des Bildes bekommen.</p>
 <p>In CSS gibt es an Attribut das nennt sich <code>position</code>. Die
-Werte die wir heute benutzen wären <code>relative</code> und
+Werte die wir heute benutzen werden sind <code>relative</code> und
 <code>absolute</code>. Beide machen alleine nichts, man muss noch
 weitere Attribute hinzufügen.</p>
 <p>Diese Attribute wären <code>top</code> und <code>left</code>. Wenn
-<code>position: relative</code> ist wird <code>top</code> und
+<code>position: relative</code> gesetzt ist wird <code>top</code> und
 <code>left</code> sich auf das umfassende Element beziehen, das heisst
 wenn beide <code>top</code> und <code>left</code> auf <code>0</code>
-gesetzt sind würde es in der oberen linken Ecke des Elementes sein
+gesetzt sind würde es in der oberen linken Ecke des Elementes sein,
 sofern kein anderes Element im Weg wäre.</p>
-<p>Bei <code>position: aboslute</code> ist es ähnlich jedoch ignoriert
+<p>Bei <code>position: absolute</code> ist es ähnlich jedoch ignoriert
 es andere Elemente. Dazu kommt noch, dass es vom nächsten relativ
 positionierten umfassenden Element ausgeht wobei der Normalfall hier die
-gesamt Webseite ist.</p>
+gesamte Webseite ist.</p>
 <p>Diese beiden Werte können wir uns zu Nutze machen in dem wir einen
 <code>&lt;div&gt;</code> um das Bild und den Knopf umfassen und ihn
 relativ positionieren. Wenn wir soweit sind können wir dem Knopf eine
 absolute Position geben wobei <code>top</code> und <code>left</code> auf
 <code>0</code> gesetzt sind. Das hätte zu Folge, dass die Bilder wie
-vorher normal in einem zwei breitem Gitter aneinander gereit sind und
+vorher normal in einem zwei breitem Gitter aneinander gereiht sind und
 die Knöpfe oben links auf den Bildern kleben.</p>
 <p>Hier ein wenig code um es zu visualisieren.</p>
 <pre class="svelte"><code>&lt;div class=&quot;image-container&quot;&gt;
@@ -639,7 +655,7 @@ die Knöpfe oben links auf den Bildern kleben.</p>
 <p>Jetzt hast du den Button, weisst wie du Funktionen ausführst wenn er
 gedrückt wird und wie du ihn positionierst. Jedoch weisst du noch nicht
 was für eine Funktion du ausführen sollst.</p>
-<p>Hier kommt wieder einmal eine Funktion ins Spiel die wir dir zur
+<p>Hier kommt wieder einmal eine Funktion ins Spiel, die wir dir zur
 Verfügung stellen. Die <code>removeImage</code> Funktion nimmt eine url
 entgegen und entfernt das Bild von der Liste.</p>
 <p>Hier wie du sie benutzen kannst</p>
@@ -648,8 +664,12 @@ entgegen und entfernt das Bild von der Liste.</p>
 
   removeImage(url);
 &lt;/script&gt;</code></pre>
-<p>Noch ein kleiner Tipp falls du nicht weisst wie du es machen sollst.
-Hier ist der Wert für das <code>on:click</code> Attribut</p>
+<details>
+<summary>
+TIPP
+</summary>
+<p>Falls du nicht weisst wie du es machen sollst mit der Funktion. Hier
+ist der Wert für das <code>on:click</code> Attribut</p>
 <pre class="svelte"><code>&lt;script&gt;
   let url = &quot;url1&quot;;
 &lt;/script&gt;
@@ -657,6 +677,7 @@ Hier ist der Wert für das <code>on:click</code> Attribut</p>
 &lt;button on:click={() =&gt; removeImage(url)}&gt;
   Löschen
 &lt;/button&gt;</code></pre>
+</details>
 <div class="solution">
 <pre class="svelte"><code>
 &lt;div class=&quot;app&quot;&gt;

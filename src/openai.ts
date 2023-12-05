@@ -10,9 +10,9 @@ const openai = new OpenAI({
   dangerouslyAllowBrowser: true,
 });
 
-const model = "dall-e-2";
+const model = "dall-e-3";
 const quality = "hd";
-const size = 512;
+const size = 1024;
 
 export async function generate(prompt: string, amount?: 1): Promise<string>;
 export async function generate(
