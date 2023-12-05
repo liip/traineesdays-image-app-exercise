@@ -16,7 +16,8 @@
 
     const stream = await $openai.chat.completions.create({
       model: "gpt-4-1106-preview",
-      messages: $history,
+      // @ts-ignore
+      messages: $history.filter(({ role }) => role !== "liip"),
       stream: true,
       max_tokens: 4096,
     });

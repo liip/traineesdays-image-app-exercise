@@ -7,14 +7,6 @@
 <div class="app-wrapper">
   <div class="app">
     <h1 class="title">Svelte Chat</h1>
-
-    <p class="explanation">
-      Dieser Chat kannst du benutzen um Fragen über die Aufgaben und Svelte zu
-      stellen. Es kann sein, dass der Chatbot falsche antworten zurückgibt,
-      deswegen sollst du uns fragen falls eine Antwort von ihm nicht
-      funktioniert.
-    </p>
-
     <form
       class="input-wrapper"
       on:submit|preventDefault
@@ -47,9 +39,5 @@
     text-align: center;
     font-size: 4rem;
     margin: 2rem 0;
-  }
-
-  .explanation {
-    padding-bottom: 2rem;
   }
 </style>

@@ -85,6 +85,8 @@ Hier siehst du den Abschnitt, wo du die Beschriftung des Buttons verändern kann
 </button>
 ```
 
+</details>
+
 <div class="solution">
 
 ```svelte
@@ -380,7 +382,7 @@ Eine `addImage`-Funktion haben wir dir bereits zur Verfügung gestellt, um Bilde
    // Das wäre die URL, die du von der Generierungsfunktion erhältst.
   let url = "url1";
 
-  // So rufst du die `addImage`-Funktion auf.
+  // So rufst du die addImage-Funktion auf.
   addImage(url, prompt);
 </script>
 ```

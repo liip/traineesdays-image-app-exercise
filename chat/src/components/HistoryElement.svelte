@@ -22,10 +22,22 @@
   };
 
   $: highlight(parsedContent);
+
+  $: roleText = ((role: string) => {
+    console.log(role);
+    switch (role) {
+      case "liip":
+        return "liip";
+      case "user":
+        return "frage";
+      case "assistant":
+        return "antwort";
+    }
+  })(role);
 </script>
 
 <div>
-  <h2 class="role {role}">{role === "user" ? "Frage" : "Antwort"}</h2>
+  <h2 class="role {role}">{roleText}</h2>
   <div class="content">{@html parsedContent}</div>
 </div>
 
