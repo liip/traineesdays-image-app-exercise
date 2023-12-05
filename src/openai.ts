@@ -1,9 +1,8 @@
 import { writable } from "svelte/store";
+import OpenAI from "openai";
+import { OPENAI_API_KEY, OPENAI_ORGANIZATION } from "./env";
 
 export const error = writable<any>(null);
-
-import { OPENAI_API_KEY, OPENAI_ORGANIZATION } from "./env";
-import OpenAI from "openai";
 
 const openai = new OpenAI({
   apiKey: OPENAI_API_KEY,

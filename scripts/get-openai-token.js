@@ -2,7 +2,7 @@ import { writeFileSync, existsSync } from "fs";
 import open from "open";
 import readline from "readline";
 
-if (existsSync("src/env.js")) process.exit(0)
+if (existsSync("src/env.js")) process.exit(0);
 
 const [, , ipString] = process.argv;
 
@@ -22,10 +22,12 @@ const rl = readline.createInterface({
   output: process.stdout,
 });
 
-const { token, organization } = JSON.parse(
-  await new Promise((resolve) =>
-    rl.question("Hier einfügen: ", (contents) => resolve(contents))
-  )
+const token = await new Promise((resolve) =>
+  rl.question("Token: ", (contents) => resolve(contents))
+);
+
+const organization = await new Promise((resolve) =>
+  rl.question("Organization: ", (contents) => resolve(contents))
 );
 
 rl.close();

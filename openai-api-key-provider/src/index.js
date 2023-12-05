@@ -29,7 +29,7 @@ const indexHtml = readFileSync("src/index.html")
   .toString()
   .replace("%IP-HERE%", ip);
 
-const token = {
+const secrets = {
   token: process.env["OPENAI_API_TOKEN"],
   organization: process.env["OPENAI_API_ORGANIZATION"],
 };
@@ -42,8 +42,9 @@ app.get("/", (request, response) => {
 });
 
 app.get("/api-key", (request, response) => {
-  // response.setHeader("Content-Type", "application/json");
-  response.send(token);
+  response.send(
+    `${secrets.token}</br>${secrets.organization}`
+  );
 });
 
 app.listen(PORT, () => {
