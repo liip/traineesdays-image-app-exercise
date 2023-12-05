@@ -1,10 +1,10 @@
 # Schnuppertag bei der Liip
 
-Heute werden wir mit Hilfe von AI Bilder generieren. Du wirst lernen wie man Styling.
+Heute lernst du, wie man mithilfe von Künstlicher Intelligenz Bilder generiert. Du wirst erfahren, wie man ein HTML-Element erstellt, es stilvoll gestaltet und es mit JavaScript reaktiv macht.
 
-Wenn du alles gestartet hast haben sich 3 neue Browser Tabs geöffnet. Im Tab mit dem Titel `Bilder Generierung` findest du die Bilder Webseite an der du aktiv arbeiten wirst. Im zweiten Tab mit dem Titel `Aufgaben` findest du die Aufgaben dazu. Im dritten Tab mit dem Titel `Svelte Chat` befindet sich ein Chatbot, welchen du verwenden kannst um Unterstützung für das Lösen der Aufgaben zu erhalten. Der Chatbot kennt alle Aufgaben sowie deren Lösungen. Verwende den Chatbot wenn du Hilfe zu einer Aufgabe benötigst oder frage uns direkt.
+Nachdem du das Programm gestartet hast, öffnen sich drei neue Browser-Tabs. Im ersten Tab, betitelt Bilder Generierung, findest du die Webseite, auf der du praktisch arbeiten wirst. Der zweite Tab, Aufgaben, enthält die dazugehörigen Übungen. Im dritten Tab, Svelte Chat, befindet sich ein Chatbot, den du zur Unterstützung heranziehen kannst. Dieser Chatbot kennt alle Aufgaben und deren Lösungen. Nutze den Chatbot, wenn du Hilfe bei einer Aufgabe benötigst, oder kontaktiere uns direkt.
 
-Öffne nun den Tab mit dem Titel `Bilder Generierung` um mit den Aufgaben zu beginnen.
+Beginne nun mit den Aufgaben, indem du den Tab Bilder Generierung öffnest.
 
 ## Einfache Aufgaben
 
@@ -12,11 +12,11 @@ Wenn du alles gestartet hast haben sich 3 neue Browser Tabs geöffnet. Im Tab mi
 
 #### Aufgabe
 
-Füge einen Titel mit dem Text `Bild Generierung` in die Webseite ein.
+Füge der Webseite einen Titel mit dem Text `Bild Generierung` hinzu.
 
 #### Hilfestellung
 
-Ein Titel, oder heading, gibt es in 6 Grössen in HTML.
+Ein Titel, auch Überschrift genannt, kann in HTML in sechs verschiedenen Größen dargestellt werden:
 
 ```svelte
 <h1>H1</h1>
@@ -27,9 +27,9 @@ Ein Titel, oder heading, gibt es in 6 Grössen in HTML.
 <h6>H6</h6>
 ```
 
-Hierbei ist zu beachten, dass `<h1>` am grössten ist und `<h6>` am kleinsten.
+Dabei ist `<h1>` die größte Überschrift und `<h6>` die kleinste.
 
-Hier findest du die Stelle an der du deinen Titel einfügst.
+An folgender Stelle solltest du den Titel einfügen:
 
 ```svelte
 <div class="app">
@@ -39,7 +39,7 @@ Hier findest du die Stelle an der du deinen Titel einfügst.
 </div>
 ```
 
-Beachte, dass `<h>` kein endgültiger Titel ist und du noch die Grösse (1-6) hinzufügen musst.
+Ersetze `<h>` durch ein geeignetes Überschrift-Tag, indem du die passende Größe (1-6) wählst.
 
 <div class="solution">
 
@@ -57,19 +57,33 @@ Beachte, dass `<h>` kein endgültiger Titel ist und du noch die Grösse (1-6) hi
 
 #### Aufgabe
 
-Ändere den Text des Buttons der aktuell `Generate` bezeichnet ist.
+Ändere die Beschriftung des Buttons, der momentan `Generate` lautet.
 
 #### Hilfestellung
 
-Ein Button, in HTML auch `<button>`, sieht wie folgt aus
+Ein Button, im HTML als `<button>` bezeichnet, sieht wie folgt aus:
 
 ```svelte
 <button>
-  Knopf Text
+  Button Beschriftung
 </button>
 ```
 
-Wobei `Knopf Text` der Text ist der angezeigt wird.
+Dabei ist `Button Beschriftung` der Text, der auf dem Button dargestellt wird.
+
+<details>
+<summary>TIPP</summary>
+
+Hier siehst du den Abschnitt, wo du die Beschriftung des Buttons verändern kannst.
+
+```svelte
+<button
+  class="submit-button"
+  on:click={handleGenerate}
+>
+  Neuer Button Text
+</button>
+```
 
 <div class="solution">
 
@@ -79,61 +93,45 @@ Wobei `Knopf Text` der Text ist der angezeigt wird.
     class="form"
     on:submit|preventDefault
   >
-    <!-- Prompt Input -->
+    <!-- Eingabeaufforderung -->
 
     <button
-      class="submit-button custom-button"
+      class="submit-button"
       on:click={handleGenerate}
     >
-      Dein Generate Text
+      Neuer Button Text
     </button>
   </form>
 
-  <!-- Image & Error -->
+  <!-- Bild & Fehlermeldung -->
 </div>
 ```
 
 </div>
-
-<details>
-<summary>TIPP</summary>
-
-Hier findest du die Stelle an der du den Text im Knopf abändern sollst.
-
-```svelte
-<button
-  class="submit-button custom-button"
-  on:click={handleGenerate}
->
-  Dein neuer Text
-</button>
-```
-
-</details>
 
 ### 3. Anweisungstext (Prompt) anpassen
 
 #### Aufgabe
 
-Ändere den bestehenden Prompt. Aktuell ist dieser `"Eine siamesische Katze mit blauen Augen."`.
+Vereinfache den aktuellen Prompt `"Eine siamesische Katze mit blauen Augen."`
 
-Spiele ein wenig mit dem Prompt herum und schaue dir die Ergebnisse an.
+Experimentiere ein wenig mit dem Prompt und betrachte, wie sich die Ergebnisse verändern.
 
 #### Hilfestellung
 
-Hier findest du die Stelle an der du den Prompt abändern sollst.
+Hier siehst du, wo du den Prompt verändern sollst.
 
 ```svelte
 <script lang="ts">
-  // Import & source Variable.
+  // Importiere notwendige Quellen und initialisiere Variablen.
 
-  let prompt = "Eine siamesische Katze mit blauen Augen."; // <-- Hier anpassen
+  let prompt = "Eine siamesische Katze mit blauen Augen."; // <-- Hier Anpassungen vornehmen
 
-  // handleGenerate Funktion
+  // Funktion zum Auslösen der Generierung
 </script>
 ```
 
-Du kannst nach `let prompt` mit `CTRL + F` auf Windows & Linux danach suchen und auf MacOS mit `Command + F`.
+Verwende `let prompt` als Suchbegriff, nutze `CTRL + F` auf Windows & Linux oder `Command + F` auf MacOS, um dies zu tun.
 
 <div class="solution">
 
@@ -145,26 +143,26 @@ Du kannst nach `let prompt` mit `CTRL + F` auf Windows & Linux danach suchen und
 
 </div>
 
-### 4. Input & Knopf Styling
+### 4. Input & Button Styling
 
 #### Aufgabe
 
-CSS, ausgeschrieben `Cascading Style Sheets`, benutzt man um Farbe, Form und Position von HTML Elementen abzuändern.
+Mit CSS kannst du die Erscheinung von HTML-Elementen anpassen, einschließlich ihrer Farbe, Form und Position.
 
-Du sollst die Farbe des Textes, des Hintergrundes und des Randes vom Generierungs Button und vom Prompt Input abändern.
+Deine Aufgabe ist es, die Textfarbe, Hintergrundfarbe und Rahmenfarbe des Generierungsbuttons und des Eingabefelds für den Prompt zu ändern.
 
 #### Hilfestellung
 
-Hierzu stehen dir zwei leere Klassen schon zur Verfügung.
+Zwei Klassen sind bereits vorgesehen und warten auf deine Anpassungen.
 
 ```svelte
 <style>
-  .custom-input {
-    /* Deine Eigenschaften hier. */
+  .prompt-input {
+    /* Füge deine Eigenschaften hier ein. */
   }
 
-  .custom-button {
-    /* Deine Eigenschaften hier. */
+  .submit-button {
+    /* Füge deine Eigenschaften hier ein. */
   }
 </style>
 ```
@@ -172,20 +170,20 @@ Hierzu stehen dir zwei leere Klassen schon zur Verfügung.
 <details>
 <summary>TIPP</summary>
 
-Du kannst Eigenschaften wie `background`, `color` und `border` benutzen.
+Du kannst Eigenschaften wie `background`, `color` und `border` verwenden.
 
 ```css
 .class {
-  /* Du kannst fast alle Farben auf Englisch angeben. */
+  /* Du kannst die meisten Farben mit ihrem englischen Namen verwenden. */
   background: red;
 
-  /* Das gleiche wie beim Hintergrund. */
+  /* Gilt auch für Textfarbe. */
   color: black;
 
-  /* Die border ist ein wenig komplexer. Sie besteht aus 3 Teilen. */
-  /* Zuerst kommt die Dicke in pixel, hier 1px */
-  /* Danach die Art der Border. Hier solid aber es geht auch dotted oder dashed für gepunktete oder gestrichelte Linien. */
-  /* Und zuletzt die Farbe, die ist, wie bei background und color, fast alle Farben auf Englisch. */
+  /* Der Rahmen (border) setzt sich aus drei Werten zusammen. */
+  /* Erst wird die Dicke angegeben, z.B. 1px. */
+  /* Danach folgt der Stil des Rahmens. 'solid' für eine durchgezogene Linie, es gibt aber auch 'dotted' für gepunktet oder 'dashed' für gestrichelt. */
+  /* Zu guter Letzt die Farbe des Rahmens, die wie bei background und color, in den meisten Fällen in Englisch angegeben wird. */
   border: 1px solid black;
 }
 ```
@@ -196,12 +194,12 @@ Du kannst Eigenschaften wie `background`, `color` und `border` benutzen.
 
 ```svelte
 <style>
-  .custom-input {
+  .prompt-input {
     background: red;
     color: green;
   }
 
-  .custom-button {
+  .submit-button {
     background: orange;
     color: white;
   }
@@ -210,23 +208,23 @@ Du kannst Eigenschaften wie `background`, `color` und `border` benutzen.
 
 </div>
 
-### 5. Lade Indikator hinzufügen
+### 5. Lade-Indikator hinzufügen
 
 #### Aufgabe
 
-Ein lade Indikator wird gebraucht um anzuzeigen, wann etwas geladen wird.
+Ein Lade-Indikator wird verwendet, um anzuzeigen, dass etwas gerade geladen wird.
 
-Hier ein Beispiel was ein lade Indikator ist
+Hier siehst du ein Beispiel dafür:
 
-<img src="assets/loading-indicator.gif" alt="Lade Indikator" />
+<img src="assets/loading-indicator.gif" alt="Lade-Indikator" />
 
-Jedoch sollst du nur einen Text anzeigen, welchen dem Nutzer eine visuelle Mitteilung gibt, dass das Bild gerade generiert wird.
+In deinem Fall soll jedoch ein Text eingesetzt werden, um zu signalisieren, dass das Bild momentan erstellt wird.
 
 #### Hilfestellung
 
-Hierfür kannst du eine Variable und eine `if` Bedingung gebrauchen.
+Nutze für diese Aufgabe eine Variable und eine `if`-Bedingung.
 
-In Svelte kannst du dies wie folgt erzielen
+In Svelte könntest du das so umsetzen:
 
 ```svelte
 <script>
@@ -234,37 +232,35 @@ In Svelte kannst du dies wie folgt erzielen
 
   const generate = () => {
     if (loading) {
-      return
+      return;
     }
 
     loading = true;
 
-    // Restlicher code
+    // Hier den restlichen Code einfügen
 
     loading = false;
   }
 </script>
 
 {#if loading}
-  <p>
-    Wird geladen
-  </p>
+  <p>Wird geladen...</p>
 {/if}
 
 <button on:click={generate}>
-  Generate
+  Bild erstellen
 </button>
 ```
 
-Hier wird eine Variable `loading` erstellt welche initial negativ eingestellt ist (`false`).
+Anfänglich wird die Variable `loading` auf `false` gesetzt, was bedeutet, dass aktuell nichts geladen wird.
 
-Dies wird dann in der `generate` Funktion auf positiv geändert (`true`). Nach einem beliebigen Prozess wird sie wieder auf einen negativen Wert (`false`). Dazu kommt noch, dass wir am Anfang der `generate` Funktion schauen ob `loading` positiv oder negativ ist und falls sie positiv ist, brechen wir die Funktion ab.
+Innerhalb der `generate`-Funktion wird dieser Wert zu Beginn auf `true` geändert, um den Ladevorgang anzuzeigen. Sobald der Prozess abgeschlossen ist, setzen wir `loading` zurück auf `false`. Zudem prüfen wir zu Beginn der Funktion, ob `loading` bereits `true` ist, um die Funktion gegebenenfalls nicht erneut auszuführen.
 
-Die `generate` Funktion wird jedoch nicht direkt ausgeführt, sondern erst wenn der Button gedrückt wird. Mit `on:click` definieren wir, dass die Funktion `generate` ausgeführt werden soll, wenn der Button gedrückt wird.
+Die `generate`-Funktion wird aktiviert, wenn der Nutzer auf den Button klickt. Mit `on:click` legen wir fest, dass die Funktion `generate` ausgeführt werden soll, sobald der Button betätigt wird.
 
-Über dem Knopf schauen wir ob `loading` negativ oder positiv ist und falls es positiv ist, zeigen wir einen Paragraph (`<p>`) mit dem Text `Wird geladen` an.
+Über dem Button wird geprüft, ob `loading` den Wert `true` hat, und falls ja, zeigen wir einen Absatz (`<p>`) mit dem Texthinweis `Wird geladen...` an.
 
-Alles im `<script>` ist JavaScript und alles ausserhalb ist HTML. Dazu sind Variablen reaktiv. Das heisst, dass wenn du eine Variable oben im `<script>` erstellst und danach veränderst kannst du die Veränderung auch im HTML direkt beobachten, deshalb heisst es auch **Reaktiv**, weil HTML auf die Veränderung von JavaScript **reagiert**.
+Der Bereich innerhalb von `<script>` ist JavaScript, während alles außerhalb HTML entspricht. Variablen sind dabei reaktiv, was bedeutet, dass eine im `<script>`-Teil erstellte und später veränderte Variable ihre Aktualisierung unmittelbar im zugehörigen HTML wiedergibt. Dies erklärt den Begriff **Reaktiv**, da das HTML automatisch auf jegliche Änderungen im JavaScript **reagiert**.
 
 <div class="solution">
 
@@ -281,7 +277,7 @@ Alles im `<script>` ist JavaScript und alles ausserhalb ist HTML. Dazu sind Vari
 
   const handleGenerate = async () => {
     if (isGenerating) {
-      return
+      return;
     };
 
     isGenerating = true;
@@ -293,13 +289,13 @@ Alles im `<script>` ist JavaScript und alles ausserhalb ist HTML. Dazu sind Vari
 </script>
 
 <div class="app">
-  <!-- Form -->
+  <!-- Formular -->
 
   {#if isGenerating}
     <p>Wird generiert...</p>
   {/if}
 
-  <!-- Image & Error -->
+  <!-- Bild & Fehlermeldung -->
 </div>
 ```
 
@@ -309,15 +305,15 @@ Alles im `<script>` ist JavaScript und alles ausserhalb ist HTML. Dazu sind Vari
 
 #### Aufgabe
 
-Ein Alt Text bei Bildern im Internet werden gebraucht falls das Bild nicht laden kann oder falls ein Blinder Mensch auf deine Webseite kommt. Ersteres kann zmb. passieren falls die Internet Verbindung zu langsam ist oder das Bild nicht mehr existiert.
+Ein Alt-Text ist bei Bildern im Internet wichtig, falls das Bild nicht geladen werden kann oder für Personen mit Sehbehinderungen, die auf Deine Webseite zugreifen. Ersteres kann z. B. geschehen, wenn die Internetverbindung zu langsam ist oder das Bild aus irgendeinem Grund nicht mehr verfügbar ist.
 
-Setze den Alt Text vom Bild auf den Prompt Text.
+Setze den Alt-Text des Bildes auf den Text des Prompts.
 
 #### Hilfestellung
 
-In Svelte kann man dynamisch den Wert einer Variable als Attribut auf Elemente setzen.
+In Svelte ist es möglich, den Wert einer Variablen dynamisch als Attribut in Elemente einzufügen.
 
-Hier ein Beispiel
+Hier ein Beispiel:
 
 ```svelte
 <script>
@@ -327,13 +323,13 @@ Hier ein Beispiel
 <img alt="{altText}" />
 ```
 
-Sobald man `{` und `}` in einem Attribut benutzt kann man variablen einsetzen.
+Indem man `{` und `}` in einem Attribut verwendet, kann man Variablen einfügen.
 
 <div class="solution">
 
 ```svelte
 <div class="app">
-  <!-- Form & Loading -->
+  <!-- Formular & Laden -->
 
   <img
     class="image"
@@ -341,7 +337,7 @@ Sobald man `{` und `}` in einem Attribut benutzt kann man variablen einsetzen.
     alt={prompt}
   />
 
-  <!-- Error -->
+  <!-- Fehlermeldung -->
 </div>
 ```
 
@@ -355,11 +351,11 @@ Wir empfehlen den Chatbot spätestens hier zu gebrauchen!
 
 #### Aufgabe
 
-Speichere jedes generierte Bild mit dem jeweiligen Prompt ab und iteriere über alle Bilder in der Liste und zeige sie an.
+Speichere jedes erzeugte Bild zusammen mit dem dazugehörigen Textbefehl und zeige anschließend alle Bilder aus der Liste an.
 
 #### Hilfestellung
 
-Wenn du eine Liste in Svelte hast, kannst du wie folgt darüber iterieren, was bedeutet, dass wir durch alle Bilder durch gehen und, in unserem Fall, sie anzeigen.
+Wenn du eine Liste in Svelte vorliegen hast, kannst du diese so durchlaufen, dass wir jedes Element der Liste – in unserem Fall ein Bild – auf dem Bildschirm anzeigen.
 
 ```svelte
 <script>
@@ -371,29 +367,28 @@ Wenn du eine Liste in Svelte hast, kannst du wie folgt darüber iterieren, was b
 {/each}
 ```
 
-Hierbei ist zu beachten, dass wir wie beim `{#if} ... {/if}` die gewellten Klammern um das `each` (`jedes`) haben.
+Beachte dabei, dass die geschweiften Klammern um `each` genauso wie bei `{#if} ... {/if}` verwendet werden.
 
-Der erste Wert direkt nach dem `each` ist unsere Liste. Danach kommt ein `as` und eine neue Variable, hier `url`. Jetzt können wir in dem `each` Block `url` benutzen und somit geht Svelte über jedes Bild und zeigt es in einem `<img>` an.
+Das erste Element nach `each` repräsentiert die Liste, die wir durchgehen wollen. Dann folgt ein `as` und eine neue Variable, die wir hier `url` nennen. Innerhalb des `each`-Blocks können wir die Variable `url` verwenden, um Svelte jedes Bild in einem `<img>`-Tag anzeigen zu lassen.
 
-Wir haben für dich eine `addImage` Funktion bereitgestellt welche die Bilder zu einer bestehenden Liste hinzufügt. Hier wie du die addImage Funktion benutzen kannst.
+Eine `addImage`-Funktion haben wir dir bereits zur Verfügung gestellt, um Bilder einer bestehenden Liste hinzuzufügen. So kannst du die `addImage`-Funktion verwenden:
 
 ```svelte
 <script>
-   // Das wäre dein Prompt den du immer wieder mal änderst.
+   // Das wäre dein Textbefehl, den du immer wieder ändern kannst.
   let prompt = "Ein Baum auf einer Wiese im Herbst.";
-   // Das wäre die url welche du von der generate Funktion zurück bekommst.
+   // Das wäre die URL, die du von der Generierungsfunktion erhältst.
   let url = "url1";
 
-  // So benutzt du die addImage Funktion.
+  // So rufst du die `addImage`-Funktion auf.
   addImage(url, prompt);
 </script>
 ```
 
-Diese Liste haben wir dir auch schon zur Verfügung gestellt, jedoch ist es eine spezielle Liste die du wie folgt benutzen musst.
+Diese spezielle Liste haben wir dir ebenfalls bereits bereitgestellt und du kannst sie folgendermaßen nutzen:
 
 ```svelte
-<!-- $images ist unsere Liste. -->
-<!-- Wir bekommen wir einmal die url des Bildes und der dazugehörige Prompt. -->
+<!-- $images ist unsere Liste, in der jede URL eines Bildes und der dazugehörige Textbefehl gespeichert ist. -->
 {#each $images as { url, prompt }}
   <img src={url} alt={prompt} />
 {/each}
@@ -425,7 +420,7 @@ Diese Liste haben wir dir auch schon zur Verfügung gestellt, jedoch ist es eine
 </script>
 
 <div class="app">
-  <!-- Form & Loading -->
+  <!-- Form & Loading Indikator -->
 
   {#each $images as { url, prompt }}
     <img
@@ -435,7 +430,7 @@ Diese Liste haben wir dir auch schon zur Verfügung gestellt, jedoch ist es eine
     />
   {/each}
 
-  <!-- Error -->
+  <!-- Fehlermeldung -->
 </div>
 ```
 
@@ -445,11 +440,11 @@ Diese Liste haben wir dir auch schon zur Verfügung gestellt, jedoch ist es eine
 
 #### Aufgabe
 
-Ändere das Styling der Galerie, sodass zwei Bilder nebeneinander sind und gleich gross angezeigt werden.
+Passe das Design der Bildergalerie an, sodass zwei Bilder nebeneinander und in derselben Größe dargestellt werden.
 
 #### Hilfestellung
 
-Wenn du mehrere Elemente hast die du in einem Gitter anzeigen willst kannst du das wie folgt tun
+Wenn du mehrere Elemente in einem Raster darstellen möchtest, kannst du es wie folgt machen:
 
 ```svelte
 <div class="grid">
@@ -466,19 +461,18 @@ Wenn du mehrere Elemente hast die du in einem Gitter anzeigen willst kannst du d
     grid-template-columns: 1fr 1fr;
     gap: 8px;
     overflow-y: scroll;
-  }.
-
+  }
 </style>
 ```
 
-Mit diesem CSS würden die 5 Paragraphe so angeordnet werden, dass jeweils zwei nebeneinander liegen und sie einen 8 Pixel grossen Abstand dazwischen haben. Das `1fr 1fr` bedeutet, dass das erste Element in dem Gitter gleich viel Platz erhält wie das zweite Element. Das `overflow-y: scroll` bewirkt, dass alles was in der Höhe zu gross wäre in dem Gitter, würde unsichtbar werden und man wird mit dem Mausrad beziehungsweise mit dem Trackpad nach unten scrollen können.
+Mit diesem CSS werden die fünf Absätze so angeordnet, dass immer zwei nebeneinanderstehen und einen Abstand von 8 Pixel zueinander haben. Das "1fr 1fr" stellt sicher, dass das erste Element im Raster genauso viel Platz einnimmt wie das zweite Element. Die Einstellung `overflow-y: scroll` sorgt dafür, dass Inhalte, die in der Höhe über den Rand des Rasters hinausgehen, verborgen bleiben und durch Scrollen mit dem Mausrad oder Trackpad zugänglich gemacht werden können.
 
-Vergiss nicht, den Bildern die Breite (`width`) zu entziehen und es dem Gitter zu übergeben.
+Vergiss nicht, den Bildern die feste Breite zu entziehen und sie stattdessen vom Raster bestimmen zu lassen.
 
 <details>
 <summary>TIPP</summary>
 
-Das Styling für die Bilder findest du hier.
+Hier findest du das Styling für die Bilder.
 
 ```svelte
 <style>
@@ -496,7 +490,7 @@ Das Styling für die Bilder findest du hier.
 
 ```svelte
 <div class="app">
-  <!-- Form & Loading -->
+  <!-- Formular & Laden -->
 
   <div class="image-grid">
     {#each $images as { url, prompt }}
@@ -508,7 +502,7 @@ Das Styling für die Bilder findest du hier.
     {/each}
   </div>
 
-  <!-- Error -->
+  <!-- Fehlermeldung -->
 </div>
 
 <style>
@@ -520,7 +514,6 @@ Das Styling für die Bilder findest du hier.
   }
 
   .image-grid {
-    width: 768px;
     display: grid;
     grid-template-columns: 1fr 1fr;
     gap: 8px;
@@ -535,11 +528,11 @@ Das Styling für die Bilder findest du hier.
 
 #### Aufgabe
 
-Füge ein weiteres Eingabefeld hinzu, womit du die Anzahl der Bilder pro Knopfdruck bestimmen kannst.
+Ergänze ein zusätzliches Eingabefeld, mit dem die Menge an Bildern festgelegt werden kann, die bei jedem Klick auf den Button generiert werden sollen.
 
 #### Hilfestellung
 
-Die `generate` Funktion welche wir verwenden um die Bilder zu generieren, kann auch noch einen weiteren Parameter entgegen nehmen, welcher die Anzahl der Bilder, die es generieren soll, bestimmt. Hier noch ein Beispiel wie du die `generate` Funktion nun verwenden kannst.
+Die `generate`-Funktion, die wir für die Erstellung der Bilder nutzen, akzeptiert einen zusätzlichen Parameter, der die Anzahl der zu generierenden Bilder angibt. Hier ein Beispiel, wie die `generate`-Funktion mit dem neuen Parameter genutzt wird:
 
 ```svelte
 <script>
@@ -550,7 +543,7 @@ Die `generate` Funktion welche wir verwenden um die Bilder zu generieren, kann a
 </script>
 ```
 
-Du kannst die Liste von urls dann jedoch wie gewohnt mit der `addImage` zur Liste der Bilder hinzufügen.
+Die erzeugte Liste von URLs kann dann, wie zuvor, mit der `addImage`-Methode zur Liste der Bilder hinzugefügt werden:
 
 ```svelte
 <script>
@@ -558,7 +551,7 @@ Du kannst die Liste von urls dann jedoch wie gewohnt mit der `addImage` zur List
 </script>
 ```
 
-Hier ein Beispiel wie ein solches Eingabefeld in Svelte aussehen kann.
+Nachfolgend ein Beispiel für ein Eingabefeld in Svelte, das erlaubt, diese Anzahl zu bestimmen:
 
 ```svelte
 <script>
@@ -568,7 +561,7 @@ Hier ein Beispiel wie ein solches Eingabefeld in Svelte aussehen kann.
 <input type="number" min="1" max="4" bind:value={amount}/>
 ```
 
-Im `<script>` erstellen wir eine Variable namens `amount`. Darunter erstellen wir einen `<input>` welcher vom Typ `number` ist, das heisst man kann keine Buchstaben eingeben. Gleich dahinter sagen wir dem Eingabefeld, dass der Wert darin mindestens 1 und maximal 4 sein kann. Zuletzt binden wir die Variable `amount` auf den Parameter `value` vom Eingabefeld was dazu führt, dass die Variable sich mit verändert wenn du die Zahl im `<input>` änderst.
+Im `<script>`-Bereich definieren wir eine Variable namens `amount`. Danach fügen wir einen `<input>` ein, der vom Typ `number` ist, was bedeutet, dass man dort keine Buchstaben eingeben kann. Direkt danach legen wir fest, dass das Eingabefeld Werte zwischen mindestens 1 und höchstens 4 akzeptieren soll. Zum Schluss binden wir die Variable `amount` an das `value`-Attribut des Eingabefelds, sodass sich die Variable automatisch aktualisiert, wenn du die Zahl im Eingabefeld änderst.
 
 <div class="solution">
 
@@ -602,17 +595,17 @@ Im `<script>` erstellen wir eine Variable namens `amount`. Darunter erstellen wi
     class="form"
     on:submit|preventDefault
   >
-    <!-- Prompt Input -->
+    <!-- Eingabefeld für die Bilderanzahl -->
     <input
       type="number"
       min="1"
       max="4"
       bind:value={amount}
     />
-    <!-- Generate Button -->
+    <!-- Button zum Generieren -->
   </form>
 
-  <!-- Loading, Bilder & Error -->
+  <!-- Anzeigen von Laden, Bildern & Fehlermeldungen -->
 </div>
 ```
 
@@ -622,35 +615,35 @@ Im `<script>` erstellen wir eine Variable namens `amount`. Darunter erstellen wi
 
 #### Aufgabe
 
-Style den neu erstellten Input mit ein wenig Margin und Padding, damit es nicht so komisch aussieht.
+Mach das neu erstellte Input-Feld optisch ansprechender, indem du etwas Randabstand und Innenabstand hinzufügst, damit es nicht mehr so platzlos aussieht.
 
 #### Hilfestellung
 
-Margin und Padding sind ähnlich in dem was sie tun. Sie geben dem Element, dem zu zugewiesen sind, mehr Platz.
+Randabstand (Margin) und Innenabstand (Padding) dienen beide dazu, zusätzlichen Platz um ein Element herum zu schaffen.
 
-Um es besser zu erklären, hier ein Bild
+Um das besser zu veranschaulichen, sieh dir dieses Bild an:
 
 <img src="assets/padding-border-margin.png" alt="Padding, Border & Margin"/>
 
-Zuerst schauen wir die orangene Fläche an. Dies ist der Content, bei einem `<p>` wäre es der Text.
+Betrachten wir zunächst die orangefarbene Fläche - das ist der Inhalt, z.B. bei einem `<p>`-Tag wäre das der Text.
 
-Gleich drum herum ist eine gelbe Fläche, Padding. Diese ist zwischen der Border und des Contents. Wenn du den Hintergrund eines Elementes setzt wird der Content und die Padding Region beeinflusst.
+Direkt um den Inhalt herum befindet sich eine gelbe Zone, das Padding. Diese Zone liegt zwischen dem Rahmen (Border) und dem Inhalt. Wenn du die Hintergrundfarbe eines Elements festlegst, wird sowohl der Inhalt als auch der Innenabstand (Padding) beeinflusst.
 
-Die Wand zwischen dem Rest der Webseite und unseres Elementes ist die blaue Fläche namens Border. Die hast du auch schon verändert.
+Die blauen Linien stellen den Rahmen (Border) dar und grenzen unser Element vom Rest der Webseite ab. Diesen Rahmen hast du eventuell bereits angepasst.
 
-Zuletzt die weisse Region namens Margin. Sie Beschreibt wie viel Platz bis zum nächsten Element mindestens sein muss.
+Die weiße Fläche, das Margin, definiert den Mindestabstand zum nächsten Element.
 
-Padding und Margin kannst du wie folgt anwenden
+So wendest du Padding und Margin an:
 
 ```svelte
 <div class="container">
-  <!-- Content -->
+  <!-- Inhalt -->
 </div>
 
 <style>
   .container {
-    padding: 8px;
-    margin: 8px;
+    padding: 8px; /* Anpassung möglich */
+    margin: 8px; /* Anpassung möglich */
   }
 </style>
 ```
@@ -663,7 +656,7 @@ Padding und Margin kannst du wie folgt anwenden
     class="form"
     on:submit|preventDefault
   >
-    <!-- Prompt Input -->
+    <!-- Eingabefeld für den Betrag -->
     <input
       class="amount"
       type="number"
@@ -671,18 +664,18 @@ Padding und Margin kannst du wie folgt anwenden
       max="4"
       bind:value={amount}
     />
-    <!-- Generate Button -->
+    <!-- Generiere-Button -->
   </form>
 
-  <!-- Loading, Bilder & Error -->
+  <!-- Laden, Bilder & Fehlermeldungen -->
 </div>
 
 <style>
-  /* Andere styles */
+  /* Weitere Stile */
 
   .amount {
-    padding: 8px; /* Dieser Wert kann variieren */
-    margin: 8px; /* Dieser Wert kann variieren */
+    padding: 8px; /* Anpassung möglich */
+    margin: 8px; /* Anpassung möglich */
   }
 </style>
 ```
@@ -695,37 +688,35 @@ Padding und Margin kannst du wie folgt anwenden
 
 #### Aufgabe
 
-Erstelle einen Knopf, pro Bild, welcher das Bild aus der Liste entfernt.
+Erstelle für jedes Bild einen Button, der das entsprechende Bild aus der Liste entfernt.
 
 #### Hilfestellung
 
-Wir haben schon Attribute wie `alt` für `<img>` angeschaut oder `bind:value` für `<input>`. `alt` & `value` sind die Attribute an sich, wobei `bind:` das `value` an eine Variable bindet. Jetzt gibt es noch mehr von solchen Modifikatoren. Hier brauchen wir `on:` für unsere Knöpfe. `on:click` zum Beispiel nimmt eine Funktion entgegen und führt diese aus wenn der Knopf gedrückt wird also auf einem Klick oder im englischen `on a click`.
+Wir haben bereits Attribute wie `alt` für das `<img>`-Element oder `bind:value` für das `<input>`-Element kennengelernt. `alt` und `value` sind die eigentlichen Attribute, während `bind:` das `value` an eine Variable bindet. Zusätzlich gibt es Modifikatoren, und einer davon ist `on:` für unsere Buttons. `on:click`, nimmt beispielsweise eine Funktion entgegen, die ausgeführt wird, wenn der Button geklickt wird.
 
-Hier ein Beispiel was ich meine
+Ein Beispiel dazu:
 
 ```svelte
 <script>
   const handleClick = () => {
-    // Code der ausgeführt wird wenn der Knopf gedrückt wird.
+    // Code, der ausgeführt wird, wenn der Button geklickt wird.
   }
 </script>
 
 <button on:click={handleClick}>
-  Knopf
+  Button
 </button>
 ```
 
-Wenn du jetzt jedoch nur einen Knopf unterhalb des Bildes einfügst, wirst du sehen, dass es nun nur noch ein Bild auf der Linken Seite und rechts ein hell graues Viereck hat. Dieses Viereck ist unser Knopf. Nun wollen wir ihn in die obere linke Ecke des Bildes bekommen.
+Fügst du jetzt einen Button unter dem Bild ein, so wirst du feststellen, dass es einen Bild und daneben ein hellgrau unterlegtes Viereck gibt. Dieses Viereck ist unser Button. Nun möchten wir den Button in die obere linke Ecke des Bildes setzen.
 
-In CSS gibt es an Attribut das nennt sich `position`. Die Werte die wir heute benutzen werden sind `relative` und `absolute`. Beide machen alleine nichts, man muss noch weitere Attribute hinzufügen.
+In CSS gibt es ein `position` Attribut. Die Werte, die wir verwenden werden, sind `relative` und `absolute`. Diese alleine bewirken noch nichts; man muss zusätzliche Attribute einfügen, wie `top` und `left`. Bei `position: relative` beziehen sich `top` und `left` auf das umgebende Element, was bedeutet, dass `top` und `left` bei `0` in der oberen linken Ecke des Elements wären, vorausgesetzt kein anderes Element stört.
 
-Diese Attribute wären `top` und `left`. Wenn `position: relative` gesetzt ist wird `top` und `left` sich auf das umfassende Element beziehen, das heisst wenn beide `top` und `left` auf `0` gesetzt sind würde es in der oberen linken Ecke des Elementes sein, sofern kein anderes Element im Weg wäre.
+Bei `position: absolute` ist es ähnlich, mit dem Unterschied, dass andere Elemente ignoriert werden und die Positionierung vom nächsten relativ positionierten Element ausgeht. Das ist meist die ganze Webseite.
 
-Bei `position: absolute` ist es ähnlich jedoch ignoriert es andere Elemente. Dazu kommt noch, dass es vom nächsten relativ positionierten umfassenden Element ausgeht wobei der Normalfall hier die gesamte Webseite ist.
+Indem wir einen `<div>` um das Bild und den Button legen und diesen relativ positionieren, können wir dem Button eine absolute Position geben und `top` sowie `left` auf `0` setzen. Das Ergebnis ist, dass die Bilder wie zuvor im zweispaltigen Raster aufgereiht bleiben und die Buttons oben links an den Bildern anhaften.
 
-Diese beiden Werte können wir uns zu Nutze machen in dem wir einen `<div>` um das Bild und den Knopf umfassen und ihn relativ positionieren. Wenn wir soweit sind können wir dem Knopf eine absolute Position geben wobei `top` und `left` auf `0` gesetzt sind. Das hätte zu Folge, dass die Bilder wie vorher normal in einem zwei breitem Gitter aneinander gereiht sind und die Knöpfe oben links auf den Bildern kleben.
-
-Hier ein wenig code um es zu visualisieren.
+Siehe hier ein Beispiel zum Veranschaulichen:
 
 ```svelte
 <div class="image-container">
@@ -746,11 +737,9 @@ Hier ein wenig code um es zu visualisieren.
 </style>
 ```
 
-Jetzt hast du den Button, weisst wie du Funktionen ausführst wenn er gedrückt wird und wie du ihn positionierst. Jedoch weisst du noch nicht was für eine Funktion du ausführen sollst.
+Nun weißt du, wie du einen Button erstellen, ihn positionieren und Funktionen auf Knopfdruck ausführen kannst. Aber wir müssen noch klären, welche Funktion ausgeführt werden soll.
 
-Hier kommt wieder einmal eine Funktion ins Spiel, die wir dir zur Verfügung stellen. Die `removeImage` Funktion nimmt eine url entgegen und entfernt das Bild von der Liste.
-
-Hier wie du sie benutzen kannst
+Wir stellen dir die Funktion `removeImage` bereit. Diese nimmt eine URL entgegen und entfernt das entsprechende Bild aus der Liste. So kannst du sie verwenden:
 
 ```svelte
 <script>
@@ -763,7 +752,7 @@ Hier wie du sie benutzen kannst
 <details>
 <summary>TIPP</summary>
 
-Falls du nicht weisst wie du es machen sollst mit der Funktion. Hier ist der Wert für das `on:click` Attribut
+Falls du nicht sicher bist, wie du die Funktion einsetzen kannst, sieh dir dieses Beispiel für das `on:click` Attribut an:
 
 ```svelte
 <script>
@@ -782,7 +771,7 @@ Falls du nicht weisst wie du es machen sollst mit der Funktion. Hier ist der Wer
 ```svelte
 
 <div class="app">
-  <!-- Title, Form & Loading -->
+  <!-- Titel, Formular & Ladeanzeige -->
 
   <div class="image-grid">
     {#each $images as { url, prompt }}
@@ -800,7 +789,7 @@ Falls du nicht weisst wie du es machen sollst mit der Funktion. Hier ist der Wer
     {/each}
   </div>
 
-  <!-- Error -->
+  <!-- Fehlermeldung -->
 </div>
 
 <style>

@@ -17,13 +17,13 @@
     on:submit|preventDefault
   >
     <input
-      class="prompt-input custom-input"
+      class="prompt-input"
       type="text"
       bind:value={prompt}
       disabled
     />
     <button
-      class="submit-button custom-button"
+      class="submit-button"
       on:click={handleGenerate}
     >
       Generate
@@ -45,11 +45,11 @@
 </div>
 
 <style>
-  .custom-input {
+  .prompt-input {
     /* Deine Eigenschaften hier. */
   }
 
-  .custom-button {
+  .submit-button {
     /* Deine Eigenschaften hier. */
   }
 
