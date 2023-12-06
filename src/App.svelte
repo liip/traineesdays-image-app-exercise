@@ -1,48 +1,53 @@
 <script lang="ts">
   import { generate, error } from "./openai";
-  import { addImage, images, removeImage } from "./gallery";
+  import { images, removeImage } from "./gallery";
+  import { loading } from "./stores";
 
-  let source = "";
-
-  let prompt = "Eine siamesische Katze mit blauen Augen.";
-
-  const handleGenerate = async () => {
-    source = await generate(prompt);
-  };
+  let prompt = "Ein Wald mit einem Haus aus Beton.";
 </script>
 
-<div class="app">
-  <form
-    class="form"
-    on:submit|preventDefault
+<form
+  class="form"
+  on:submit|preventDefault
+>
+  <input
+    class="prompt-input"
+    type="text"
+    bind:value={prompt}
+    disabled
+  />
+  <button
+    class="submit-button"
+    on:click={() => generate(prompt)}
   >
-    <input
-      class="prompt-input"
-      type="text"
-      bind:value={prompt}
-      disabled
-    />
-    <button
-      class="submit-button"
-      on:click={handleGenerate}
-    >
-      Generate
-    </button>
-  </form>
+    Generate
+  </button>
+</form>
 
-  {#if source}
+{#if $loading}
+  <p>Wird generiert...</p>
+{/if}
+
+{#each $images as { url, prompt }}
+  <div class="image-container">
     <img
       class="image"
-      src={source}
-      alt=""
+      src={url}
+      alt={prompt}
     />
-  {/if}
+    <button
+      class="delete-button"
+      on:click={() => removeImage(url)}
+    >
+      Löschen
+    </button>
+  </div>
+{/each}
 
-  {#if $error}
-    <h2 class="error">Error {$error.status}</h2>
-    <p>{$error.error.message} <strong>({$error.error.type})</strong></p>
-  {/if}
-</div>
+{#if $error}
+  <h2 class="error">Error {$error.status}</h2>
+  <p>{$error.error.message} <strong>({$error.error.type})</strong></p>
+{/if}
 
 <style>
   .prompt-input {
@@ -54,8 +59,14 @@
   }
 
   .image {
-    width: 768px;
-    border: 3px solid black;
-    border-radius: 8px;
+    /* Deine Eigenschaften hier. */
+  }
+
+  .image-container {
+    /* Deine Eigenschaften hier. */
+  }
+
+  .delete-button {
+    /* Deine Eigenschaften hier. */
   }
 </style>

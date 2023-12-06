@@ -210,7 +210,180 @@ Du kannst Eigenschaften wie `background`, `color` und `border` verwenden.
 
 </div>
 
-### 5. Lade-Indikator hinzufügen
+### 5. Platz schaffen
+
+#### Aufgabe
+
+Füge Margin und Padding dem Input und dem Button hinzu.
+
+#### Hilfestellung
+
+Du kannst die gleichen Klassen vor bei Aufgabe [4](#4-input--button-styling) verwenden.
+
+Randabstand (Margin) und Innenabstand (Padding) dienen beide dazu, zusätzlichen Platz um ein Element herum zu schaffen.
+
+Um das besser zu veranschaulichen, sieh dir dieses Bild an:
+
+<img src="assets/padding-border-margin.png" alt="Padding, Border & Margin"/>
+
+Betrachten wir zunächst die orangefarbene Fläche - das ist der Inhalt, z.B. bei einem `<p>`-Tag wäre das der Text.
+
+Direkt um den Inhalt herum befindet sich eine gelbe Zone, das Padding. Diese Zone liegt zwischen dem Rahmen (Border) und dem Inhalt. Wenn du die Hintergrundfarbe eines Elements festlegst, wird sowohl der Inhalt als auch der Innenabstand (Padding) beeinflusst.
+
+Die blauen Linien stellen den Rahmen (Border) dar und grenzen unser Element vom Rest der Webseite ab. Diesen Rahmen hast du eventuell bereits angepasst.
+
+Die weiße Fläche, das Margin, definiert den Mindestabstand zum nächsten Element.
+
+So wendest du Padding und Margin an:
+
+```svelte
+<div class="container">
+  <!-- Inhalt -->
+</div>
+
+<style>
+  .container {
+    padding: 8px; /* Anpassung möglich */
+    margin: 8px; /* Anpassung möglich */
+  }
+</style>
+```
+
+<div class="solution">
+
+```svelte
+<style>
+  .prompt-input {
+    margin: 4px;
+    padding: 4px;
+  }
+
+  .submit-button {
+    margin: 4px;
+    padding: 4px;
+  }
+</style>
+```
+
+</div>
+
+### 6. Lösch Button Styling
+
+#### Aufgabe
+
+Setze den Hintergrund des Lösch Buttons auf rot.
+
+#### Hilfestellung
+
+Dir wurde bereits eine Klasse zur Verfügung gestellt.
+
+```svelte
+<style>
+  .delete-button {
+    /* Füge deine Eigenschaften hier ein. */
+  }
+</style>
+```
+
+<div class="solution">
+
+```svelte
+<style>
+  .delete-button {
+    background: red;
+  }
+</style>
+```
+
+</div>
+
+### 7. Lösch Button Platz
+
+#### Aufgabe
+
+Füge wie bei Aufgabe [5](#5-platz-schaffen) Platz um den Lösch Button herum.
+
+#### Hilfestellung
+
+Du kannst die gleiche Klasse wie bei Aufgabe [6](#6-lösch-button-styling)
+
+<div class="solution">
+
+```svelte
+<style>
+  .delete-button {
+    padding: 4px;
+    margin: 4px;
+  }
+</style>
+```
+
+</div>
+
+### 8. Rand um die Bilder hinzufügen
+
+#### Aufgabe
+
+Füge einen Rand um jedes Bild und runde die Ecken ab.
+
+#### Hilfestellung
+
+Hierzu kannst du `border` und `border-radius` erneut benutzen.
+
+<div class="solution">
+
+```svelte
+<style>
+  .image-container {
+    border: 1px solid black;
+    border-radius: 4px;
+  }
+</style>
+```
+
+</div>
+
+### 9. Bilder Grid erstellen
+
+#### Aufgabe
+
+Füge ein Grid um die Bildergalerie hinzu.
+
+#### Hilfestellung
+
+Hierzu musst du die Bilder Galerie in einem `<div>` ummanteln.
+
+Dazu musst du ihm eine Klasse geben und folgende Styles auf dieser Klasse setzen
+
+```svelte
+<style>
+  .image-gallery {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 8px;
+  }
+</style>
+```
+
+<div class="solution">
+
+```svelte
+<style>
+  .image-gallery /* Can change */ {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 8px;
+  }
+</style>
+```
+
+</div>
+
+## Schwere Aufgaben
+
+Wir empfehlen den Chatbot spätestens hier zu gebrauchen!
+
+### 10. Lade-Indikator hinzufügen
 
 #### Aufgabe
 
@@ -303,7 +476,7 @@ Der Bereich innerhalb von `<script>` ist JavaScript, während alles außerhalb H
 
 </div>
 
-### 6. Dynamischer Alt Text hinzufügen
+### 11. Dynamischer Alt Text hinzufügen
 
 #### Aufgabe
 
@@ -341,470 +514,6 @@ Indem man `{` und `}` in einem Attribut verwendet, kann man Variablen einfügen.
 
   <!-- Fehlermeldung -->
 </div>
-```
-
-</div>
-
-## Mittlere Aufgaben
-
-Wir empfehlen den Chatbot spätestens hier zu gebrauchen!
-
-### 7. Bilder Galerie erstellen
-
-#### Aufgabe
-
-Speichere jedes erzeugte Bild zusammen mit dem dazugehörigen Textbefehl und zeige anschließend alle Bilder aus der Liste an.
-
-#### Hilfestellung
-
-Wenn du eine Liste in Svelte vorliegen hast, kannst du diese so durchlaufen, dass wir jedes Element der Liste – in unserem Fall ein Bild – auf dem Bildschirm anzeigen.
-
-```svelte
-<script>
-  let imageList = ["url1", "url2", "url3"];
-</script>
-
-{#each imageList as url}
-  <img src={url} />
-{/each}
-```
-
-Beachte dabei, dass die geschweiften Klammern um `each` genauso wie bei `{#if} ... {/if}` verwendet werden.
-
-Das erste Element nach `each` repräsentiert die Liste, die wir durchgehen wollen. Dann folgt ein `as` und eine neue Variable, die wir hier `url` nennen. Innerhalb des `each`-Blocks können wir die Variable `url` verwenden, um Svelte jedes Bild in einem `<img>`-Tag anzeigen zu lassen.
-
-Eine `addImage`-Funktion haben wir dir bereits zur Verfügung gestellt, um Bilder einer bestehenden Liste hinzuzufügen. So kannst du die `addImage`-Funktion verwenden:
-
-```svelte
-<script>
-   // Das wäre dein Textbefehl, den du immer wieder ändern kannst.
-  let prompt = "Ein Baum auf einer Wiese im Herbst.";
-   // Das wäre die URL, die du von der Generierungsfunktion erhältst.
-  let url = "url1";
-
-  // So rufst du die addImage-Funktion auf.
-  addImage(url, prompt);
-</script>
-```
-
-Diese spezielle Liste haben wir dir ebenfalls bereits bereitgestellt und du kannst sie folgendermaßen nutzen:
-
-```svelte
-<!-- $images ist unsere Liste, in der jede URL eines Bildes und der dazugehörige Textbefehl gespeichert ist. -->
-{#each $images as { url, prompt }}
-  <img src={url} alt={prompt} />
-{/each}
-```
-
-<div class="solution">
-
-```svelte
-<script lang="ts">
-  import { generate, error } from "./openai";
-  import { addImage, images, removeImage } from "./gallery";
-
-  let source = "";
-
-  let prompt = "Eine siamesische Katze mit blauen Augen.";
-
-  let isGenerating = false;
-
-  const handleGenerate = async () => {
-    if (isGenerating) return;
-
-    isGenerating = true;
-
-    const url = await generate(prompt);
-    addImage(url, prompt);
-
-    isGenerating = false;
-  };
-</script>
-
-<div class="app">
-  <!-- Form & Loading Indikator -->
-
-  {#each $images as { url, prompt }}
-    <img
-      class="image"
-      src={url}
-      alt={prompt}
-    />
-  {/each}
-
-  <!-- Fehlermeldung -->
-</div>
-```
-
-</div>
-
-### 8. Styling der Galerie
-
-#### Aufgabe
-
-Passe das Design der Bildergalerie an, sodass zwei Bilder nebeneinander und in derselben Größe dargestellt werden.
-
-#### Hilfestellung
-
-Wenn du mehrere Elemente in einem Raster darstellen möchtest, kannst du es wie folgt machen:
-
-```svelte
-<div class="grid">
-  <p>Paragraph 1</p>
-  <p>Paragraph 2</p>
-  <p>Paragraph 3</p>
-  <p>Paragraph 4</p>
-  <p>Paragraph 5</p>
-</div>
-
-<style>
-  .grid {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 8px;
-    overflow-y: scroll;
-  }
-</style>
-```
-
-Mit diesem CSS werden die fünf Absätze so angeordnet, dass immer zwei nebeneinanderstehen und einen Abstand von 8 Pixel zueinander haben. Das "1fr 1fr" stellt sicher, dass das erste Element im Raster genauso viel Platz einnimmt wie das zweite Element. Die Einstellung `overflow-y: scroll` sorgt dafür, dass Inhalte, die in der Höhe über den Rand des Rasters hinausgehen, verborgen bleiben und durch Scrollen mit dem Mausrad oder Trackpad zugänglich gemacht werden können.
-
-Vergiss nicht, den Bildern die feste Breite zu entziehen und sie stattdessen vom Raster bestimmen zu lassen.
-
-<details>
-<summary>TIPP</summary>
-
-Hier findest du das Styling für die Bilder.
-
-```svelte
-<style>
-  .image {
-    width: 768px;
-    border: 3px solid black;
-    border-radius: 8px;
-  }
-</style>
-```
-
-</details>
-
-<div class="solution">
-
-```svelte
-<div class="app">
-  <!-- Formular & Laden -->
-
-  <div class="image-grid">
-    {#each $images as { url, prompt }}
-      <img
-        class="image"
-        src={url}
-        alt={prompt}
-      />
-    {/each}
-  </div>
-
-  <!-- Fehlermeldung -->
-</div>
-
-<style>
-  /* Andere Styles */
-
-  .image {
-    border: 3px solid black;
-    border-radius: 8px;
-  }
-
-  .image-grid {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 8px;
-    overflow-y: scroll;
-  }
-</style>
-```
-
-</div>
-
-### 9. Mehrere Bilder auf einmal
-
-#### Aufgabe
-
-Ergänze ein zusätzliches Eingabefeld, mit dem die Menge an Bildern festgelegt werden kann, die bei jedem Klick auf den Button generiert werden sollen.
-
-#### Hilfestellung
-
-Die `generate`-Funktion, die wir für die Erstellung der Bilder nutzen, akzeptiert einen zusätzlichen Parameter, der die Anzahl der zu generierenden Bilder angibt. Hier ein Beispiel, wie die `generate`-Funktion mit dem neuen Parameter genutzt wird:
-
-```svelte
-<script>
-  let amount = 4;
-  let prompt = "Ein Baum auf einer Wiese im Herbst.";
-
-  let urls = await generate(prompt, amount);
-</script>
-```
-
-Die erzeugte Liste von URLs kann dann, wie zuvor, mit der `addImage`-Methode zur Liste der Bilder hinzugefügt werden:
-
-```svelte
-<script>
-  addImage(urls, prompt);
-</script>
-```
-
-Nachfolgend ein Beispiel für ein Eingabefeld in Svelte, das erlaubt, diese Anzahl zu bestimmen:
-
-```svelte
-<script>
-  let amount = 1;
-</script>
-
-<input type="number" min="1" max="4" bind:value={amount}/>
-```
-
-Im `<script>`-Bereich definieren wir eine Variable namens `amount`. Danach fügen wir einen `<input>` ein, der vom Typ `number` ist, was bedeutet, dass man dort keine Buchstaben eingeben kann. Direkt danach legen wir fest, dass das Eingabefeld Werte zwischen mindestens 1 und höchstens 4 akzeptieren soll. Zum Schluss binden wir die Variable `amount` an das `value`-Attribut des Eingabefelds, sodass sich die Variable automatisch aktualisiert, wenn du die Zahl im Eingabefeld änderst.
-
-<div class="solution">
-
-```svelte
-<script lang="ts">
-  import { generate, error } from "./openai";
-  import { addImage, images, removeImage } from "./gallery";
-
-  let source = "";
-
-  let prompt = "Eine siamesische Katze mit blauen Augen.";
-
-  let isGenerating = false;
-
-  let amount = 1;
-
-  const handleGenerate = async () => {
-    if (isGenerating) return;
-
-    isGenerating = true;
-
-    const url = await generate(prompt, amount);
-    addImage(url, prompt);
-
-    isGenerating = false;
-  };
-</script>
-
-<div class="app">
-  <form
-    class="form"
-    on:submit|preventDefault
-  >
-    <!-- Eingabefeld für die Bilderanzahl -->
-    <input
-      type="number"
-      min="1"
-      max="4"
-      bind:value={amount}
-    />
-    <!-- Button zum Generieren -->
-  </form>
-
-  <!-- Anzeigen von Laden, Bildern & Fehlermeldungen -->
-</div>
-```
-
-</div>
-
-### 10. Input Styling
-
-#### Aufgabe
-
-Mach das neu erstellte Input-Feld optisch ansprechender, indem du etwas Randabstand und Innenabstand hinzufügst, damit es nicht mehr so platzlos aussieht.
-
-#### Hilfestellung
-
-Randabstand (Margin) und Innenabstand (Padding) dienen beide dazu, zusätzlichen Platz um ein Element herum zu schaffen.
-
-Um das besser zu veranschaulichen, sieh dir dieses Bild an:
-
-<img src="assets/padding-border-margin.png" alt="Padding, Border & Margin"/>
-
-Betrachten wir zunächst die orangefarbene Fläche - das ist der Inhalt, z.B. bei einem `<p>`-Tag wäre das der Text.
-
-Direkt um den Inhalt herum befindet sich eine gelbe Zone, das Padding. Diese Zone liegt zwischen dem Rahmen (Border) und dem Inhalt. Wenn du die Hintergrundfarbe eines Elements festlegst, wird sowohl der Inhalt als auch der Innenabstand (Padding) beeinflusst.
-
-Die blauen Linien stellen den Rahmen (Border) dar und grenzen unser Element vom Rest der Webseite ab. Diesen Rahmen hast du eventuell bereits angepasst.
-
-Die weiße Fläche, das Margin, definiert den Mindestabstand zum nächsten Element.
-
-So wendest du Padding und Margin an:
-
-```svelte
-<div class="container">
-  <!-- Inhalt -->
-</div>
-
-<style>
-  .container {
-    padding: 8px; /* Anpassung möglich */
-    margin: 8px; /* Anpassung möglich */
-  }
-</style>
-```
-
-<div class="solution">
-
-```svelte
-<div class="app">
-  <form
-    class="form"
-    on:submit|preventDefault
-  >
-    <!-- Eingabefeld für den Betrag -->
-    <input
-      class="amount"
-      type="number"
-      min="1"
-      max="4"
-      bind:value={amount}
-    />
-    <!-- Generiere-Button -->
-  </form>
-
-  <!-- Laden, Bilder & Fehlermeldungen -->
-</div>
-
-<style>
-  /* Weitere Stile */
-
-  .amount {
-    padding: 8px; /* Anpassung möglich */
-    margin: 8px; /* Anpassung möglich */
-  }
-</style>
-```
-
-</div>
-
-## Schwere Aufgaben
-
-### 11. Einzelne Bilder löschen
-
-#### Aufgabe
-
-Erstelle für jedes Bild einen Button, der das entsprechende Bild aus der Liste entfernt.
-
-#### Hilfestellung
-
-Wir haben bereits Attribute wie `alt` für das `<img>`-Element oder `bind:value` für das `<input>`-Element kennengelernt. `alt` und `value` sind die eigentlichen Attribute, während `bind:` das `value` an eine Variable bindet. Zusätzlich gibt es Modifikatoren, und einer davon ist `on:` für unsere Buttons. `on:click`, nimmt beispielsweise eine Funktion entgegen, die ausgeführt wird, wenn der Button geklickt wird.
-
-Ein Beispiel dazu:
-
-```svelte
-<script>
-  const handleClick = () => {
-    // Code, der ausgeführt wird, wenn der Button geklickt wird.
-  }
-</script>
-
-<button on:click={handleClick}>
-  Button
-</button>
-```
-
-Fügst du jetzt einen Button unter dem Bild ein, so wirst du feststellen, dass es einen Bild und daneben ein hellgrau unterlegtes Viereck gibt. Dieses Viereck ist unser Button. Nun möchten wir den Button in die obere linke Ecke des Bildes setzen.
-
-In CSS gibt es ein `position` Attribut. Die Werte, die wir verwenden werden, sind `relative` und `absolute`. Diese alleine bewirken noch nichts; man muss zusätzliche Attribute einfügen, wie `top` und `left`. Bei `position: relative` beziehen sich `top` und `left` auf das umgebende Element, was bedeutet, dass `top` und `left` bei `0` in der oberen linken Ecke des Elements wären, vorausgesetzt kein anderes Element stört.
-
-Bei `position: absolute` ist es ähnlich, mit dem Unterschied, dass andere Elemente ignoriert werden und die Positionierung vom nächsten relativ positionierten Element ausgeht. Das ist meist die ganze Webseite.
-
-Indem wir einen `<div>` um das Bild und den Button legen und diesen relativ positionieren, können wir dem Button eine absolute Position geben und `top` sowie `left` auf `0` setzen. Das Ergebnis ist, dass die Bilder wie zuvor im zweispaltigen Raster aufgereiht bleiben und die Buttons oben links an den Bildern anhaften.
-
-Siehe hier ein Beispiel zum Veranschaulichen:
-
-```svelte
-<div class="image-container">
-  <img src="some_url"/>
-  <button class="delete-button">Löschen</button>
-</div>
-
-<style>
-  .image-container {
-    position: relative;
-  }
-
-  .delete-button {
-    position: absolute;
-    top: 0;
-    left: 0;
-  }
-</style>
-```
-
-Nun weißt du, wie du einen Button erstellen, ihn positionieren und Funktionen auf Knopfdruck ausführen kannst. Aber wir müssen noch klären, welche Funktion ausgeführt werden soll.
-
-Wir stellen dir die Funktion `removeImage` bereit. Diese nimmt eine URL entgegen und entfernt das entsprechende Bild aus der Liste. So kannst du sie verwenden:
-
-```svelte
-<script>
-  let url = "url1";
-
-  removeImage(url);
-</script>
-```
-
-<details>
-<summary>TIPP</summary>
-
-Falls du nicht sicher bist, wie du die Funktion einsetzen kannst, sieh dir dieses Beispiel für das `on:click` Attribut an:
-
-```svelte
-<script>
-  let url = "url1";
-</script>
-
-<button on:click={() => removeImage(url)}>
-  Löschen
-</button>
-```
-
-</details>
-
-<div class="solution">
-
-```svelte
-
-<div class="app">
-  <!-- Titel, Formular & Ladeanzeige -->
-
-  <div class="image-grid">
-    {#each $images as { url, prompt }}
-      <div class="image-container">
-        <img
-          class="image"
-          src={url}
-          alt={prompt}
-        />
-        <button
-          class="delete-button"
-          on:click={() => removeImage(url)}>Löschen</button
-        >
-      </div>
-    {/each}
-  </div>
-
-  <!-- Fehlermeldung -->
-</div>
-
-<style>
-  .image-container {
-    position: relative;
-  }
-
-  .delete-button {
-    position: absolute;
-    top: 0;
-    left: 0;
-  }
-</style>
 ```
 
 </div>

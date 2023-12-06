@@ -1,6 +1,8 @@
 import { writable } from "svelte/store";
 import OpenAI from "openai";
 import { OPENAI_API_KEY, OPENAI_ORGANIZATION } from "./env";
+import { loading } from "./stores";
+import { addImage } from "./gallery";
 
 export const error = writable<any>(null);
 
@@ -14,36 +16,24 @@ const model = "dall-e-3";
 const quality = "hd";
 const size = 1024;
 
-export async function generate(prompt: string, amount?: 1): Promise<string>;
-export async function generate(
-  prompt: string,
-  amount?: number
-): Promise<string[]>;
-export async function generate(prompt: string, amount: number = 1) {
-  if (amount < 1) amount = 1;
-  if (amount > 4) amount = 4;
+export async function generate(prompt: string) {
+  if (!prompt) return;
 
-  const isOne = amount === 1;
-
-  if (!prompt) return isOne ? "" : [];
+  loading.set(true);
 
   try {
     const response = await openai.images.generate({
       prompt,
       model,
       quality,
-      n: amount,
       size: `${size}x${size}`,
     });
-    return (
-      (isOne
-        ? response.data[0].url
-        : response.data.map(({ url }) => url || "").filter(Boolean)) ||
-      (isOne ? "" : [])
-    );
+
+    if (response.data[0].url) addImage(response.data[0].url, prompt);
   } catch (e) {
     error.set(e);
   }
 
-  return isOne ? "" : [];
+  loading.set(false);
+  return;
 }

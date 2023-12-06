@@ -163,15 +163,133 @@ class="sourceCode css"><code class="sourceCode css"><span id="cb10-1"><a href="#
   }
 &lt;/style&gt;</code></pre>
 </div>
-<h3 id="lade-indikator-hinzufügen">5. Lade-Indikator hinzufügen</h3>
+<h3 id="platz-schaffen">5. Platz schaffen</h3>
 <h4 id="aufgabe-4">Aufgabe</h4>
+<p>Füge Margin und Padding dem Input und dem Button hinzu.</p>
+<h4 id="hilfestellung-4">Hilfestellung</h4>
+<p>Du kannst die gleichen Klassen vor bei Aufgabe <a
+href="#4-input--button-styling">4</a> verwenden.</p>
+<p>Randabstand (Margin) und Innenabstand (Padding) dienen beide dazu,
+zusätzlichen Platz um ein Element herum zu schaffen.</p>
+<p>Um das besser zu veranschaulichen, sieh dir dieses Bild an:</p>
+<p><img src="assets/padding-border-margin.png" alt="Padding, Border & Margin"/></p>
+<p>Betrachten wir zunächst die orangefarbene Fläche - das ist der
+Inhalt, z.B. bei einem <code>&lt;p&gt;</code>-Tag wäre das der Text.</p>
+<p>Direkt um den Inhalt herum befindet sich eine gelbe Zone, das
+Padding. Diese Zone liegt zwischen dem Rahmen (Border) und dem Inhalt.
+Wenn du die Hintergrundfarbe eines Elements festlegst, wird sowohl der
+Inhalt als auch der Innenabstand (Padding) beeinflusst.</p>
+<p>Die blauen Linien stellen den Rahmen (Border) dar und grenzen unser
+Element vom Rest der Webseite ab. Diesen Rahmen hast du eventuell
+bereits angepasst.</p>
+<p>Die weiße Fläche, das Margin, definiert den Mindestabstand zum
+nächsten Element.</p>
+<p>So wendest du Padding und Margin an:</p>
+<pre class="svelte"><code>&lt;div class=&quot;container&quot;&gt;
+  &lt;!-- Inhalt --&gt;
+&lt;/div&gt;
+
+&lt;style&gt;
+  .container {
+    padding: 8px; /* Anpassung möglich */
+    margin: 8px; /* Anpassung möglich */
+  }
+&lt;/style&gt;</code></pre>
+<div class="solution">
+<pre class="svelte"><code>&lt;style&gt;
+  .prompt-input {
+    margin: 4px;
+    padding: 4px;
+  }
+
+  .submit-button {
+    margin: 4px;
+    padding: 4px;
+  }
+&lt;/style&gt;</code></pre>
+</div>
+<h3 id="lösch-button-styling">6. Lösch Button Styling</h3>
+<h4 id="aufgabe-5">Aufgabe</h4>
+<p>Setze den Hintergrund des Lösch Buttons auf rot.</p>
+<h4 id="hilfestellung-5">Hilfestellung</h4>
+<p>Dir wurde bereits eine Klasse zur Verfügung gestellt.</p>
+<pre class="svelte"><code>&lt;style&gt;
+  .delete-button {
+    /* Füge deine Eigenschaften hier ein. */
+  }
+&lt;/style&gt;</code></pre>
+<div class="solution">
+<pre class="svelte"><code>&lt;style&gt;
+  .delete-button {
+    background: red;
+  }
+&lt;/style&gt;</code></pre>
+</div>
+<h3 id="lösch-button-platz">7. Lösch Button Platz</h3>
+<h4 id="aufgabe-6">Aufgabe</h4>
+<p>Füge wie bei Aufgabe <a href="#5-platz-schaffen">5</a> Platz um den
+Lösch Button herum.</p>
+<h4 id="hilfestellung-6">Hilfestellung</h4>
+<p>Du kannst die gleiche Klasse wie bei Aufgabe <a
+href="#6-lösch-button-styling">6</a></p>
+<div class="solution">
+<pre class="svelte"><code>&lt;style&gt;
+  .delete-button {
+    padding: 4px;
+    margin: 4px;
+  }
+&lt;/style&gt;</code></pre>
+</div>
+<h3 id="rand-um-die-bilder-hinzufügen">8. Rand um die Bilder
+hinzufügen</h3>
+<h4 id="aufgabe-7">Aufgabe</h4>
+<p>Füge einen Rand um jedes Bild und runde die Ecken ab.</p>
+<h4 id="hilfestellung-7">Hilfestellung</h4>
+<p>Hierzu kannst du <code>border</code> und <code>border-radius</code>
+erneut benutzen.</p>
+<div class="solution">
+<pre class="svelte"><code>&lt;style&gt;
+  .image-container {
+    border: 1px solid black;
+    border-radius: 4px;
+  }
+&lt;/style&gt;</code></pre>
+</div>
+<h3 id="bilder-grid-erstellen">9. Bilder Grid erstellen</h3>
+<h4 id="aufgabe-8">Aufgabe</h4>
+<p>Füge ein Grid um die Bildergalerie hinzu.</p>
+<h4 id="hilfestellung-8">Hilfestellung</h4>
+<p>Hierzu musst du die Bilder Galerie in einem <code>&lt;div&gt;</code>
+ummanteln.</p>
+<p>Dazu musst du ihm eine Klasse geben und folgende Styles auf dieser
+Klasse setzen</p>
+<pre class="svelte"><code>&lt;style&gt;
+  .image-gallery {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 8px;
+  }
+&lt;/style&gt;</code></pre>
+<div class="solution">
+<pre class="svelte"><code>&lt;style&gt;
+  .image-gallery /* Can change */ {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 8px;
+  }
+&lt;/style&gt;</code></pre>
+</div>
+<h2 id="schwere-aufgaben">Schwere Aufgaben</h2>
+<p>Wir empfehlen den Chatbot spätestens hier zu gebrauchen!</p>
+<h3 id="lade-indikator-hinzufügen">10. Lade-Indikator hinzufügen</h3>
+<h4 id="aufgabe-9">Aufgabe</h4>
 <p>Ein Lade-Indikator wird verwendet, um anzuzeigen, dass etwas gerade
 geladen wird.</p>
 <p>Hier siehst du ein Beispiel dafür:</p>
 <p><img src="assets/loading-indicator.gif" alt="Lade-Indikator" /></p>
 <p>In deinem Fall soll jedoch ein Text eingesetzt werden, um zu
 signalisieren, dass das Bild momentan erstellt wird.</p>
-<h4 id="hilfestellung-4">Hilfestellung</h4>
+<h4 id="hilfestellung-9">Hilfestellung</h4>
 <p>Nutze für diese Aufgabe eine Variable und eine
 <code>if</code>-Bedingung.</p>
 <p>In Svelte könntest du das so umsetzen:</p>
@@ -256,16 +374,16 @@ zugehörigen HTML wiedergibt. Dies erklärt den Begriff
   &lt;!-- Bild &amp; Fehlermeldung --&gt;
 &lt;/div&gt;</code></pre>
 </div>
-<h3 id="dynamischer-alt-text-hinzufügen">6. Dynamischer Alt Text
+<h3 id="dynamischer-alt-text-hinzufügen">11. Dynamischer Alt Text
 hinzufügen</h3>
-<h4 id="aufgabe-5">Aufgabe</h4>
+<h4 id="aufgabe-10">Aufgabe</h4>
 <p>Ein Alt-Text ist bei Bildern im Internet wichtig, falls das Bild
 nicht geladen werden kann oder für Personen mit Sehbehinderungen, die
 auf Deine Webseite zugreifen. Ersteres kann z. B. geschehen, wenn die
 Internetverbindung zu langsam ist oder das Bild aus irgendeinem Grund
 nicht mehr verfügbar ist.</p>
 <p>Setze den Alt-Text des Bildes auf den Text des Prompts.</p>
-<h4 id="hilfestellung-5">Hilfestellung</h4>
+<h4 id="hilfestellung-10">Hilfestellung</h4>
 <p>In Svelte ist es möglich, den Wert einer Variablen dynamisch als
 Attribut in Elemente einzufügen.</p>
 <p>Hier ein Beispiel:</p>
@@ -288,432 +406,5 @@ verwendet, kann man Variablen einfügen.</p>
 
   &lt;!-- Fehlermeldung --&gt;
 &lt;/div&gt;</code></pre>
-</div>
-<h2 id="mittlere-aufgaben">Mittlere Aufgaben</h2>
-<p>Wir empfehlen den Chatbot spätestens hier zu gebrauchen!</p>
-<h3 id="bilder-galerie-erstellen">7. Bilder Galerie erstellen</h3>
-<h4 id="aufgabe-6">Aufgabe</h4>
-<p>Speichere jedes erzeugte Bild zusammen mit dem dazugehörigen
-Textbefehl und zeige anschließend alle Bilder aus der Liste an.</p>
-<h4 id="hilfestellung-6">Hilfestellung</h4>
-<p>Wenn du eine Liste in Svelte vorliegen hast, kannst du diese so
-durchlaufen, dass wir jedes Element der Liste – in unserem Fall ein Bild
-– auf dem Bildschirm anzeigen.</p>
-<pre class="svelte"><code>&lt;script&gt;
-  let imageList = [&quot;url1&quot;, &quot;url2&quot;, &quot;url3&quot;];
-&lt;/script&gt;
-
-{#each imageList as url}
-  &lt;img src={url} /&gt;
-{/each}</code></pre>
-<p>Beachte dabei, dass die geschweiften Klammern um <code>each</code>
-genauso wie bei <code>{#if} ... {/if}</code> verwendet werden.</p>
-<p>Das erste Element nach <code>each</code> repräsentiert die Liste, die
-wir durchgehen wollen. Dann folgt ein <code>as</code> und eine neue
-Variable, die wir hier <code>url</code> nennen. Innerhalb des
-<code>each</code>-Blocks können wir die Variable <code>url</code>
-verwenden, um Svelte jedes Bild in einem <code>&lt;img&gt;</code>-Tag
-anzeigen zu lassen.</p>
-<p>Eine <code>addImage</code>-Funktion haben wir dir bereits zur
-Verfügung gestellt, um Bilder einer bestehenden Liste hinzuzufügen. So
-kannst du die <code>addImage</code>-Funktion verwenden:</p>
-<pre class="svelte"><code>&lt;script&gt;
-   // Das wäre dein Textbefehl, den du immer wieder ändern kannst.
-  let prompt = &quot;Ein Baum auf einer Wiese im Herbst.&quot;;
-   // Das wäre die URL, die du von der Generierungsfunktion erhältst.
-  let url = &quot;url1&quot;;
-
-  // So rufst du die addImage-Funktion auf.
-  addImage(url, prompt);
-&lt;/script&gt;</code></pre>
-<p>Diese spezielle Liste haben wir dir ebenfalls bereits bereitgestellt
-und du kannst sie folgendermaßen nutzen:</p>
-<pre class="svelte"><code>&lt;!-- $images ist unsere Liste, in der jede URL eines Bildes und der dazugehörige Textbefehl gespeichert ist. --&gt;
-{#each $images as { url, prompt }}
-  &lt;img src={url} alt={prompt} /&gt;
-{/each}</code></pre>
-<div class="solution">
-<pre class="svelte"><code>&lt;script lang=&quot;ts&quot;&gt;
-  import { generate, error } from &quot;./openai&quot;;
-  import { addImage, images, removeImage } from &quot;./gallery&quot;;
-
-  let source = &quot;&quot;;
-
-  let prompt = &quot;Eine siamesische Katze mit blauen Augen.&quot;;
-
-  let isGenerating = false;
-
-  const handleGenerate = async () =&gt; {
-    if (isGenerating) return;
-
-    isGenerating = true;
-
-    const url = await generate(prompt);
-    addImage(url, prompt);
-
-    isGenerating = false;
-  };
-&lt;/script&gt;
-
-&lt;div class=&quot;app&quot;&gt;
-  &lt;!-- Form &amp; Loading Indikator --&gt;
-
-  {#each $images as { url, prompt }}
-    &lt;img
-      class=&quot;image&quot;
-      src={url}
-      alt={prompt}
-    /&gt;
-  {/each}
-
-  &lt;!-- Fehlermeldung --&gt;
-&lt;/div&gt;</code></pre>
-</div>
-<h3 id="styling-der-galerie">8. Styling der Galerie</h3>
-<h4 id="aufgabe-7">Aufgabe</h4>
-<p>Passe das Design der Bildergalerie an, sodass zwei Bilder
-nebeneinander und in derselben Größe dargestellt werden.</p>
-<h4 id="hilfestellung-7">Hilfestellung</h4>
-<p>Wenn du mehrere Elemente in einem Raster darstellen möchtest, kannst
-du es wie folgt machen:</p>
-<pre class="svelte"><code>&lt;div class=&quot;grid&quot;&gt;
-  &lt;p&gt;Paragraph 1&lt;/p&gt;
-  &lt;p&gt;Paragraph 2&lt;/p&gt;
-  &lt;p&gt;Paragraph 3&lt;/p&gt;
-  &lt;p&gt;Paragraph 4&lt;/p&gt;
-  &lt;p&gt;Paragraph 5&lt;/p&gt;
-&lt;/div&gt;
-
-&lt;style&gt;
-  .grid {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 8px;
-    overflow-y: scroll;
-  }
-&lt;/style&gt;</code></pre>
-<p>Mit diesem CSS werden die fünf Absätze so angeordnet, dass immer zwei
-nebeneinanderstehen und einen Abstand von 8 Pixel zueinander haben. Das
-“1fr 1fr” stellt sicher, dass das erste Element im Raster genauso viel
-Platz einnimmt wie das zweite Element. Die Einstellung
-<code>overflow-y: scroll</code> sorgt dafür, dass Inhalte, die in der
-Höhe über den Rand des Rasters hinausgehen, verborgen bleiben und durch
-Scrollen mit dem Mausrad oder Trackpad zugänglich gemacht werden
-können.</p>
-<p>Vergiss nicht, den Bildern die feste Breite zu entziehen und sie
-stattdessen vom Raster bestimmen zu lassen.</p>
-<details>
-<summary>
-TIPP
-</summary>
-<p>Hier findest du das Styling für die Bilder.</p>
-<pre class="svelte"><code>&lt;style&gt;
-  .image {
-    width: 768px;
-    border: 3px solid black;
-    border-radius: 8px;
-  }
-&lt;/style&gt;</code></pre>
-</details>
-<div class="solution">
-<pre class="svelte"><code>&lt;div class=&quot;app&quot;&gt;
-  &lt;!-- Formular &amp; Laden --&gt;
-
-  &lt;div class=&quot;image-grid&quot;&gt;
-    {#each $images as { url, prompt }}
-      &lt;img
-        class=&quot;image&quot;
-        src={url}
-        alt={prompt}
-      /&gt;
-    {/each}
-  &lt;/div&gt;
-
-  &lt;!-- Fehlermeldung --&gt;
-&lt;/div&gt;
-
-&lt;style&gt;
-  /* Andere Styles */
-
-  .image {
-    border: 3px solid black;
-    border-radius: 8px;
-  }
-
-  .image-grid {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 8px;
-    overflow-y: scroll;
-  }
-&lt;/style&gt;</code></pre>
-</div>
-<h3 id="mehrere-bilder-auf-einmal">9. Mehrere Bilder auf einmal</h3>
-<h4 id="aufgabe-8">Aufgabe</h4>
-<p>Ergänze ein zusätzliches Eingabefeld, mit dem die Menge an Bildern
-festgelegt werden kann, die bei jedem Klick auf den Button generiert
-werden sollen.</p>
-<h4 id="hilfestellung-8">Hilfestellung</h4>
-<p>Die <code>generate</code>-Funktion, die wir für die Erstellung der
-Bilder nutzen, akzeptiert einen zusätzlichen Parameter, der die Anzahl
-der zu generierenden Bilder angibt. Hier ein Beispiel, wie die
-<code>generate</code>-Funktion mit dem neuen Parameter genutzt wird:</p>
-<pre class="svelte"><code>&lt;script&gt;
-  let amount = 4;
-  let prompt = &quot;Ein Baum auf einer Wiese im Herbst.&quot;;
-
-  let urls = await generate(prompt, amount);
-&lt;/script&gt;</code></pre>
-<p>Die erzeugte Liste von URLs kann dann, wie zuvor, mit der
-<code>addImage</code>-Methode zur Liste der Bilder hinzugefügt
-werden:</p>
-<pre class="svelte"><code>&lt;script&gt;
-  addImage(urls, prompt);
-&lt;/script&gt;</code></pre>
-<p>Nachfolgend ein Beispiel für ein Eingabefeld in Svelte, das erlaubt,
-diese Anzahl zu bestimmen:</p>
-<pre class="svelte"><code>&lt;script&gt;
-  let amount = 1;
-&lt;/script&gt;
-
-&lt;input type=&quot;number&quot; min=&quot;1&quot; max=&quot;4&quot; bind:value={amount}/&gt;</code></pre>
-<p>Im <code>&lt;script&gt;</code>-Bereich definieren wir eine Variable
-namens <code>amount</code>. Danach fügen wir einen
-<code>&lt;input&gt;</code> ein, der vom Typ <code>number</code> ist, was
-bedeutet, dass man dort keine Buchstaben eingeben kann. Direkt danach
-legen wir fest, dass das Eingabefeld Werte zwischen mindestens 1 und
-höchstens 4 akzeptieren soll. Zum Schluss binden wir die Variable
-<code>amount</code> an das <code>value</code>-Attribut des Eingabefelds,
-sodass sich die Variable automatisch aktualisiert, wenn du die Zahl im
-Eingabefeld änderst.</p>
-<div class="solution">
-<pre class="svelte"><code>&lt;script lang=&quot;ts&quot;&gt;
-  import { generate, error } from &quot;./openai&quot;;
-  import { addImage, images, removeImage } from &quot;./gallery&quot;;
-
-  let source = &quot;&quot;;
-
-  let prompt = &quot;Eine siamesische Katze mit blauen Augen.&quot;;
-
-  let isGenerating = false;
-
-  let amount = 1;
-
-  const handleGenerate = async () =&gt; {
-    if (isGenerating) return;
-
-    isGenerating = true;
-
-    const url = await generate(prompt, amount);
-    addImage(url, prompt);
-
-    isGenerating = false;
-  };
-&lt;/script&gt;
-
-&lt;div class=&quot;app&quot;&gt;
-  &lt;form
-    class=&quot;form&quot;
-    on:submit|preventDefault
-  &gt;
-    &lt;!-- Eingabefeld für die Bilderanzahl --&gt;
-    &lt;input
-      type=&quot;number&quot;
-      min=&quot;1&quot;
-      max=&quot;4&quot;
-      bind:value={amount}
-    /&gt;
-    &lt;!-- Button zum Generieren --&gt;
-  &lt;/form&gt;
-
-  &lt;!-- Anzeigen von Laden, Bildern &amp; Fehlermeldungen --&gt;
-&lt;/div&gt;</code></pre>
-</div>
-<h3 id="input-styling">10. Input Styling</h3>
-<h4 id="aufgabe-9">Aufgabe</h4>
-<p>Mach das neu erstellte Input-Feld optisch ansprechender, indem du
-etwas Randabstand und Innenabstand hinzufügst, damit es nicht mehr so
-platzlos aussieht.</p>
-<h4 id="hilfestellung-9">Hilfestellung</h4>
-<p>Randabstand (Margin) und Innenabstand (Padding) dienen beide dazu,
-zusätzlichen Platz um ein Element herum zu schaffen.</p>
-<p>Um das besser zu veranschaulichen, sieh dir dieses Bild an:</p>
-<p><img src="assets/padding-border-margin.png" alt="Padding, Border & Margin"/></p>
-<p>Betrachten wir zunächst die orangefarbene Fläche - das ist der
-Inhalt, z.B. bei einem <code>&lt;p&gt;</code>-Tag wäre das der Text.</p>
-<p>Direkt um den Inhalt herum befindet sich eine gelbe Zone, das
-Padding. Diese Zone liegt zwischen dem Rahmen (Border) und dem Inhalt.
-Wenn du die Hintergrundfarbe eines Elements festlegst, wird sowohl der
-Inhalt als auch der Innenabstand (Padding) beeinflusst.</p>
-<p>Die blauen Linien stellen den Rahmen (Border) dar und grenzen unser
-Element vom Rest der Webseite ab. Diesen Rahmen hast du eventuell
-bereits angepasst.</p>
-<p>Die weiße Fläche, das Margin, definiert den Mindestabstand zum
-nächsten Element.</p>
-<p>So wendest du Padding und Margin an:</p>
-<pre class="svelte"><code>&lt;div class=&quot;container&quot;&gt;
-  &lt;!-- Inhalt --&gt;
-&lt;/div&gt;
-
-&lt;style&gt;
-  .container {
-    padding: 8px; /* Anpassung möglich */
-    margin: 8px; /* Anpassung möglich */
-  }
-&lt;/style&gt;</code></pre>
-<div class="solution">
-<pre class="svelte"><code>&lt;div class=&quot;app&quot;&gt;
-  &lt;form
-    class=&quot;form&quot;
-    on:submit|preventDefault
-  &gt;
-    &lt;!-- Eingabefeld für den Betrag --&gt;
-    &lt;input
-      class=&quot;amount&quot;
-      type=&quot;number&quot;
-      min=&quot;1&quot;
-      max=&quot;4&quot;
-      bind:value={amount}
-    /&gt;
-    &lt;!-- Generiere-Button --&gt;
-  &lt;/form&gt;
-
-  &lt;!-- Laden, Bilder &amp; Fehlermeldungen --&gt;
-&lt;/div&gt;
-
-&lt;style&gt;
-  /* Weitere Stile */
-
-  .amount {
-    padding: 8px; /* Anpassung möglich */
-    margin: 8px; /* Anpassung möglich */
-  }
-&lt;/style&gt;</code></pre>
-</div>
-<h2 id="schwere-aufgaben">Schwere Aufgaben</h2>
-<h3 id="einzelne-bilder-löschen">11. Einzelne Bilder löschen</h3>
-<h4 id="aufgabe-10">Aufgabe</h4>
-<p>Erstelle für jedes Bild einen Button, der das entsprechende Bild aus
-der Liste entfernt.</p>
-<h4 id="hilfestellung-10">Hilfestellung</h4>
-<p>Wir haben bereits Attribute wie <code>alt</code> für das
-<code>&lt;img&gt;</code>-Element oder <code>bind:value</code> für das
-<code>&lt;input&gt;</code>-Element kennengelernt. <code>alt</code> und
-<code>value</code> sind die eigentlichen Attribute, während
-<code>bind:</code> das <code>value</code> an eine Variable bindet.
-Zusätzlich gibt es Modifikatoren, und einer davon ist <code>on:</code>
-für unsere Buttons. <code>on:click</code>, nimmt beispielsweise eine
-Funktion entgegen, die ausgeführt wird, wenn der Button geklickt
-wird.</p>
-<p>Ein Beispiel dazu:</p>
-<pre class="svelte"><code>&lt;script&gt;
-  const handleClick = () =&gt; {
-    // Code, der ausgeführt wird, wenn der Button geklickt wird.
-  }
-&lt;/script&gt;
-
-&lt;button on:click={handleClick}&gt;
-  Button
-&lt;/button&gt;</code></pre>
-<p>Fügst du jetzt einen Button unter dem Bild ein, so wirst du
-feststellen, dass es einen Bild und daneben ein hellgrau unterlegtes
-Viereck gibt. Dieses Viereck ist unser Button. Nun möchten wir den
-Button in die obere linke Ecke des Bildes setzen.</p>
-<p>In CSS gibt es ein <code>position</code> Attribut. Die Werte, die wir
-verwenden werden, sind <code>relative</code> und <code>absolute</code>.
-Diese alleine bewirken noch nichts; man muss zusätzliche Attribute
-einfügen, wie <code>top</code> und <code>left</code>. Bei
-<code>position: relative</code> beziehen sich <code>top</code> und
-<code>left</code> auf das umgebende Element, was bedeutet, dass
-<code>top</code> und <code>left</code> bei <code>0</code> in der oberen
-linken Ecke des Elements wären, vorausgesetzt kein anderes Element
-stört.</p>
-<p>Bei <code>position: absolute</code> ist es ähnlich, mit dem
-Unterschied, dass andere Elemente ignoriert werden und die
-Positionierung vom nächsten relativ positionierten Element ausgeht. Das
-ist meist die ganze Webseite.</p>
-<p>Indem wir einen <code>&lt;div&gt;</code> um das Bild und den Button
-legen und diesen relativ positionieren, können wir dem Button eine
-absolute Position geben und <code>top</code> sowie <code>left</code> auf
-<code>0</code> setzen. Das Ergebnis ist, dass die Bilder wie zuvor im
-zweispaltigen Raster aufgereiht bleiben und die Buttons oben links an
-den Bildern anhaften.</p>
-<p>Siehe hier ein Beispiel zum Veranschaulichen:</p>
-<pre class="svelte"><code>&lt;div class=&quot;image-container&quot;&gt;
-  &lt;img src=&quot;some_url&quot;/&gt;
-  &lt;button class=&quot;delete-button&quot;&gt;Löschen&lt;/button&gt;
-&lt;/div&gt;
-
-&lt;style&gt;
-  .image-container {
-    position: relative;
-  }
-
-  .delete-button {
-    position: absolute;
-    top: 0;
-    left: 0;
-  }
-&lt;/style&gt;</code></pre>
-<p>Nun weißt du, wie du einen Button erstellen, ihn positionieren und
-Funktionen auf Knopfdruck ausführen kannst. Aber wir müssen noch klären,
-welche Funktion ausgeführt werden soll.</p>
-<p>Wir stellen dir die Funktion <code>removeImage</code> bereit. Diese
-nimmt eine URL entgegen und entfernt das entsprechende Bild aus der
-Liste. So kannst du sie verwenden:</p>
-<pre class="svelte"><code>&lt;script&gt;
-  let url = &quot;url1&quot;;
-
-  removeImage(url);
-&lt;/script&gt;</code></pre>
-<details>
-<summary>
-TIPP
-</summary>
-<p>Falls du nicht sicher bist, wie du die Funktion einsetzen kannst,
-sieh dir dieses Beispiel für das <code>on:click</code> Attribut an:</p>
-<pre class="svelte"><code>&lt;script&gt;
-  let url = &quot;url1&quot;;
-&lt;/script&gt;
-
-&lt;button on:click={() =&gt; removeImage(url)}&gt;
-  Löschen
-&lt;/button&gt;</code></pre>
-</details>
-<div class="solution">
-<pre class="svelte"><code>
-&lt;div class=&quot;app&quot;&gt;
-  &lt;!-- Titel, Formular &amp; Ladeanzeige --&gt;
-
-  &lt;div class=&quot;image-grid&quot;&gt;
-    {#each $images as { url, prompt }}
-      &lt;div class=&quot;image-container&quot;&gt;
-        &lt;img
-          class=&quot;image&quot;
-          src={url}
-          alt={prompt}
-        /&gt;
-        &lt;button
-          class=&quot;delete-button&quot;
-          on:click={() =&gt; removeImage(url)}&gt;Löschen&lt;/button
-        &gt;
-      &lt;/div&gt;
-    {/each}
-  &lt;/div&gt;
-
-  &lt;!-- Fehlermeldung --&gt;
-&lt;/div&gt;
-
-&lt;style&gt;
-  .image-container {
-    position: relative;
-  }
-
-  .delete-button {
-    position: absolute;
-    top: 0;
-    left: 0;
-  }
-&lt;/style&gt;</code></pre>
 </div>
 `;export default TASKS;
