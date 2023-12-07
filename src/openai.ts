@@ -17,7 +17,11 @@ const quality = "hd";
 const size = 1024;
 
 export async function generate(prompt: string) {
-  if (!prompt) return;
+  const loadingState = await new Promise((resolve) =>
+    loading.subscribe((loading) => resolve(loading))
+  );
+
+  if (!loadingState) return;
 
   loading.set(true);
 
