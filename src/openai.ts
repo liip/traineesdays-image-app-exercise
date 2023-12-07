@@ -21,7 +21,7 @@ export async function generate(prompt: string) {
     loading.subscribe((loading) => resolve(loading))
   );
 
-  if (!loadingState) return;
+  if (loadingState) return;
 
   loading.set(true);
 
