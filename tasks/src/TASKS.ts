@@ -279,8 +279,6 @@ Klasse setzen</p>
   }
 &lt;/style&gt;</code></pre>
 </div>
-<h2 id="schwere-aufgaben">Schwere Aufgaben</h2>
-<p>Wir empfehlen den Chatbot spätestens hier zu gebrauchen!</p>
 <h3 id="lade-indikator-hinzufügen">10. Lade-Indikator hinzufügen</h3>
 <h4 id="aufgabe-9">Aufgabe</h4>
 <p>Ein Lade-Indikator wird verwendet, um anzuzeigen, dass etwas gerade
@@ -292,88 +290,26 @@ signalisieren, dass das Bild momentan erstellt wird.</p>
 <h4 id="hilfestellung-9">Hilfestellung</h4>
 <p>Nutze für diese Aufgabe eine Variable und eine
 <code>if</code>-Bedingung.</p>
-<p>In Svelte könntest du das so umsetzen:</p>
-<pre class="svelte"><code>&lt;script&gt;
-  let loading = false;
-
-  const generate = () =&gt; {
-    if (loading) {
-      return;
-    }
-
-    loading = true;
-
-    // Hier den restlichen Code einfügen
-
-    loading = false;
-  }
-&lt;/script&gt;
-
-{#if loading}
-  &lt;p&gt;Wird geladen...&lt;/p&gt;
-{/if}
-
-&lt;button on:click={generate}&gt;
-  Bild erstellen
-&lt;/button&gt;</code></pre>
-<p>Anfänglich wird die Variable <code>loading</code> auf
-<code>false</code> gesetzt, was bedeutet, dass aktuell nichts geladen
-wird.</p>
-<p>Innerhalb der <code>generate</code>-Funktion wird dieser Wert zu
-Beginn auf <code>true</code> geändert, um den Ladevorgang anzuzeigen.
-Sobald der Prozess abgeschlossen ist, setzen wir <code>loading</code>
-zurück auf <code>false</code>. Zudem prüfen wir zu Beginn der Funktion,
-ob <code>loading</code> bereits <code>true</code> ist, um die Funktion
-gegebenenfalls nicht erneut auszuführen.</p>
-<p>Die <code>generate</code>-Funktion wird aktiviert, wenn der Nutzer
-auf den Button klickt. Mit <code>on:click</code> legen wir fest, dass
-die Funktion <code>generate</code> ausgeführt werden soll, sobald der
-Button betätigt wird.</p>
-<p>Über dem Button wird geprüft, ob <code>loading</code> den Wert
-<code>true</code> hat, und falls ja, zeigen wir einen Absatz
-(<code>&lt;p&gt;</code>) mit dem Texthinweis
-<code>Wird geladen...</code> an.</p>
-<p>Der Bereich innerhalb von <code>&lt;script&gt;</code> ist JavaScript,
-während alles außerhalb HTML entspricht. Variablen sind dabei reaktiv,
-was bedeutet, dass eine im <code>&lt;script&gt;</code>-Teil erstellte
-und später veränderte Variable ihre Aktualisierung unmittelbar im
-zugehörigen HTML wiedergibt. Dies erklärt den Begriff
-<strong>Reaktiv</strong>, da das HTML automatisch auf jegliche
-Änderungen im JavaScript <strong>reagiert</strong>.</p>
+<p>Wir haben dir schone eine Variable, <code>loading</code>, zu
+Verfügung gestellt. Diese kannst du wie folgt benutzen</p>
+<pre class="svelte"><code>{#if $loading}
+  &lt;p&gt;Wird generiert...&lt;/p&gt;
+{/if}</code></pre>
+<p>Setze den Lade Text am besten zwischen das Form un die Bilder.</p>
 <div class="solution">
-<pre class="svelte"><code>&lt;script lang=&quot;ts&quot;&gt;
-  import { generate, error } from &quot;./openai&quot;;
-  import { addImage, images, removeImage } from &quot;./gallery&quot;;
-
-  let source = &quot;&quot;;
-
-  let prompt = &quot;Eine siamesische Katze mit blauen Augen.&quot;;
-
-  let isGenerating = false;
-
-  const handleGenerate = async () =&gt; {
-    if (isGenerating) {
-      return;
-    };
-
-    isGenerating = true;
-
-    source = await generate(prompt);
-
-    isGenerating = false;
-  };
-&lt;/script&gt;
-
+<pre class="svelte"><code>
 &lt;div class=&quot;app&quot;&gt;
   &lt;!-- Formular --&gt;
 
-  {#if isGenerating}
+  {#if $loading}
     &lt;p&gt;Wird generiert...&lt;/p&gt;
   {/if}
 
   &lt;!-- Bild &amp; Fehlermeldung --&gt;
 &lt;/div&gt;</code></pre>
 </div>
+<h2 id="schwere-aufgaben">Schwere Aufgaben</h2>
+<p>Wir empfehlen den Chatbot spätestens hier zu gebrauchen!</p>
 <h3 id="dynamischer-alt-text-hinzufügen">11. Dynamischer Alt Text
 hinzufügen</h3>
 <h4 id="aufgabe-10">Aufgabe</h4>
@@ -407,4 +343,6 @@ verwendet, kann man Variablen einfügen.</p>
   &lt;!-- Fehlermeldung --&gt;
 &lt;/div&gt;</code></pre>
 </div>
+<h3 id="frage-und">12. Frage und :)</h3>
+<p>Du hasst alles erledigt, frage uns für weitere Aufgaben.</p>
 `;export default TASKS;

@@ -24,10 +24,6 @@ const APP = `<script lang="ts">
   </button>
 </form>
 
-{#if $loading}
-  <p>Wird generiert...</p>
-{/if}
-
 {#each $images as { url, prompt }}
   <div class="image-container">
     <img

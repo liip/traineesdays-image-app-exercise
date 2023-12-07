@@ -379,10 +379,6 @@ Dazu musst du ihm eine Klasse geben und folgende Styles auf dieser Klasse setzen
 
 </div>
 
-## Schwere Aufgaben
-
-Wir empfehlen den Chatbot spätestens hier zu gebrauchen!
-
 ### 10. Lade-Indikator hinzufügen
 
 #### Aufgabe
@@ -399,74 +395,24 @@ In deinem Fall soll jedoch ein Text eingesetzt werden, um zu signalisieren, dass
 
 Nutze für diese Aufgabe eine Variable und eine `if`-Bedingung.
 
-In Svelte könntest du das so umsetzen:
+Wir haben dir schone eine  Variable, `loading`, zu Verfügung gestellt. Diese kannst du wie folgt benutzen
 
 ```svelte
-<script>
-  let loading = false;
-
-  const generate = () => {
-    if (loading) {
-      return;
-    }
-
-    loading = true;
-
-    // Hier den restlichen Code einfügen
-
-    loading = false;
-  }
-</script>
-
-{#if loading}
-  <p>Wird geladen...</p>
+{#if $loading}
+  <p>Wird generiert...</p>
 {/if}
-
-<button on:click={generate}>
-  Bild erstellen
-</button>
 ```
 
-Anfänglich wird die Variable `loading` auf `false` gesetzt, was bedeutet, dass aktuell nichts geladen wird.
-
-Innerhalb der `generate`-Funktion wird dieser Wert zu Beginn auf `true` geändert, um den Ladevorgang anzuzeigen. Sobald der Prozess abgeschlossen ist, setzen wir `loading` zurück auf `false`. Zudem prüfen wir zu Beginn der Funktion, ob `loading` bereits `true` ist, um die Funktion gegebenenfalls nicht erneut auszuführen.
-
-Die `generate`-Funktion wird aktiviert, wenn der Nutzer auf den Button klickt. Mit `on:click` legen wir fest, dass die Funktion `generate` ausgeführt werden soll, sobald der Button betätigt wird.
-
-Über dem Button wird geprüft, ob `loading` den Wert `true` hat, und falls ja, zeigen wir einen Absatz (`<p>`) mit dem Texthinweis `Wird geladen...` an.
-
-Der Bereich innerhalb von `<script>` ist JavaScript, während alles außerhalb HTML entspricht. Variablen sind dabei reaktiv, was bedeutet, dass eine im `<script>`-Teil erstellte und später veränderte Variable ihre Aktualisierung unmittelbar im zugehörigen HTML wiedergibt. Dies erklärt den Begriff **Reaktiv**, da das HTML automatisch auf jegliche Änderungen im JavaScript **reagiert**.
+Setze den Lade Text am besten zwischen das Form un die Bilder.
 
 <div class="solution">
 
 ```svelte
-<script lang="ts">
-  import { generate, error } from "./openai";
-  import { addImage, images, removeImage } from "./gallery";
-
-  let source = "";
-
-  let prompt = "Eine siamesische Katze mit blauen Augen.";
-
-  let isGenerating = false;
-
-  const handleGenerate = async () => {
-    if (isGenerating) {
-      return;
-    };
-
-    isGenerating = true;
-
-    source = await generate(prompt);
-
-    isGenerating = false;
-  };
-</script>
 
 <div class="app">
   <!-- Formular -->
 
-  {#if isGenerating}
+  {#if $loading}
     <p>Wird generiert...</p>
   {/if}
 
@@ -475,6 +421,10 @@ Der Bereich innerhalb von `<script>` ist JavaScript, während alles außerhalb H
 ```
 
 </div>
+
+## Schwere Aufgaben
+
+Wir empfehlen den Chatbot spätestens hier zu gebrauchen!
 
 ### 11. Dynamischer Alt Text hinzufügen
 
@@ -517,3 +467,7 @@ Indem man `{` und `}` in einem Attribut verwendet, kann man Variablen einfügen.
 ```
 
 </div>
+
+### 12. Frage und :)
+
+Du hasst alles erledigt, frage uns für weitere Aufgaben.
