@@ -1,7 +1,6 @@
 # Schnuppertag Bilder
 
 - [Schnuppertag Bilder](#schnuppertag-bilder)
-  - [Starten](#starten)
   - [Bearbeitung](#bearbeitung)
     - [Development](#development)
     - [Commits](#commits)
@@ -11,22 +10,11 @@
     - [Frontend](#frontend)
   - [Chat](#chat)
   - [Schnupperlehrlinge](#schnupperlehrlinge)
+    - [Vor dem starten](#vor-dem-starten)
     - [Starten des Projekts](#starten-des-projekts)
   - [Durchführung](#durchführung)
 
 Dieses Repository wird für Schnuppertage gebraucht.
-
-## Starten
-
-Es gibt ein paar Schritte welche man durch führen muss.
-
-Ein Lernender sollte jeweils den Laptop aufgeklappt und an den Beamer gehängt vorne aufstellen und folgenden command ausführen
-
-```bash
-npm run provide-key
-```
-
-Damit startet ein express server im Hintergrund welcher den openai-api-key zur Verfügung stellt. Davor muss jedoch das `.env-example` kopiert werden und der [api key](https://platform.openai.com/api-keys) muss mit der [organization](https://platform.openai.com/account/organization) eingeschrieben werden.
 
 ## Bearbeitung
 
@@ -92,15 +80,24 @@ Das Projekt sollte per [vscode.dev](https://vscode.dev) ausgeführt werden in ei
 
 Auf [vscode.dev](https://vscode.dev) ist die [Github Codespaces](https://marketplace.visualstudio.com/items?itemName=GitHub.codespaces) Extension schon vorinstalliert. Sie müssen sich lediglich mit dem Github Account anmelden und das Repository auswählen.
 
+### Vor dem starten
+
+Es muss bei jedem Lernenden ein env.js existieren, dies sollte vor dem Schnuppertag als vorbereitung passieren.
+
+```js
+export const OPENAI_API_KEY = "key";
+export const OPENAI_ORGANIZATION = "org";
+```
+
+Den API key für openai findet man [hier](https://platform.openai.com/api-keys) und die organization [hier](https://platform.openai.com/account/organization).
+
 ### Starten des Projekts
 
 Das Projekt und die Aufgaben werden mit folgendem command ausgeführt.
 
 ```bash
-npm start %IP%
+npm start
 ```
-
-`%IP%` muss mit der IP ersetzt werden welche angezeigt wird nachdem man den key provider [gestartet](#starten) hat.
 
 Hierbei ist zu beachten, dass es drei neue tabs im browser direkt öffnet.
 

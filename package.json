@@ -12,7 +12,7 @@
     "chat": "cd chat && vite --port 3003 --open",
     "provide-key": "cd openai-api-key-provider && npm start",
     "install": "cd openai-api-key-provider && npm i && cd ../tasks && npm i && cd ../chat && npm i",
-    "start": "./scripts/dev.sh $1"
+    "start": "concurrently --names \"BildGenerierung,Aufgaben,Chat\" -c \"green,red,blue\" --kill-others \"vite --port 3000 --open\" \"npm run tasks\" \"npm run chat\""
   },
   "devDependencies": {
     "@sveltejs/vite-plugin-svelte": "^3.0.0",
