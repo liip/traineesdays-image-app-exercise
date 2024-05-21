@@ -27,20 +27,16 @@ verschiedenen Größen dargestellt werden:</p>
 &lt;h6&gt;H6&lt;/h6&gt;</code></pre>
 <p>Dabei ist <code>&lt;h1&gt;</code> die größte Überschrift und
 <code>&lt;h6&gt;</code> die kleinste.</p>
-<p>An folgender Stelle solltest du den Titel einfügen:</p>
-<pre class="svelte"><code>&lt;div class=&quot;app&quot;&gt;
-  &lt;h&gt;Dein Titel&lt;/h&gt;
+<p>Du solltest den Titel über dem Forum einfügen:</p>
+<pre class="svelte"><code>&lt;h1&gt;Dein Titel&lt;/h1&gt;
 
-  &lt;!-- Form, Bild &amp; Error --&gt;
-&lt;/div&gt;</code></pre>
+&lt;!-- Form, Bild &amp; Error --&gt;</code></pre>
 <p>Ersetze <code>&lt;h&gt;</code> durch ein geeignetes Überschrift-Tag,
 indem du die passende Größe (1-6) wählst.</p>
 <div class="solution">
-<pre class="svelte"><code>&lt;div class=&quot;app&quot;&gt;
-  &lt;h1&gt;Dein Titel&lt;/h1&gt;
+<pre class="svelte"><code>&lt;h1&gt;Dein Titel&lt;/h1&gt;
 
-  &lt;!-- Form, Image &amp; Error --&gt;
-&lt;/div&gt;</code></pre>
+&lt;!-- Form, Image &amp; Error --&gt;</code></pre>
 </div>
 <h3 id="button-text-ändern">2. Button Text ändern</h3>
 <h4 id="aufgabe-1">Aufgabe</h4>
@@ -68,28 +64,26 @@ verändern kannst.</p>
 &lt;/button&gt;</code></pre>
 </details>
 <div class="solution">
-<pre class="svelte"><code>&lt;div class=&quot;app&quot;&gt;
-  &lt;form
-    class=&quot;form&quot;
-    on:submit|preventDefault
+<pre class="svelte"><code>&lt;form
+  class=&quot;form&quot;
+  on:submit|preventDefault
+&gt;
+  &lt;!-- Eingabeaufforderung --&gt;
+
+  &lt;button
+    class=&quot;submit-button&quot;
+    on:click={handleGenerate}
   &gt;
-    &lt;!-- Eingabeaufforderung --&gt;
+    Neuer Button Text
+  &lt;/button&gt;
+&lt;/form&gt;
 
-    &lt;button
-      class=&quot;submit-button&quot;
-      on:click={handleGenerate}
-    &gt;
-      Neuer Button Text
-    &lt;/button&gt;
-  &lt;/form&gt;
-
-  &lt;!-- Bild &amp; Fehlermeldung --&gt;
-&lt;/div&gt;</code></pre>
+&lt;!-- Bild &amp; Fehlermeldung --&gt;</code></pre>
 </div>
 <h3 id="anweisungstext-prompt-anpassen">3. Anweisungstext (Prompt)
 anpassen</h3>
 <h4 id="aufgabe-2">Aufgabe</h4>
-<p>Vereinfache den aktuellen Prompt
+<p>Verändere den aktuellen Prompt
 <code>"Eine siamesische Katze mit blauen Augen."</code></p>
 <p>Experimentiere ein wenig mit dem Prompt und betrachte, wie sich die
 Ergebnisse verändern.</p>
@@ -104,7 +98,7 @@ Ergebnisse verändern.</p>
 &lt;/script&gt;</code></pre>
 <p>Verwende <code>let prompt</code> als Suchbegriff, nutze
 <code>CTRL + F</code> auf Windows &amp; Linux oder
-<code>Command + F</code> auf MacOS, um dies zu tun.</p>
+<code>Command + F</code> auf MacOS, um zu suchen.</p>
 <div class="solution">
 <pre class="svelte"><code>&lt;script lang=&quot;ts&quot;&gt;
   let prompt = &quot;Ein neuer Prompt.&quot;;
@@ -138,16 +132,16 @@ TIPP
 <div class="sourceCode" id="cb10"><pre
 class="sourceCode css"><code class="sourceCode css"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a><span class="fu">.class</span> {</span>
 <span id="cb10-2"><a href="#cb10-2" aria-hidden="true" tabindex="-1"></a>  <span class="co">/* Du kannst die meisten Farben mit ihrem englischen Namen verwenden. */</span></span>
-<span id="cb10-3"><a href="#cb10-3" aria-hidden="true" tabindex="-1"></a>  <span class="kw">background</span>: <span class="cn">red</span><span class="op">;</span></span>
+<span id="cb10-3"><a href="#cb10-3" aria-hidden="true" tabindex="-1"></a>  <span class="kw">background</span><span class="ch">:</span> <span class="cn">red</span><span class="op">;</span></span>
 <span id="cb10-4"><a href="#cb10-4" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb10-5"><a href="#cb10-5" aria-hidden="true" tabindex="-1"></a>  <span class="co">/* Gilt auch für Textfarbe. */</span></span>
-<span id="cb10-6"><a href="#cb10-6" aria-hidden="true" tabindex="-1"></a>  <span class="kw">color</span>: <span class="cn">black</span><span class="op">;</span></span>
+<span id="cb10-6"><a href="#cb10-6" aria-hidden="true" tabindex="-1"></a>  <span class="kw">color</span><span class="ch">:</span> <span class="cn">black</span><span class="op">;</span></span>
 <span id="cb10-7"><a href="#cb10-7" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb10-8"><a href="#cb10-8" aria-hidden="true" tabindex="-1"></a>  <span class="co">/* Der Rahmen (border) setzt sich aus drei Werten zusammen. */</span></span>
 <span id="cb10-9"><a href="#cb10-9" aria-hidden="true" tabindex="-1"></a>  <span class="co">/* Erst wird die Dicke angegeben, z.B. 1px. */</span></span>
 <span id="cb10-10"><a href="#cb10-10" aria-hidden="true" tabindex="-1"></a>  <span class="co">/* Danach folgt der Stil des Rahmens. &#39;solid&#39; für eine durchgezogene Linie, es gibt aber auch &#39;dotted&#39; für gepunktet oder &#39;dashed&#39; für gestrichelt. */</span></span>
 <span id="cb10-11"><a href="#cb10-11" aria-hidden="true" tabindex="-1"></a>  <span class="co">/* Zu guter Letzt die Farbe des Rahmens, die wie bei background und color, in den meisten Fällen in Englisch angegeben wird. */</span></span>
-<span id="cb10-12"><a href="#cb10-12" aria-hidden="true" tabindex="-1"></a>  <span class="kw">border</span>: <span class="dv">1</span><span class="dt">px</span> <span class="dv">solid</span> <span class="cn">black</span><span class="op">;</span></span>
+<span id="cb10-12"><a href="#cb10-12" aria-hidden="true" tabindex="-1"></a>  <span class="kw">border</span><span class="ch">:</span> <span class="dv">1</span><span class="dt">px</span> <span class="dv">solid</span> <span class="cn">black</span><span class="op">;</span></span>
 <span id="cb10-13"><a href="#cb10-13" aria-hidden="true" tabindex="-1"></a>}</span></code></pre></div>
 </details>
 <div class="solution">
@@ -343,6 +337,6 @@ verwendet, kann man Variablen einfügen.</p>
   &lt;!-- Fehlermeldung --&gt;
 &lt;/div&gt;</code></pre>
 </div>
-<h3 id="frage-und">12. Frage und :)</h3>
-<p>Du hasst alles erledigt, frage uns für weitere Aufgaben.</p>
+<h3 id="frage-uns">12. Frage uns :)</h3>
+<p>Du hast alles erledigt, frage uns für weitere Aufgaben.</p>
 `;export default TASKS;

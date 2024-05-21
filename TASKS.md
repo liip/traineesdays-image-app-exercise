@@ -29,14 +29,12 @@ Ein Titel, auch Überschrift genannt, kann in HTML in sechs verschiedenen Größ
 
 Dabei ist `<h1>` die größte Überschrift und `<h6>` die kleinste.
 
-An folgender Stelle solltest du den Titel einfügen:
+Du solltest den Titel über dem Forum einfügen:
 
 ```svelte
-<div class="app">
-  <h>Dein Titel</h>
+<h1>Dein Titel</h1>
 
-  <!-- Form, Bild & Error -->
-</div>
+<!-- Form, Bild & Error -->
 ```
 
 Ersetze `<h>` durch ein geeignetes Überschrift-Tag, indem du die passende Größe (1-6) wählst.
@@ -44,11 +42,9 @@ Ersetze `<h>` durch ein geeignetes Überschrift-Tag, indem du die passende Grö�
 <div class="solution">
 
 ```svelte
-<div class="app">
-  <h1>Dein Titel</h1>
+<h1>Dein Titel</h1>
 
-  <!-- Form, Image & Error -->
-</div>
+<!-- Form, Image & Error -->
 ```
 
 </div>
@@ -90,23 +86,21 @@ Hier siehst du den Abschnitt, wo du die Beschriftung des Buttons verändern kann
 <div class="solution">
 
 ```svelte
-<div class="app">
-  <form
-    class="form"
-    on:submit|preventDefault
+<form
+  class="form"
+  on:submit|preventDefault
+>
+  <!-- Eingabeaufforderung -->
+
+  <button
+    class="submit-button"
+    on:click={handleGenerate}
   >
-    <!-- Eingabeaufforderung -->
+    Neuer Button Text
+  </button>
+</form>
 
-    <button
-      class="submit-button"
-      on:click={handleGenerate}
-    >
-      Neuer Button Text
-    </button>
-  </form>
-
-  <!-- Bild & Fehlermeldung -->
-</div>
+<!-- Bild & Fehlermeldung -->
 ```
 
 </div>
@@ -115,7 +109,7 @@ Hier siehst du den Abschnitt, wo du die Beschriftung des Buttons verändern kann
 
 #### Aufgabe
 
-Vereinfache den aktuellen Prompt `"Eine siamesische Katze mit blauen Augen."`
+Verändere den aktuellen Prompt `"Eine siamesische Katze mit blauen Augen."`
 
 Experimentiere ein wenig mit dem Prompt und betrachte, wie sich die Ergebnisse verändern.
 
@@ -133,7 +127,7 @@ Hier siehst du, wo du den Prompt verändern sollst.
 </script>
 ```
 
-Verwende `let prompt` als Suchbegriff, nutze `CTRL + F` auf Windows & Linux oder `Command + F` auf MacOS, um dies zu tun.
+Verwende `let prompt` als Suchbegriff, nutze `CTRL + F` auf Windows & Linux oder `Command + F` auf MacOS, um zu suchen.
 
 <div class="solution">
 
@@ -468,6 +462,6 @@ Indem man `{` und `}` in einem Attribut verwendet, kann man Variablen einfügen.
 
 </div>
 
-### 12. Frage und :)
+### 12. Frage uns :)
 
-Du hasst alles erledigt, frage uns für weitere Aufgaben.
+Du hast alles erledigt, frage uns für weitere Aufgaben.

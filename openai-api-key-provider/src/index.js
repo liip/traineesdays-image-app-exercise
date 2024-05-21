@@ -3,7 +3,7 @@ import { networkInterfaces } from "os";
 import { readFileSync } from "fs";
 import "dotenv/config";
 
-const PORT = 3002;
+const PORT = 3005;
 
 const nets = networkInterfaces();
 const results = Object.create(null);

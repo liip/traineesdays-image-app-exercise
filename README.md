@@ -20,7 +20,7 @@ Dieses Repository wird für Schnuppertage gebraucht.
 
 Es gibt ein paar Schritte welche man durch führen muss.
 
-Ein Lehnender sollte jeweils den Laptop aufgeklappt und an den Beamer gehängt vorne aufstellen und folgenden command ausführenË
+Ein Lernender sollte jeweils den Laptop aufgeklappt und an den Beamer gehängt vorne aufstellen und folgenden command ausführen
 
 ```bash
 npm run provide-key
